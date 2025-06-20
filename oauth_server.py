@@ -16,7 +16,11 @@ app = Flask(__name__)
 CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 REDIRECT_URI = os.getenv("REDIRECT_URI")
-TOKEN_URL = "https://api.accelo.com/oauth2/token"
+# Domain of the Accelo deployment. Can be overridden via ACCELO_HOST
+# in the environment to support other deployments.
+ACCELO_HOST = os.getenv("ACCELO_HOST", "polarisforensics.api.accelo.com")
+TOKEN_URL = f"https://{ACCELO_HOST}/oauth2/token"
+TOKEN_FILE = "auth/tokens.json"
 TOKEN_FILE = "auth/tokens.json"
 
 def save_tokens(data):
@@ -53,5 +57,10 @@ def callback():
 if __name__ == "__main__":
     print(f"🌐 Server running at {REDIRECT_URI}")
     print("🔗 Visit this URL in a browser:")
-    print(f"https://api.accelo.com/oauth2/authorize?client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&response_type=code&scope=read(all)+write(all)")
+    authorize_url = (
+        f"https://{ACCELO_HOST}/oauth2/v0/authorize?"
+        f"client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}"
+        "&response_type=code&scope=read(all)+write(all)"
+    )
+    print(authorize_url)
     app.run(host="0.0.0.0", port=8000)
