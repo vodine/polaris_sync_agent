@@ -1,0 +1,82 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# VSCode settings
+.vscode/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Environment
+.migration/
+.env
+.venv/
+venv/
+ENV/
+env/
+*.env
+*.env.*
+
+# macOS
+.DS_Store
+
+# PyInstaller
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# pytest
+.pytest_cache/
+.cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Logs
+*.log
+logs/
+*.out
+
+# Database / Migrations
+migrations/
+*.sqlite3
+db.sqlite3
+
+# IDEs / Editors
+.idea/
+*.swp
+
+# Byte-compiled / cache / distribution
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Backup files
+*~
+
+# Temporary files
+*.bak
+*.tmp
+
+# Local scripts or data
+local_settings.py
+
+# Docker files
+*.pid
