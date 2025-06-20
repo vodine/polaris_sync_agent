@@ -14,7 +14,9 @@ CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 REDIRECT_URI = os.getenv("REDIRECT_URI")
 TOKEN_FILE = os.getenv("TOKEN_FILE", "token_store.json")  # fallback if missing
 
-AUTH_URL = "https://api.accelo.com/oauth2/token"
+# Accelo deployment host. Allows refreshing tokens against the correct server.
+ACCELO_HOST = os.getenv("ACCELO_HOST", "polarisforensics.api.accelo.com")
+AUTH_URL = f"https://{ACCELO_HOST}/oauth2/token"
 
 def save_tokens(data):
     data["expires_at"] = int(time.time()) + int(data["expires_in"])

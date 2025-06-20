@@ -13,8 +13,10 @@ CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 REDIRECT_URI = os.getenv("REDIRECT_URI")
 
-AUTH_URL = "https://api.accelo.com/oauth2/authorize"
-TOKEN_URL = "https://api.accelo.com/oauth2/token"
+# Accelo deployment host for OAuth operations
+ACCELO_HOST = os.getenv("ACCELO_HOST", "polarisforensics.api.accelo.com")
+AUTH_URL = f"https://{ACCELO_HOST}/oauth2/v0/authorize"
+TOKEN_URL = f"https://{ACCELO_HOST}/oauth2/token"
 
 # Build the auth URL
 params = {
