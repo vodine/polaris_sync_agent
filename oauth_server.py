@@ -3,7 +3,13 @@ import os
 import json
 import time
 import requests
+from dotenv import load_dotenv
 from flask import Flask, request, redirect
+
+# Load environment variables from a .env file if present. This mirrors the
+# behavior of the other modules and ensures CLIENT_ID, CLIENT_SECRET and
+# REDIRECT_URI are populated when running the server locally.
+load_dotenv()
 
 app = Flask(__name__)
 
