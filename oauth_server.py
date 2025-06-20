@@ -1,48 +1,51 @@
 # oauth_server.py
 import os
 import json
+import time
 import requests
-from flask import Flask, request
-from dotenv import load_dotenv
+from flask import Flask, request, redirect
 
-load_dotenv()
+app = Flask(__name__)
 
 CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 REDIRECT_URI = os.getenv("REDIRECT_URI")
-TOKEN_FILE = os.getenv("TOKEN_FILE", "token_store.json")
+TOKEN_URL = "https://api.accelo.com/oauth2/token"
+TOKEN_FILE = "auth/tokens.json"
 
-AUTH_BASE = "https://polarisforensics.accelo.com/oauth2"
-
-app = Flask(__name__)
+def save_tokens(data):
+    os.makedirs(os.path.dirname(TOKEN_FILE), exist_ok=True)
+    data["expires_at"] = int(time.time()) + int(data["expires_in"])
+    with open(TOKEN_FILE, "w") as f:
+        json.dump(data, f, indent=2)
 
 @app.route("/callback")
-def oauth_callback():
+def callback():
     code = request.args.get("code")
     if not code:
-        return "Missing code in callback.", 400
+        return "Missing authorization code", 400
 
-    # Exchange code for token
-    token_url = f"{AUTH_BASE}/token"
-    data = {
+    print(f"🔑 Received code: {code}")
+
+    response = requests.post(TOKEN_URL, data={
         "grant_type": "authorization_code",
-        "code": code,
         "client_id": CLIENT_ID,
         "client_secret": CLIENT_SECRET,
-        "redirect_uri": REDIRECT_URI
-    }
+        "redirect_uri": REDIRECT_URI,
+        "code": code
+    })
 
-    response = requests.post(token_url, data=data)
-    token_data = response.json()
-
-    if "access_token" in token_data:
-        with open(TOKEN_FILE, "w") as f:
-            json.dump(token_data, f, indent=2)
-        return "✅ Access token saved!"
+    if response.status_code == 200:
+        tokens = response.json()
+        save_tokens(tokens)
+        print("✅ Access and refresh tokens saved.")
+        return "✅ Authorization complete. You may close this tab."
     else:
-        return f"❌ Token error: {token_data}", 400
+        print("❌ Token exchange failed:", response.text)
+        return f"Token exchange failed: {response.text}", 500
 
 if __name__ == "__main__":
-    print(f"➡️ Open this URL in a browser:")
-    print(f"https://polarisforensics.accelo.com/oauth2/v0/authorize?client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&response_type=code&scope=read write")
-    app.run(port=8000)
+    print(f"🌐 Server running at {REDIRECT_URI}")
+    print("🔗 Visit this URL in a browser:")
+    print(f"https://api.accelo.com/oauth2/authorize?client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&response_type=code&scope=read(all)+write(all)")
+    app.run(host="0.0.0.0", port=8000)

@@ -14,7 +14,7 @@ CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 REDIRECT_URI = os.getenv("REDIRECT_URI")
 TOKEN_FILE = os.getenv("TOKEN_FILE", "token_store.json")  # fallback if missing
 
-AUTH_URL = "https://polarisforensics.api.accelo.com/oauth2/token"
+AUTH_URL = "https://api.accelo.com/oauth2/token"
 
 def save_tokens(data):
     data["expires_at"] = int(time.time()) + int(data["expires_in"])
