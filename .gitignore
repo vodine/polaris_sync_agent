@@ -80,3 +80,9 @@ local_settings.py
 
 # Docker files
 *.pid
+
+# Custom Folders
+archive/
+
+# Custom files
+test_auth.py
