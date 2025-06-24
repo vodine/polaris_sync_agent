@@ -1,0 +1,10596 @@
+{
+  "account_category": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "account_category_option": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "account_category_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "account_category_value": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "account_category_id",
+      "type": "integer"
+    },
+    {
+      "name": "account_category_option_id",
+      "type": "integer"
+    }
+  ],
+  "account_invoice": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "invoice_number",
+      "type": "character varying"
+    },
+    {
+      "name": "currency_id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "creator_id",
+      "type": "integer"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "latest_resource_id",
+      "type": "integer"
+    },
+    {
+      "name": "amount",
+      "type": "numeric"
+    },
+    {
+      "name": "tax",
+      "type": "numeric"
+    },
+    {
+      "name": "raised",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "due",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "outstanding",
+      "type": "numeric"
+    },
+    {
+      "name": "reference_id",
+      "type": "integer"
+    },
+    {
+      "name": "reference_table",
+      "type": "character varying"
+    },
+    {
+      "name": "subject",
+      "type": "character varying"
+    },
+    {
+      "name": "notes",
+      "type": "text"
+    },
+    {
+      "name": "internal_notes",
+      "type": "text"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "last_interaction",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "template_id",
+      "type": "integer"
+    },
+    {
+      "name": "customer_activity_include_nonbillable",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_group_by",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_date",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_hours",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_rate_per_hour",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_amount",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_owner",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_description",
+      "type": "text"
+    },
+    {
+      "name": "pdf_settings",
+      "type": "text"
+    },
+    {
+      "name": "sent",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "total",
+      "type": "numeric"
+    }
+  ],
+  "account_invoice_item": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "invoice_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "ledger_id",
+      "type": "integer"
+    },
+    {
+      "name": "tax_id",
+      "type": "integer"
+    },
+    {
+      "name": "quantity",
+      "type": "numeric"
+    },
+    {
+      "name": "rate",
+      "type": "numeric"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "amount",
+      "type": "numeric"
+    },
+    {
+      "name": "tax",
+      "type": "numeric"
+    },
+    {
+      "name": "total",
+      "type": "numeric"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "agreed_fee",
+      "type": "numeric"
+    },
+    {
+      "name": "percentage_complete",
+      "type": "numeric"
+    },
+    {
+      "name": "value_complete",
+      "type": "numeric"
+    },
+    {
+      "name": "value_previously_claimed",
+      "type": "numeric"
+    }
+  ],
+  "account_invoice_recipient": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    }
+  ],
+  "account_invoice_template": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "default_term_duration",
+      "type": "integer"
+    },
+    {
+      "name": "show_profile_fields",
+      "type": "text"
+    },
+    {
+      "name": "customer_notes",
+      "type": "text"
+    },
+    {
+      "name": "internal_notes",
+      "type": "text"
+    },
+    {
+      "name": "email_subject",
+      "type": "text"
+    },
+    {
+      "name": "email_body",
+      "type": "text"
+    },
+    {
+      "name": "material_include_materials",
+      "type": "text"
+    },
+    {
+      "name": "material_template_id",
+      "type": "integer"
+    },
+    {
+      "name": "expense_include_expenses",
+      "type": "text"
+    },
+    {
+      "name": "expense_status",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_budget_date_range",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_budget_status",
+      "type": "text"
+    },
+    {
+      "name": "customer_theme",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_show_invoice_items",
+      "type": "text"
+    },
+    {
+      "name": "customer_service_show_item_quantity",
+      "type": "text"
+    },
+    {
+      "name": "customer_service_show_unit_price",
+      "type": "text"
+    },
+    {
+      "name": "customer_service_show_tax_code",
+      "type": "text"
+    },
+    {
+      "name": "customer_service_show_tax_amount",
+      "type": "text"
+    },
+    {
+      "name": "customer_service_show_item_amount",
+      "type": "text"
+    },
+    {
+      "name": "customer_service_show_item_total",
+      "type": "text"
+    },
+    {
+      "name": "customer_material_show_item_quantity",
+      "type": "text"
+    },
+    {
+      "name": "customer_material_show_unit_price",
+      "type": "text"
+    },
+    {
+      "name": "customer_material_show_tax_code",
+      "type": "text"
+    },
+    {
+      "name": "customer_material_show_tax_amount",
+      "type": "text"
+    },
+    {
+      "name": "customer_material_show_template_code",
+      "type": "text"
+    },
+    {
+      "name": "customer_material_show_item_amount",
+      "type": "text"
+    },
+    {
+      "name": "customer_material_show_item_total",
+      "type": "text"
+    },
+    {
+      "name": "customer_expense_show_item_quantity",
+      "type": "text"
+    },
+    {
+      "name": "customer_expense_show_unit_price",
+      "type": "text"
+    },
+    {
+      "name": "customer_expense_show_tax_code",
+      "type": "text"
+    },
+    {
+      "name": "customer_expense_show_tax_amount",
+      "type": "text"
+    },
+    {
+      "name": "customer_expense_show_item_amount",
+      "type": "text"
+    },
+    {
+      "name": "customer_expense_show_item_total",
+      "type": "text"
+    },
+    {
+      "name": "customer_show_related_invoices",
+      "type": "text"
+    },
+    {
+      "name": "customer_show_payments",
+      "type": "text"
+    },
+    {
+      "name": "customer_show_work_summary",
+      "type": "text"
+    },
+    {
+      "name": "customer_work_summary_show_description",
+      "type": "text"
+    },
+    {
+      "name": "customer_work_summary_show_resolution",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_group_by",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_sort_by",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_type",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_date",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_hours",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_rate_per_hour",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_amount",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_description",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_subject",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_owner",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_show_avatar",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_include_nonbillable",
+      "type": "text"
+    },
+    {
+      "name": "customer_pdf_filename",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_rte_left_section",
+      "type": "text"
+    },
+    {
+      "name": "customer_rte_right_section",
+      "type": "text"
+    },
+    {
+      "name": "customer_rte_bottom_section",
+      "type": "text"
+    },
+    {
+      "name": "customer_rte_total_section_first_line_title",
+      "type": "text"
+    },
+    {
+      "name": "customer_rte_total_section_first_line_value",
+      "type": "text"
+    },
+    {
+      "name": "customer_rte_total_section_second_line_title",
+      "type": "text"
+    },
+    {
+      "name": "customer_rte_total_section_second_line_value",
+      "type": "text"
+    },
+    {
+      "name": "customer_rte_total_section_third_line_title",
+      "type": "text"
+    },
+    {
+      "name": "customer_rte_total_section_third_line_value",
+      "type": "text"
+    },
+    {
+      "name": "customer_rte_total_section_fourth_line_title",
+      "type": "text"
+    },
+    {
+      "name": "customer_rte_total_section_fourth_line_value",
+      "type": "text"
+    },
+    {
+      "name": "customer_rte_description_section",
+      "type": "text"
+    },
+    {
+      "name": "customer_invoice_font",
+      "type": "text"
+    },
+    {
+      "name": "customer_activity_table_style",
+      "type": "text"
+    },
+    {
+      "name": "customer_invoice_table_style",
+      "type": "text"
+    },
+    {
+      "name": "customer_include_work_summary_contract",
+      "type": "text"
+    },
+    {
+      "name": "customer_include_work_summary_bulk",
+      "type": "text"
+    },
+    {
+      "name": "invoice_owner_type",
+      "type": "text"
+    },
+    {
+      "name": "default_invoice_subject",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "customer_service_show_agreed_fee",
+      "type": "text"
+    },
+    {
+      "name": "customer_service_show_percentage_complete",
+      "type": "text"
+    },
+    {
+      "name": "customer_service_show_value_complete",
+      "type": "text"
+    },
+    {
+      "name": "customer_service_show_value_previously_claimed",
+      "type": "text"
+    },
+    {
+      "name": "customer_expense_show_date",
+      "type": "text"
+    },
+    {
+      "name": "customer_expense_show_type",
+      "type": "text"
+    },
+    {
+      "name": "customer_expense_show_owner",
+      "type": "text"
+    },
+    {
+      "name": "customer_expense_show_avatar",
+      "type": "text"
+    },
+    {
+      "name": "customer_expense_group_by",
+      "type": "text"
+    },
+    {
+      "name": "customer_expense_sort_by",
+      "type": "text"
+    },
+    {
+      "name": "customer_expense_show_item_title",
+      "type": "text"
+    },
+    {
+      "name": "customer_expense_summarize_by",
+      "type": "text"
+    },
+    {
+      "name": "customer_show_invoice_items_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_service_show_agreed_fee_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_service_show_percentage_complete_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_service_show_value_complete_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_service_show_value_previously_claimed_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_service_show_item_quantity_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_service_show_unit_price_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_service_show_item_amount_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_service_show_tax_code_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_service_show_tax_amount_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_service_show_item_total_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_material_show_item_quantity_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_material_show_unit_price_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_material_show_item_amount_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_material_show_tax_code_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_material_show_tax_amount_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_material_show_item_total_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_material_show_template_code_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_expense_show_item_title_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_expense_show_item_quantity_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_expense_show_unit_price_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_expense_show_item_amount_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_expense_show_tax_code_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_expense_show_tax_amount_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_expense_show_item_total_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_expense_show_date_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_expense_show_owner_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_expense_show_avatar_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_expense_show_type_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_show_payments_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_show_related_invoices_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_activity_show_type_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_activity_show_date_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_activity_show_hours_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_activity_show_rate_per_hour_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_activity_show_amount_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_activity_show_subject_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_activity_show_description_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_activity_show_owner_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_activity_show_avatar_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_activity_include_nonbillable_title",
+      "type": "character varying"
+    },
+    {
+      "name": "services_setting_title",
+      "type": "character varying"
+    },
+    {
+      "name": "materials_setting_title",
+      "type": "character varying"
+    },
+    {
+      "name": "expenses_setting_title",
+      "type": "character varying"
+    },
+    {
+      "name": "work_summary_setting_title",
+      "type": "character varying"
+    },
+    {
+      "name": "work_detail_setting_title",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_activity_show_rate_title",
+      "type": "text"
+    },
+    {
+      "name": "material_include_purchased_materials",
+      "type": "text"
+    },
+    {
+      "name": "show_milestone_materials_under_services",
+      "type": "text"
+    },
+    {
+      "name": "use_default_title_when_auto_renewal",
+      "type": "text"
+    },
+    {
+      "name": "customer_work_detail_summarize_by",
+      "type": "text"
+    },
+    {
+      "name": "work_detail_show_subtotal",
+      "type": "text"
+    },
+    {
+      "name": "page_breaks",
+      "type": "character varying"
+    },
+    {
+      "name": "customer_show_table_headings_on_each_page",
+      "type": "text"
+    }
+  ],
+  "account_invoice_template_service": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "template_id",
+      "type": "integer"
+    },
+    {
+      "name": "service_type",
+      "type": "text"
+    },
+    {
+      "name": "invoice_type",
+      "type": "text"
+    },
+    {
+      "name": "invoice_item_job_detail",
+      "type": "text"
+    },
+    {
+      "name": "activity_status",
+      "type": "text"
+    },
+    {
+      "name": "activity_logged_before",
+      "type": "text"
+    },
+    {
+      "name": "itemize_invoice_items",
+      "type": "text"
+    },
+    {
+      "name": "customer_include_activities",
+      "type": "text"
+    },
+    {
+      "name": "budget_percentage",
+      "type": "numeric"
+    },
+    {
+      "name": "include_excess",
+      "type": "text"
+    },
+    {
+      "name": "open_periods_only",
+      "type": "text"
+    },
+    {
+      "name": "service_detail",
+      "type": "text"
+    },
+    {
+      "name": "complete_percentage",
+      "type": "numeric"
+    }
+  ],
+  "account_item_template": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "ledger_id",
+      "type": "integer"
+    },
+    {
+      "name": "tax_id",
+      "type": "integer"
+    },
+    {
+      "name": "description",
+      "type": "character varying"
+    },
+    {
+      "name": "quantity",
+      "type": "integer"
+    },
+    {
+      "name": "amount",
+      "type": "numeric"
+    },
+    {
+      "name": "cost",
+      "type": "numeric"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "include_rate_title",
+      "type": "text"
+    },
+    {
+      "name": "foreign_amount",
+      "type": "numeric"
+    },
+    {
+      "name": "foreign_cost",
+      "type": "numeric"
+    }
+  ],
+  "account_item_type_preference": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "account_preference_id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "tax_id",
+      "type": "integer"
+    }
+  ],
+  "account_ledger": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "code",
+      "type": "character varying"
+    },
+    {
+      "name": "comment",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "external",
+      "type": "character varying"
+    },
+    {
+      "name": "external_id",
+      "type": "character varying"
+    },
+    {
+      "name": "external_tax_id",
+      "type": "character varying"
+    },
+    {
+      "name": "external_tax_type",
+      "type": "character varying"
+    },
+    {
+      "name": "account_class",
+      "type": "text"
+    },
+    {
+      "name": "can_invoice",
+      "type": "text"
+    },
+    {
+      "name": "can_purchase",
+      "type": "text"
+    },
+    {
+      "name": "can_receipt",
+      "type": "text"
+    }
+  ],
+  "account_payment": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "currency_id",
+      "type": "integer"
+    },
+    {
+      "name": "method_id",
+      "type": "integer"
+    },
+    {
+      "name": "receipt_id",
+      "type": "integer"
+    },
+    {
+      "name": "reference_id",
+      "type": "integer"
+    },
+    {
+      "name": "reference_table",
+      "type": "character varying"
+    },
+    {
+      "name": "amount",
+      "type": "numeric"
+    },
+    {
+      "name": "direction",
+      "type": "text"
+    },
+    {
+      "name": "entered",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "entered_by",
+      "type": "integer"
+    },
+    {
+      "name": "reference",
+      "type": "text"
+    }
+  ],
+  "account_payment_method": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "direction",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "boolean"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "account_preference": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "default_billing_affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "default_term_duration",
+      "type": "integer"
+    }
+  ],
+  "account_purchase": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "purchase_number",
+      "type": "character varying"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "creator_id",
+      "type": "integer"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "amount",
+      "type": "numeric"
+    },
+    {
+      "name": "tax",
+      "type": "numeric"
+    },
+    {
+      "name": "total",
+      "type": "numeric"
+    },
+    {
+      "name": "payment_due",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "purchase_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "shipping_details",
+      "type": "text"
+    },
+    {
+      "name": "public_notes",
+      "type": "text"
+    },
+    {
+      "name": "internal_notes",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "latest_resource_id",
+      "type": "integer"
+    },
+    {
+      "name": "outstanding",
+      "type": "numeric"
+    },
+    {
+      "name": "template_id",
+      "type": "integer"
+    }
+  ],
+  "account_purchase_item": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "purchase_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "ledger_id",
+      "type": "integer"
+    },
+    {
+      "name": "tax_id",
+      "type": "integer"
+    },
+    {
+      "name": "quantity",
+      "type": "numeric"
+    },
+    {
+      "name": "rate",
+      "type": "numeric"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "amount",
+      "type": "numeric"
+    },
+    {
+      "name": "tax",
+      "type": "numeric"
+    },
+    {
+      "name": "total",
+      "type": "numeric"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "tax_override",
+      "type": "numeric"
+    }
+  ],
+  "account_purchase_item_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "account_purchase_item_id",
+      "type": "integer"
+    },
+    {
+      "name": "link_table",
+      "type": "character varying"
+    },
+    {
+      "name": "link_id",
+      "type": "integer"
+    }
+  ],
+  "account_purchase_order_rte_row": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "account_purchase_order_setting_id",
+      "type": "integer"
+    },
+    {
+      "name": "ordering",
+      "type": "boolean"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "value",
+      "type": "character varying"
+    }
+  ],
+  "account_purchase_order_setting": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "style_font",
+      "type": "character varying"
+    },
+    {
+      "name": "style_theme",
+      "type": "character varying"
+    },
+    {
+      "name": "item_show_quantity",
+      "type": "text"
+    },
+    {
+      "name": "item_show_rate",
+      "type": "text"
+    },
+    {
+      "name": "item_show_amount",
+      "type": "text"
+    },
+    {
+      "name": "item_show_tax_code",
+      "type": "text"
+    },
+    {
+      "name": "item_show_tax_amount",
+      "type": "text"
+    },
+    {
+      "name": "item_show_total",
+      "type": "text"
+    },
+    {
+      "name": "item_show_material_code",
+      "type": "text"
+    },
+    {
+      "name": "file_name",
+      "type": "character varying"
+    },
+    {
+      "name": "rte_left_section",
+      "type": "text"
+    },
+    {
+      "name": "rte_right_section",
+      "type": "text"
+    },
+    {
+      "name": "rte_bottom_section",
+      "type": "text"
+    },
+    {
+      "name": "rte_description_section",
+      "type": "text"
+    }
+  ],
+  "account_purchase_template": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "purchase_title",
+      "type": "character varying"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_type",
+      "type": "text"
+    },
+    {
+      "name": "internal_notes",
+      "type": "text"
+    },
+    {
+      "name": "expand_advance_options",
+      "type": "text"
+    },
+    {
+      "name": "create_pdf",
+      "type": "text"
+    },
+    {
+      "name": "populate_existing_items",
+      "type": "text"
+    },
+    {
+      "name": "shipping_details",
+      "type": "text"
+    },
+    {
+      "name": "public_notes",
+      "type": "text"
+    },
+    {
+      "name": "email_subject",
+      "type": "text"
+    },
+    {
+      "name": "email_body",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "default_term_duration",
+      "type": "integer"
+    }
+  ],
+  "account_receipt": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "currency_id",
+      "type": "integer"
+    },
+    {
+      "name": "method_id",
+      "type": "integer"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "amount",
+      "type": "numeric"
+    },
+    {
+      "name": "reference",
+      "type": "text"
+    },
+    {
+      "name": "direction",
+      "type": "text"
+    },
+    {
+      "name": "notified",
+      "type": "text"
+    },
+    {
+      "name": "owner_type",
+      "type": "text"
+    },
+    {
+      "name": "reference_id",
+      "type": "integer"
+    },
+    {
+      "name": "reference_table",
+      "type": "character varying"
+    },
+    {
+      "name": "received",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "delete_me",
+      "type": "text"
+    }
+  ],
+  "account_receipt_method": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "ledger_id",
+      "type": "integer"
+    },
+    {
+      "name": "ordering",
+      "type": "boolean"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "account_tax": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "rate",
+      "type": "numeric"
+    },
+    {
+      "name": "is_invoice",
+      "type": "text"
+    },
+    {
+      "name": "is_purchase",
+      "type": "text"
+    },
+    {
+      "name": "account_table",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "external",
+      "type": "character varying"
+    },
+    {
+      "name": "external_id",
+      "type": "character varying"
+    },
+    {
+      "name": "external_tax_type",
+      "type": "character varying"
+    }
+  ],
+  "activity": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "thread_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_table",
+      "type": "text"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "medium",
+      "type": "text"
+    },
+    {
+      "name": "scheduled",
+      "type": "text"
+    },
+    {
+      "name": "subject",
+      "type": "character varying"
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "priority_id",
+      "type": "integer"
+    },
+    {
+      "name": "class_id",
+      "type": "integer"
+    },
+    {
+      "name": "task_id",
+      "type": "integer"
+    },
+    {
+      "name": "visibility",
+      "type": "text"
+    },
+    {
+      "name": "details",
+      "type": "text"
+    },
+    {
+      "name": "message_id",
+      "type": "character varying"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "start",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "end",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "due",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "updated",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "record_timestamp",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "record_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "rich_content_id",
+      "type": "integer"
+    },
+    {
+      "name": "recurring_event_id",
+      "type": "integer"
+    }
+  ],
+  "activity_class": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "icon",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "activity_class_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "class_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "ordering",
+      "type": "boolean"
+    },
+    {
+      "name": "active",
+      "type": "text"
+    }
+  ],
+  "activity_event": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "interact_id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "detail",
+      "type": "character varying"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "activity_file": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "activity_id",
+      "type": "integer"
+    },
+    {
+      "name": "resource_id",
+      "type": "integer"
+    }
+  ],
+  "activity_interact": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "activity_id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_table",
+      "type": "text"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "actioned",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "invitation",
+      "type": "text"
+    },
+    {
+      "name": "opened",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "activity_invoice_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "activity_id",
+      "type": "integer"
+    },
+    {
+      "name": "invoice_id",
+      "type": "integer"
+    },
+    {
+      "name": "invoice_item_id",
+      "type": "integer"
+    }
+  ],
+  "activity_priority": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "icon",
+      "type": "text"
+    },
+    {
+      "name": "level",
+      "type": "integer"
+    }
+  ],
+  "activity_template": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "activity_body",
+      "type": "text"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "activity_template_category_id",
+      "type": "integer"
+    },
+    {
+      "name": "shared",
+      "type": "text"
+    },
+    {
+      "name": "activity_class_id",
+      "type": "integer"
+    },
+    {
+      "name": "activity_visibility",
+      "type": "text"
+    },
+    {
+      "name": "activity_seconds",
+      "type": "integer"
+    },
+    {
+      "name": "activity_subject",
+      "type": "character varying"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "activity_template_category": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "shared",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "activity_template_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "activity_id",
+      "type": "integer"
+    },
+    {
+      "name": "activity_template_id",
+      "type": "integer"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "address": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "state_id",
+      "type": "integer"
+    },
+    {
+      "name": "country_id",
+      "type": "integer"
+    },
+    {
+      "name": "company_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "street1",
+      "type": "character varying"
+    },
+    {
+      "name": "street2",
+      "type": "character varying"
+    },
+    {
+      "name": "city",
+      "type": "character varying"
+    },
+    {
+      "name": "postcode",
+      "type": "character varying"
+    },
+    {
+      "name": "postal",
+      "type": "text"
+    },
+    {
+      "name": "physical",
+      "type": "text"
+    },
+    {
+      "name": "latitude",
+      "type": "text"
+    },
+    {
+      "name": "longtitude",
+      "type": "text"
+    },
+    {
+      "name": "dpid",
+      "type": "text"
+    },
+    {
+      "name": "dpid_barcode",
+      "type": "text"
+    },
+    {
+      "name": "link_id",
+      "type": "integer"
+    },
+    {
+      "name": "link_table",
+      "type": "character varying"
+    }
+  ],
+  "affiliation": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "country_id",
+      "type": "integer"
+    },
+    {
+      "name": "physical_id",
+      "type": "integer"
+    },
+    {
+      "name": "postal_id",
+      "type": "integer"
+    },
+    {
+      "name": "contact_id",
+      "type": "integer"
+    },
+    {
+      "name": "company_id",
+      "type": "integer"
+    },
+    {
+      "name": "phone",
+      "type": "character varying"
+    },
+    {
+      "name": "fax",
+      "type": "character varying"
+    },
+    {
+      "name": "mobile",
+      "type": "character varying"
+    },
+    {
+      "name": "email",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "communication",
+      "type": "text"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "invoice_method",
+      "type": "text"
+    },
+    {
+      "name": "client_portal_access",
+      "type": "text"
+    },
+    {
+      "name": "last_interaction",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "affiliation_progression": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "next_id",
+      "type": "integer"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "link",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "icon",
+      "type": "text"
+    }
+  ],
+  "affiliation_segmentation": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "reference_id",
+      "type": "integer"
+    },
+    {
+      "name": "reference_table",
+      "type": "character varying"
+    }
+  ],
+  "affiliation_status": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "annex": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "manager_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    }
+  ],
+  "annex_type": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "asset": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "manager_id",
+      "type": "integer"
+    },
+    {
+      "name": "address_id",
+      "type": "integer"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    }
+  ],
+  "asset_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "asset_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "description",
+      "type": "character varying"
+    },
+    {
+      "name": "start_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "end_date",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "asset_type": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "has_affiliation",
+      "type": "text"
+    },
+    {
+      "name": "has_manager",
+      "type": "text"
+    },
+    {
+      "name": "has_address",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "auth_history": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "username",
+      "type": "character varying"
+    },
+    {
+      "name": "failed_login_attempts",
+      "type": "integer"
+    },
+    {
+      "name": "last_failed_login",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "authority": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "company_id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "authority_role": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "authority_id",
+      "type": "integer"
+    },
+    {
+      "name": "location_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    }
+  ],
+  "authority_type": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "required",
+      "type": "text"
+    },
+    {
+      "name": "company_required",
+      "type": "text"
+    }
+  ],
+  "calculation": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "module",
+      "type": "character varying"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "object_1",
+      "type": "text"
+    },
+    {
+      "name": "value_1",
+      "type": "character varying"
+    },
+    {
+      "name": "object_2",
+      "type": "text"
+    },
+    {
+      "name": "value_2",
+      "type": "character varying"
+    },
+    {
+      "name": "operation",
+      "type": "text"
+    },
+    {
+      "name": "format",
+      "type": "text"
+    },
+    {
+      "name": "summary",
+      "type": "character varying"
+    },
+    {
+      "name": "summary_function",
+      "type": "text"
+    }
+  ],
+  "campaign": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "manager_id",
+      "type": "integer"
+    },
+    {
+      "name": "code",
+      "type": "character varying"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "start_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "end_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "link_table",
+      "type": "character varying"
+    },
+    {
+      "name": "link_id",
+      "type": "integer"
+    },
+    {
+      "name": "total_targets",
+      "type": "integer"
+    }
+  ],
+  "campaign_action": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "manager_id",
+      "type": "integer"
+    },
+    {
+      "name": "campaign_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "medium",
+      "type": "text"
+    }
+  ],
+  "campaign_action_dispatch": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "action_id",
+      "type": "integer"
+    },
+    {
+      "name": "platform",
+      "type": "text"
+    },
+    {
+      "name": "subject",
+      "type": "character varying"
+    },
+    {
+      "name": "from_name",
+      "type": "character varying"
+    },
+    {
+      "name": "from_email",
+      "type": "character varying"
+    },
+    {
+      "name": "reply_email",
+      "type": "character varying"
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "scheduled",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "recipients",
+      "type": "integer"
+    },
+    {
+      "name": "opens",
+      "type": "integer"
+    },
+    {
+      "name": "clicks",
+      "type": "integer"
+    },
+    {
+      "name": "bounces",
+      "type": "integer"
+    },
+    {
+      "name": "unsubscribes",
+      "type": "integer"
+    },
+    {
+      "name": "spams",
+      "type": "integer"
+    }
+  ],
+  "campaign_action_dispatch_file": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "dispatch_id",
+      "type": "integer"
+    },
+    {
+      "name": "resource_id",
+      "type": "integer"
+    }
+  ],
+  "campaign_action_target": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "target_id",
+      "type": "integer"
+    },
+    {
+      "name": "action_id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "actioned",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "converted",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "email",
+      "type": "character varying"
+    }
+  ],
+  "campaign_action_target_call": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "target_id",
+      "type": "integer"
+    },
+    {
+      "name": "started",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "caller",
+      "type": "integer"
+    },
+    {
+      "name": "outcome",
+      "type": "USER-DEFINED"
+    },
+    {
+      "name": "outcome_id",
+      "type": "integer"
+    },
+    {
+      "name": "number",
+      "type": "character varying"
+    },
+    {
+      "name": "notes",
+      "type": "text"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    }
+  ],
+  "campaign_action_target_event": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "target_id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "ip_address",
+      "type": "character varying"
+    },
+    {
+      "name": "detail",
+      "type": "character varying"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "campaign_conversion": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "action_id",
+      "type": "integer"
+    },
+    {
+      "name": "converted_by",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "conversion_table",
+      "type": "character varying"
+    },
+    {
+      "name": "conversion_object",
+      "type": "character varying"
+    },
+    {
+      "name": "conversion_id",
+      "type": "integer"
+    },
+    {
+      "name": "conversion_field",
+      "type": "character varying"
+    },
+    {
+      "name": "conversion_value",
+      "type": "text"
+    },
+    {
+      "name": "conversion_manager",
+      "type": "integer"
+    },
+    {
+      "name": "conversion_title",
+      "type": "character varying"
+    },
+    {
+      "name": "value",
+      "type": "numeric"
+    },
+    {
+      "name": "manual",
+      "type": "text"
+    }
+  ],
+  "campaign_monitor_target": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "target_id",
+      "type": "integer"
+    },
+    {
+      "name": "action",
+      "type": "text"
+    },
+    {
+      "name": "remote_list_id",
+      "type": "character varying"
+    },
+    {
+      "name": "local_campaign_action_id",
+      "type": "integer"
+    }
+  ],
+  "campaign_progression": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "next_id",
+      "type": "integer"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "link",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "icon",
+      "type": "text"
+    },
+    {
+      "name": "targets",
+      "type": "text"
+    },
+    {
+      "name": "campaign_actions",
+      "type": "text"
+    }
+  ],
+  "campaign_ruleset": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "action_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "join_operator",
+      "type": "text"
+    },
+    {
+      "name": "medium",
+      "type": "text"
+    },
+    {
+      "name": "unconverted",
+      "type": "text"
+    }
+  ],
+  "campaign_ruleset_conversion": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "ruleset_id",
+      "type": "integer"
+    },
+    {
+      "name": "conversion_id",
+      "type": "integer"
+    }
+  ],
+  "campaign_status": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "start",
+      "type": "text"
+    }
+  ],
+  "campaign_target": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "campaign_id",
+      "type": "integer"
+    },
+    {
+      "name": "target_id",
+      "type": "integer"
+    },
+    {
+      "name": "target_table",
+      "type": "character varying"
+    }
+  ],
+  "campaign_target_conversion": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "action_target_id",
+      "type": "integer"
+    },
+    {
+      "name": "conversion_table",
+      "type": "character varying"
+    },
+    {
+      "name": "conversion_object",
+      "type": "character varying"
+    },
+    {
+      "name": "conversion_id",
+      "type": "integer"
+    },
+    {
+      "name": "conversion_field",
+      "type": "character varying"
+    },
+    {
+      "name": "conversion_value",
+      "type": "text"
+    },
+    {
+      "name": "converted",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "converted_by",
+      "type": "integer"
+    },
+    {
+      "name": "value",
+      "type": "numeric"
+    },
+    {
+      "name": "ruleset_id",
+      "type": "integer"
+    }
+  ],
+  "checklist": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    }
+  ],
+  "checklist_item": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "checklist_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "completed",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "completed_by",
+      "type": "integer"
+    }
+  ],
+  "client_portal_group": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "permissions",
+      "type": "text"
+    },
+    {
+      "name": "company_id",
+      "type": "integer"
+    }
+  ],
+  "client_portal_group_membership": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "group_id",
+      "type": "integer"
+    }
+  ],
+  "client_portal_invitation": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "firstname",
+      "type": "character varying"
+    },
+    {
+      "name": "email",
+      "type": "character varying"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "date_created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "date_modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "company_id",
+      "type": "integer"
+    },
+    {
+      "name": "access_key",
+      "type": "character"
+    }
+  ],
+  "client_portal_password_reset": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "contact_id",
+      "type": "integer"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "key",
+      "type": "character"
+    }
+  ],
+  "client_portal_signoff": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "subject",
+      "type": "character varying"
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    },
+    {
+      "name": "expires",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "requires",
+      "type": "text"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "updated",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "client_portal_signoff_attachment": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "signoff_id",
+      "type": "integer"
+    },
+    {
+      "name": "resource_id",
+      "type": "integer"
+    },
+    {
+      "name": "activity_id",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "client_portal_signoff_attachment_comment": [
+    {
+      "name": "activity_id",
+      "type": "integer"
+    },
+    {
+      "name": "attachment_id",
+      "type": "integer"
+    }
+  ],
+  "client_portal_signoff_comment": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "signoff_id",
+      "type": "integer"
+    },
+    {
+      "name": "activity_id",
+      "type": "integer"
+    }
+  ],
+  "client_portal_signoff_recipient": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "signoff_id",
+      "type": "integer"
+    },
+    {
+      "name": "recipient_table",
+      "type": "text"
+    },
+    {
+      "name": "recipient_id",
+      "type": "integer"
+    },
+    {
+      "name": "ip",
+      "type": "integer"
+    },
+    {
+      "name": "response",
+      "type": "text"
+    },
+    {
+      "name": "responded",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "access_key",
+      "type": "character"
+    },
+    {
+      "name": "approver",
+      "type": "text"
+    }
+  ],
+  "collection": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "locked",
+      "type": "text"
+    },
+    {
+      "name": "get",
+      "type": "text"
+    },
+    {
+      "name": "contact_access",
+      "type": "text"
+    }
+  ],
+  "collection_access": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "collection_id",
+      "type": "integer"
+    },
+    {
+      "name": "access_table",
+      "type": "text"
+    },
+    {
+      "name": "access_id",
+      "type": "integer"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    },
+    {
+      "name": "created_note",
+      "type": "character varying"
+    }
+  ],
+  "company": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "default_affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "country_id",
+      "type": "integer"
+    },
+    {
+      "name": "name",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "reference",
+      "type": "text"
+    },
+    {
+      "name": "website",
+      "type": "text"
+    },
+    {
+      "name": "notes",
+      "type": "text"
+    },
+    {
+      "name": "phone",
+      "type": "character varying"
+    },
+    {
+      "name": "fax",
+      "type": "character varying"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "postal_id",
+      "type": "integer"
+    },
+    {
+      "name": "default_priority",
+      "type": "integer"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "client_portal_permissions",
+      "type": "text"
+    },
+    {
+      "name": "last_interaction",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "custom_id",
+      "type": "character varying"
+    }
+  ],
+  "company_progression": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "next_id",
+      "type": "integer"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "link",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "icon",
+      "type": "text"
+    }
+  ],
+  "company_segmentation": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "reference_id",
+      "type": "integer"
+    },
+    {
+      "name": "company_id",
+      "type": "integer"
+    },
+    {
+      "name": "reference_table",
+      "type": "character varying"
+    }
+  ],
+  "company_status": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "start",
+      "type": "text"
+    }
+  ],
+  "contact": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "default_affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "country_id",
+      "type": "integer"
+    },
+    {
+      "name": "firstname",
+      "type": "character varying"
+    },
+    {
+      "name": "middlename",
+      "type": "character varying"
+    },
+    {
+      "name": "surname",
+      "type": "character varying"
+    },
+    {
+      "name": "preferred_name",
+      "type": "text"
+    },
+    {
+      "name": "username",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "salutation",
+      "type": "text"
+    },
+    {
+      "name": "dob",
+      "type": "date"
+    },
+    {
+      "name": "timezone",
+      "type": "character varying"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "last_extranet_login",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "comments",
+      "type": "text"
+    },
+    {
+      "name": "extranet_access",
+      "type": "text"
+    },
+    {
+      "name": "password_bcrypt",
+      "type": "character"
+    },
+    {
+      "name": "password_totp",
+      "type": "character"
+    },
+    {
+      "name": "two_factor_auth",
+      "type": "text"
+    },
+    {
+      "name": "last_client_portal_login",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "client_portal_invitation_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "last_interaction",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "contact_progression": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "next_id",
+      "type": "integer"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "link",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "icon",
+      "type": "text"
+    }
+  ],
+  "contact_segmentation": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "reference_id",
+      "type": "integer"
+    },
+    {
+      "name": "contact_id",
+      "type": "integer"
+    },
+    {
+      "name": "reference_table",
+      "type": "character varying"
+    }
+  ],
+  "contact_status": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "start",
+      "type": "text"
+    }
+  ],
+  "contact_title": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "contract": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "billable_id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "manager_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "commenced",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "expiry",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "notes",
+      "type": "text"
+    },
+    {
+      "name": "period_expiry",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "value",
+      "type": "numeric"
+    },
+    {
+      "name": "auto_renew",
+      "type": "text"
+    },
+    {
+      "name": "renew_days",
+      "type": "integer"
+    },
+    {
+      "name": "send_invoice",
+      "type": "text"
+    },
+    {
+      "name": "period_template_id",
+      "type": "integer"
+    },
+    {
+      "name": "invoice_template_id",
+      "type": "integer"
+    },
+    {
+      "name": "service_tax_id",
+      "type": "integer"
+    },
+    {
+      "name": "service_ledger_id",
+      "type": "integer"
+    },
+    {
+      "name": "client_portal_permissions",
+      "type": "text"
+    },
+    {
+      "name": "last_interaction",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "auto_complete_task",
+      "type": "text"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    }
+  ],
+  "contract_budget": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "time",
+      "type": "integer"
+    },
+    {
+      "name": "time_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "product_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "value",
+      "type": "numeric"
+    }
+  ],
+  "contract_budget_item": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "budget_id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "time",
+      "type": "integer"
+    },
+    {
+      "name": "time_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "product_quantity",
+      "type": "integer"
+    },
+    {
+      "name": "product_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "value",
+      "type": "numeric"
+    },
+    {
+      "name": "invoice_item_id",
+      "type": "integer"
+    },
+    {
+      "name": "include_rate_title",
+      "type": "text"
+    },
+    {
+      "name": "tax_id",
+      "type": "integer"
+    },
+    {
+      "name": "ledger_id",
+      "type": "integer"
+    }
+  ],
+  "contract_period": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "contract_id",
+      "type": "integer"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "duration_type",
+      "type": "text"
+    },
+    {
+      "name": "commenced",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "expiry",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "closed",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "budget_type",
+      "type": "text"
+    },
+    {
+      "name": "allowance_type",
+      "type": "text"
+    },
+    {
+      "name": "include_material",
+      "type": "text"
+    },
+    {
+      "name": "include_expense",
+      "type": "text"
+    },
+    {
+      "name": "rate_type",
+      "type": "text"
+    },
+    {
+      "name": "rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "budget_id",
+      "type": "integer"
+    },
+    {
+      "name": "service_item_id",
+      "type": "integer"
+    },
+    {
+      "name": "rollover",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "excess_rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "excess_rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "service_description",
+      "type": "character varying"
+    },
+    {
+      "name": "subtract_excess",
+      "type": "text"
+    }
+  ],
+  "contract_period_template": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "duration_type",
+      "type": "text"
+    },
+    {
+      "name": "duration",
+      "type": "integer"
+    },
+    {
+      "name": "duration_unit",
+      "type": "text"
+    },
+    {
+      "name": "budget_type",
+      "type": "text"
+    },
+    {
+      "name": "allowance_type",
+      "type": "text"
+    },
+    {
+      "name": "include_material",
+      "type": "text"
+    },
+    {
+      "name": "include_expense",
+      "type": "text"
+    },
+    {
+      "name": "amount",
+      "type": "numeric"
+    },
+    {
+      "name": "allowance_time",
+      "type": "integer"
+    },
+    {
+      "name": "allowance_amount",
+      "type": "numeric"
+    },
+    {
+      "name": "rate_type",
+      "type": "text"
+    },
+    {
+      "name": "rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "rollover",
+      "type": "text"
+    },
+    {
+      "name": "excess_rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "excess_rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "service_description",
+      "type": "character varying"
+    },
+    {
+      "name": "subtract_excess",
+      "type": "text"
+    }
+  ],
+  "contract_progression": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "next_id",
+      "type": "integer"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "link",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "icon",
+      "type": "text"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "on_create",
+      "type": "text"
+    }
+  ],
+  "contract_status": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "contract_type": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "auto_renew",
+      "type": "text"
+    },
+    {
+      "name": "renew_days",
+      "type": "integer"
+    },
+    {
+      "name": "send_invoice",
+      "type": "text"
+    },
+    {
+      "name": "period_template_id",
+      "type": "integer"
+    },
+    {
+      "name": "invoice_template_id",
+      "type": "integer"
+    },
+    {
+      "name": "service_tax_id",
+      "type": "integer"
+    },
+    {
+      "name": "service_ledger_id",
+      "type": "integer"
+    },
+    {
+      "name": "auto_complete_task",
+      "type": "text"
+    }
+  ],
+  "contributor": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "reference_id",
+      "type": "integer"
+    },
+    {
+      "name": "reference_table",
+      "type": "character varying"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "auto_link",
+      "type": "text"
+    },
+    {
+      "name": "auto_cc",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    }
+  ],
+  "contributor_progression": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "next_id",
+      "type": "integer"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "link",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "boolean"
+    },
+    {
+      "name": "icon",
+      "type": "text"
+    }
+  ],
+  "contributor_status": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "boolean"
+    },
+    {
+      "name": "start",
+      "type": "text"
+    }
+  ],
+  "contributor_type": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "ordering",
+      "type": "boolean"
+    },
+    {
+      "name": "auto_link",
+      "type": "text"
+    },
+    {
+      "name": "auto_cc",
+      "type": "text"
+    },
+    {
+      "name": "has_status",
+      "type": "text"
+    },
+    {
+      "name": "default_status_id",
+      "type": "integer"
+    },
+    {
+      "name": "default_status",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "country": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "region_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "prefix",
+      "type": "integer"
+    },
+    {
+      "name": "suffix",
+      "type": "character"
+    },
+    {
+      "name": "state_name",
+      "type": "character varying"
+    },
+    {
+      "name": "state_required",
+      "type": "text"
+    },
+    {
+      "name": "postcode_name",
+      "type": "character varying"
+    },
+    {
+      "name": "postcode_required",
+      "type": "text"
+    },
+    {
+      "name": "default_option",
+      "type": "text"
+    }
+  ],
+  "currency_type": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "code",
+      "type": "character varying"
+    },
+    {
+      "name": "symbol",
+      "type": "character varying"
+    },
+    {
+      "name": "position",
+      "type": "text"
+    },
+    {
+      "name": "rate",
+      "type": "double precision"
+    },
+    {
+      "name": "is_enabled_as_transaction_currency",
+      "type": "boolean"
+    }
+  ],
+  "custom_locations": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "name",
+      "type": "character varying"
+    }
+  ],
+  "deep_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "service_name",
+      "type": "character varying"
+    },
+    {
+      "name": "service_id",
+      "type": "character varying"
+    },
+    {
+      "name": "service_id_type",
+      "type": "character varying"
+    }
+  ],
+  "deep_link_service": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "deep_link_id",
+      "type": "integer"
+    },
+    {
+      "name": "service_id",
+      "type": "character varying"
+    },
+    {
+      "name": "service_id_type",
+      "type": "character varying"
+    }
+  ],
+  "division": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "logo",
+      "type": "character varying"
+    },
+    {
+      "name": "signature_id",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "division_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "link_id",
+      "type": "integer"
+    },
+    {
+      "name": "link_table",
+      "type": "character varying"
+    },
+    {
+      "name": "division_id",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "division_membership": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "division_id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "email",
+      "type": "character varying"
+    },
+    {
+      "name": "phone",
+      "type": "character varying"
+    },
+    {
+      "name": "fax",
+      "type": "character varying"
+    },
+    {
+      "name": "mobile",
+      "type": "character varying"
+    },
+    {
+      "name": "position",
+      "type": "character varying"
+    },
+    {
+      "name": "signature_id",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "expense": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "submitter_id",
+      "type": "integer"
+    },
+    {
+      "name": "approver_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "quantity",
+      "type": "numeric"
+    },
+    {
+      "name": "billable",
+      "type": "text"
+    },
+    {
+      "name": "reimbursable",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "incurred",
+      "type": "date"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "item_id",
+      "type": "integer"
+    },
+    {
+      "name": "unit_cost",
+      "type": "numeric"
+    },
+    {
+      "name": "price",
+      "type": "numeric"
+    },
+    {
+      "name": "activity_id",
+      "type": "integer"
+    },
+    {
+      "name": "allow_link",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "reimbursed",
+      "type": "date"
+    },
+    {
+      "name": "reimburser_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_budget_item_template_id",
+      "type": "integer"
+    },
+    {
+      "name": "tax_override",
+      "type": "numeric"
+    },
+    {
+      "name": "tax_setting",
+      "type": "text"
+    },
+    {
+      "name": "purchase_vendor_id",
+      "type": "integer"
+    },
+    {
+      "name": "expense_type_item_template_link_id",
+      "type": "integer"
+    }
+  ],
+  "expense_file": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "expense_id",
+      "type": "integer"
+    },
+    {
+      "name": "resource_id",
+      "type": "integer"
+    }
+  ],
+  "expense_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "quantity",
+      "type": "numeric"
+    },
+    {
+      "name": "price",
+      "type": "numeric"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "expense_id",
+      "type": "integer"
+    },
+    {
+      "name": "contract_period_id",
+      "type": "integer"
+    }
+  ],
+  "expense_type": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "default_item_template_link_id",
+      "type": "integer"
+    },
+    {
+      "name": "quantity_enabled",
+      "type": "text"
+    },
+    {
+      "name": "unit_singular",
+      "type": "character varying"
+    },
+    {
+      "name": "unit_plural",
+      "type": "character varying"
+    },
+    {
+      "name": "purchase_vendor_setting",
+      "type": "text"
+    },
+    {
+      "name": "purchase_vendor_id",
+      "type": "integer"
+    },
+    {
+      "name": "billable_default",
+      "type": "text"
+    },
+    {
+      "name": "billable_visible",
+      "type": "text"
+    },
+    {
+      "name": "markup_default",
+      "type": "numeric"
+    },
+    {
+      "name": "reimbursable_default",
+      "type": "text"
+    },
+    {
+      "name": "reimbursable_visible",
+      "type": "text"
+    },
+    {
+      "name": "tax_default",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "tax_visible",
+      "type": "text"
+    }
+  ],
+  "expense_type_item_template_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "expense_type_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_budget_item_template_id",
+      "type": "integer"
+    },
+    {
+      "name": "lock_price",
+      "type": "text"
+    },
+    {
+      "name": "lock_cost",
+      "type": "text"
+    },
+    {
+      "name": "title_override",
+      "type": "character varying"
+    },
+    {
+      "name": "price_override",
+      "type": "numeric"
+    },
+    {
+      "name": "cost_override",
+      "type": "numeric"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "extension_formula": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "extension_structure_id",
+      "type": "integer"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "operation",
+      "type": "character varying"
+    },
+    {
+      "name": "type",
+      "type": "character varying"
+    },
+    {
+      "name": "field",
+      "type": "character varying"
+    },
+    {
+      "name": "value",
+      "type": "character varying"
+    },
+    {
+      "name": "default_value",
+      "type": "character varying"
+    },
+    {
+      "name": "archived",
+      "type": "text"
+    },
+    {
+      "name": "formula_link_id",
+      "type": "integer"
+    }
+  ],
+  "extension_formula_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "structure_id",
+      "type": "integer"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "extension_group": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "link_table",
+      "type": "character varying"
+    },
+    {
+      "name": "link_type_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "extension_option": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "structure_id",
+      "type": "integer"
+    },
+    {
+      "name": "value",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "default_option",
+      "type": "text"
+    }
+  ],
+  "extension_status_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "structure_id",
+      "type": "integer"
+    },
+    {
+      "name": "link_status_id",
+      "type": "integer"
+    }
+  ],
+  "extension_structure": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "field_name",
+      "type": "character varying"
+    },
+    {
+      "name": "field_type",
+      "type": "text"
+    },
+    {
+      "name": "link_table",
+      "type": "character varying"
+    },
+    {
+      "name": "link_type_id",
+      "type": "integer"
+    },
+    {
+      "name": "group_id",
+      "type": "integer"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "required",
+      "type": "text"
+    },
+    {
+      "name": "archived",
+      "type": "text"
+    },
+    {
+      "name": "exported",
+      "type": "text"
+    },
+    {
+      "name": "important",
+      "type": "text"
+    },
+    {
+      "name": "is_sensitive",
+      "type": "text"
+    },
+    {
+      "name": "default_value",
+      "type": "text"
+    },
+    {
+      "name": "lookup_table",
+      "type": "character varying"
+    },
+    {
+      "name": "information",
+      "type": "text"
+    },
+    {
+      "name": "should_evaluate_rules_only_on_create",
+      "type": "boolean"
+    },
+    {
+      "name": "on_create",
+      "type": "text"
+    }
+  ],
+  "extension_value": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "structure_id",
+      "type": "integer"
+    },
+    {
+      "name": "link_table",
+      "type": "character varying"
+    },
+    {
+      "name": "link_id",
+      "type": "integer"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "value_text",
+      "type": "text"
+    },
+    {
+      "name": "value_int",
+      "type": "integer"
+    },
+    {
+      "name": "value_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "value_float",
+      "type": "numeric"
+    },
+    {
+      "name": "formula_link_id",
+      "type": "integer"
+    },
+    {
+      "name": "is_formula_value_valid",
+      "type": "boolean"
+    }
+  ],
+  "extension_value_history": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "structure_id",
+      "type": "integer"
+    },
+    {
+      "name": "link_table",
+      "type": "character varying"
+    },
+    {
+      "name": "link_id",
+      "type": "integer"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "value_text",
+      "type": "text"
+    },
+    {
+      "name": "value_int",
+      "type": "integer"
+    },
+    {
+      "name": "value_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "value_float",
+      "type": "numeric"
+    },
+    {
+      "name": "formula_link_id",
+      "type": "integer"
+    },
+    {
+      "name": "is_formula_value_valid",
+      "type": "boolean"
+    },
+    {
+      "name": "history_index",
+      "type": "integer"
+    },
+    {
+      "name": "history_modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "history_modified_by",
+      "type": "integer"
+    }
+  ],
+  "field_tracking": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "field_name",
+      "type": "character varying"
+    },
+    {
+      "name": "field_value",
+      "type": "text"
+    }
+  ],
+  "filter": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "shared",
+      "type": "text"
+    },
+    {
+      "name": "object_type",
+      "type": "character varying"
+    },
+    {
+      "name": "json_data",
+      "type": "text"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "converted_custom_list_id",
+      "type": "character varying"
+    }
+  ],
+  "google_watched_channel": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "channel",
+      "type": "character varying"
+    },
+    {
+      "name": "channel_id",
+      "type": "character varying"
+    },
+    {
+      "name": "resource_id",
+      "type": "character varying"
+    },
+    {
+      "name": "resource_uri",
+      "type": "character varying"
+    },
+    {
+      "name": "expiration",
+      "type": "character varying"
+    }
+  ],
+  "issue": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "custom_id",
+      "type": "character varying"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "class_id",
+      "type": "integer"
+    },
+    {
+      "name": "resolution_id",
+      "type": "integer"
+    },
+    {
+      "name": "subject",
+      "type": "text"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "resolution",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "priority_id",
+      "type": "integer"
+    },
+    {
+      "name": "submitted_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "submitted_by",
+      "type": "integer"
+    },
+    {
+      "name": "open_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "open_by",
+      "type": "integer"
+    },
+    {
+      "name": "resolved_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "resolved_by",
+      "type": "integer"
+    },
+    {
+      "name": "closed_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "closed_by",
+      "type": "integer"
+    },
+    {
+      "name": "reopened_last",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "reopened_count",
+      "type": "integer"
+    },
+    {
+      "name": "start",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "deadline",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_type",
+      "type": "text"
+    },
+    {
+      "name": "rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "budget_id",
+      "type": "integer"
+    },
+    {
+      "name": "billable_hours",
+      "type": "integer"
+    },
+    {
+      "name": "contract_id",
+      "type": "integer"
+    },
+    {
+      "name": "client_portal_permissions",
+      "type": "text"
+    },
+    {
+      "name": "last_interaction",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "invoice_template_id",
+      "type": "integer"
+    },
+    {
+      "name": "billing_affiliation_id",
+      "type": "integer"
+    }
+  ],
+  "issue_priority": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "icon",
+      "type": "character varying"
+    },
+    {
+      "name": "factor",
+      "type": "integer"
+    },
+    {
+      "name": "target",
+      "type": "integer"
+    },
+    {
+      "name": "target_unit",
+      "type": "text"
+    }
+  ],
+  "issue_progression": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "next_id",
+      "type": "integer"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "link",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "icon",
+      "type": "text"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "on_create",
+      "type": "text"
+    }
+  ],
+  "issue_resolution": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "report",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "issue_status": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "issue_type": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "notes",
+      "type": "text"
+    },
+    {
+      "name": "has_custom_id",
+      "type": "text"
+    },
+    {
+      "name": "budget",
+      "type": "text"
+    },
+    {
+      "name": "forms_api",
+      "type": "text"
+    },
+    {
+      "name": "default_class_id",
+      "type": "integer"
+    },
+    {
+      "name": "start_after_creation",
+      "type": "integer"
+    },
+    {
+      "name": "deadline_after_creation",
+      "type": "integer"
+    },
+    {
+      "name": "defined_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "include_material",
+      "type": "text"
+    },
+    {
+      "name": "include_expense",
+      "type": "text"
+    },
+    {
+      "name": "rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "service_time",
+      "type": "integer"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "set_submitted_to",
+      "type": "text"
+    },
+    {
+      "name": "default_priority_id",
+      "type": "integer"
+    },
+    {
+      "name": "invoice_template_id",
+      "type": "integer"
+    }
+  ],
+  "job": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "custom_id",
+      "type": "character varying"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "manager_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "start",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "commenced",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "due",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "completed",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "paused",
+      "type": "integer"
+    },
+    {
+      "name": "rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "budget_id",
+      "type": "integer"
+    },
+    {
+      "name": "contract_id",
+      "type": "integer"
+    },
+    {
+      "name": "client_portal_permissions",
+      "type": "text"
+    },
+    {
+      "name": "plan_modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "plan_modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "last_interaction",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "comments",
+      "type": "text"
+    },
+    {
+      "name": "invoice_template_id",
+      "type": "integer"
+    },
+    {
+      "name": "billing_affiliation_id",
+      "type": "integer"
+    }
+  ],
+  "job_progression": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "next_id",
+      "type": "integer"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "link",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "icon",
+      "type": "text"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "on_create",
+      "type": "text"
+    }
+  ],
+  "job_settings": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "editing_level",
+      "type": "text"
+    },
+    {
+      "name": "auto_start",
+      "type": "text"
+    },
+    {
+      "name": "auto_complete",
+      "type": "text"
+    },
+    {
+      "name": "predicted_end_date",
+      "type": "text"
+    },
+    {
+      "name": "fixed_schedule",
+      "type": "text"
+    },
+    {
+      "name": "acceleration",
+      "type": "text"
+    },
+    {
+      "name": "instant_auto_start",
+      "type": "text"
+    }
+  ],
+  "job_status": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "job_template": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "duration",
+      "type": "integer"
+    },
+    {
+      "name": "is_billable",
+      "type": "text"
+    },
+    {
+      "name": "include_material",
+      "type": "text"
+    },
+    {
+      "name": "include_expense",
+      "type": "text"
+    },
+    {
+      "name": "service_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "defined_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "foreign_service_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "foreign_defined_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "expense_price_subtotal",
+      "type": "numeric"
+    }
+  ],
+  "job_type": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "has_custom_id",
+      "type": "text"
+    },
+    {
+      "name": "has_milestone_custom_id",
+      "type": "text"
+    },
+    {
+      "name": "job_template_id",
+      "type": "integer"
+    },
+    {
+      "name": "is_billable",
+      "type": "text"
+    },
+    {
+      "name": "defined_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "include_material",
+      "type": "text"
+    },
+    {
+      "name": "include_expense",
+      "type": "text"
+    },
+    {
+      "name": "budget_default",
+      "type": "text"
+    },
+    {
+      "name": "default_manager_id",
+      "type": "integer"
+    },
+    {
+      "name": "comments",
+      "type": "text"
+    },
+    {
+      "name": "invoice_template_id",
+      "type": "integer"
+    }
+  ],
+  "lead": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "firstname",
+      "type": "character varying"
+    },
+    {
+      "name": "surname",
+      "type": "character varying"
+    },
+    {
+      "name": "company",
+      "type": "character varying"
+    },
+    {
+      "name": "phone",
+      "type": "character varying"
+    },
+    {
+      "name": "fax",
+      "type": "character varying"
+    },
+    {
+      "name": "mobile",
+      "type": "character varying"
+    },
+    {
+      "name": "email",
+      "type": "character varying"
+    },
+    {
+      "name": "street1",
+      "type": "character varying"
+    },
+    {
+      "name": "street2",
+      "type": "character varying"
+    },
+    {
+      "name": "city",
+      "type": "character varying"
+    },
+    {
+      "name": "postcode",
+      "type": "character varying"
+    },
+    {
+      "name": "created_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    },
+    {
+      "name": "notes",
+      "type": "text"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "state_id",
+      "type": "integer"
+    },
+    {
+      "name": "country_id",
+      "type": "integer"
+    },
+    {
+      "name": "communication",
+      "type": "text"
+    },
+    {
+      "name": "website",
+      "type": "text"
+    },
+    {
+      "name": "position",
+      "type": "text"
+    }
+  ],
+  "location": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "country_id",
+      "type": "integer"
+    },
+    {
+      "name": "state_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "street1",
+      "type": "character varying"
+    },
+    {
+      "name": "street2",
+      "type": "character varying"
+    },
+    {
+      "name": "city",
+      "type": "character varying"
+    },
+    {
+      "name": "postcode",
+      "type": "character varying"
+    },
+    {
+      "name": "latitude",
+      "type": "character varying"
+    },
+    {
+      "name": "longtitude",
+      "type": "character varying"
+    },
+    {
+      "name": "lot",
+      "type": "character varying"
+    },
+    {
+      "name": "dp",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "manager": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "manager_id",
+      "type": "integer"
+    },
+    {
+      "name": "manager_table",
+      "type": "text"
+    },
+    {
+      "name": "link_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "link_table",
+      "type": "text"
+    },
+    {
+      "name": "nature",
+      "type": "text"
+    }
+  ],
+  "milestone": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "job_id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "manager_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "start",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "due",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "commenced",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "completed",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "custom_id",
+      "type": "character varying"
+    }
+  ],
+  "milestone_progression": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "next_id",
+      "type": "integer"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "icon",
+      "type": "text"
+    },
+    {
+      "name": "on_create",
+      "type": "text"
+    },
+    {
+      "name": "auto_trigger",
+      "type": "character varying"
+    }
+  ],
+  "milestone_status": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "milestone_template": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "job_template_id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "manager",
+      "type": "character varying"
+    },
+    {
+      "name": "progression_id",
+      "type": "integer"
+    },
+    {
+      "name": "is_billable",
+      "type": "text"
+    },
+    {
+      "name": "rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "service_time",
+      "type": "integer"
+    },
+    {
+      "name": "service_price",
+      "type": "numeric"
+    },
+    {
+      "name": "defined_price",
+      "type": "numeric"
+    },
+    {
+      "name": "service_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "defined_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "days_from_start",
+      "type": "integer"
+    },
+    {
+      "name": "duration",
+      "type": "integer"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "foreign_rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "foreign_service_price",
+      "type": "numeric"
+    },
+    {
+      "name": "foreign_defined_price",
+      "type": "numeric"
+    },
+    {
+      "name": "foreign_service_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "foreign_defined_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "include_material",
+      "type": "text"
+    }
+  ],
+  "multicurrency_object_transaction_rate": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "multicurrency_transaction_rate_id",
+      "type": "integer"
+    }
+  ],
+  "multicurrency_transaction_rate": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "base_currency_code",
+      "type": "character varying"
+    },
+    {
+      "name": "transaction_currency_code",
+      "type": "character varying"
+    },
+    {
+      "name": "source",
+      "type": "text"
+    },
+    {
+      "name": "live_exchange_rate",
+      "type": "numeric"
+    },
+    {
+      "name": "override_exchange_rate",
+      "type": "numeric"
+    },
+    {
+      "name": "description",
+      "type": "character varying"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "live_exchange_rate_refreshed",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "live_exchange_rate_refreshed_by",
+      "type": "integer"
+    }
+  ],
+  "notification": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "message",
+      "type": "text"
+    },
+    {
+      "name": "showing",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "actioned",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "service",
+      "type": "character varying"
+    }
+  ],
+  "object_budget": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "is_billable",
+      "type": "text"
+    },
+    {
+      "name": "include_material",
+      "type": "text"
+    },
+    {
+      "name": "include_expense",
+      "type": "text"
+    },
+    {
+      "name": "defined_price",
+      "type": "numeric"
+    },
+    {
+      "name": "defined_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "service_time",
+      "type": "integer"
+    },
+    {
+      "name": "service_price",
+      "type": "numeric"
+    },
+    {
+      "name": "service_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "expense_estimate",
+      "type": "numeric"
+    },
+    {
+      "name": "expense_price",
+      "type": "numeric"
+    },
+    {
+      "name": "unapproved_expense_price",
+      "type": "numeric"
+    },
+    {
+      "name": "expense_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "unapproved_expense_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "expense_cost",
+      "type": "numeric"
+    },
+    {
+      "name": "expense_cost_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "assigned_time",
+      "type": "integer"
+    },
+    {
+      "name": "assigned_time_subtotal",
+      "type": "integer"
+    },
+    {
+      "name": "unassigned_time",
+      "type": "integer"
+    },
+    {
+      "name": "unassigned_time_subtotal",
+      "type": "integer"
+    },
+    {
+      "name": "expense_invoiced",
+      "type": "numeric"
+    },
+    {
+      "name": "expense_invoiced_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "material_cost",
+      "type": "numeric"
+    },
+    {
+      "name": "material_cost_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "material_price",
+      "type": "numeric"
+    },
+    {
+      "name": "material_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "material_invoiced",
+      "type": "numeric"
+    },
+    {
+      "name": "material_invoiced_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "billable",
+      "type": "integer"
+    },
+    {
+      "name": "nonbillable",
+      "type": "integer"
+    },
+    {
+      "name": "charged",
+      "type": "numeric"
+    },
+    {
+      "name": "costing",
+      "type": "numeric"
+    },
+    {
+      "name": "unapproved_price",
+      "type": "numeric"
+    },
+    {
+      "name": "service_time_estimate",
+      "type": "integer"
+    },
+    {
+      "name": "service_time_subtotal_estimate",
+      "type": "integer"
+    },
+    {
+      "name": "service_price_estimate",
+      "type": "numeric"
+    },
+    {
+      "name": "service_price_subtotal_estimate",
+      "type": "numeric"
+    },
+    {
+      "name": "defined_price_subtotal_estimate",
+      "type": "numeric"
+    },
+    {
+      "name": "service_cost_estimate",
+      "type": "numeric"
+    },
+    {
+      "name": "service_cost_subtotal_estimate",
+      "type": "numeric"
+    },
+    {
+      "name": "remaining_subtotal",
+      "type": "integer"
+    },
+    {
+      "name": "billable_subtotal",
+      "type": "integer"
+    },
+    {
+      "name": "nonbillable_subtotal",
+      "type": "integer"
+    },
+    {
+      "name": "charged_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "costing_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "unapproved_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "unallocated_time",
+      "type": "integer"
+    },
+    {
+      "name": "unallocated_time_subtotal",
+      "type": "integer"
+    },
+    {
+      "name": "forecasted_time",
+      "type": "integer"
+    },
+    {
+      "name": "forecasted_time_subtotal",
+      "type": "integer"
+    },
+    {
+      "name": "forecasted_price",
+      "type": "numeric"
+    },
+    {
+      "name": "forecasted_price_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "forecasted_cost",
+      "type": "numeric"
+    },
+    {
+      "name": "forecasted_cost_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "material_price_included_subtotal",
+      "type": "numeric"
+    },
+    {
+      "name": "material_cost_included_subtotal",
+      "type": "numeric"
+    }
+  ],
+  "object_budget_invoiced": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "invoice_id",
+      "type": "integer"
+    },
+    {
+      "name": "invoice_item_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "amount",
+      "type": "numeric"
+    }
+  ],
+  "object_budget_item_template": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "tax_id",
+      "type": "integer"
+    },
+    {
+      "name": "ledger_id",
+      "type": "integer"
+    },
+    {
+      "name": "code",
+      "type": "character varying"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "description",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "price_rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "price",
+      "type": "numeric"
+    },
+    {
+      "name": "cost_rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "cost",
+      "type": "numeric"
+    },
+    {
+      "name": "quantity",
+      "type": "numeric"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "cost_tax_id",
+      "type": "integer"
+    },
+    {
+      "name": "cost_ledger_id",
+      "type": "integer"
+    },
+    {
+      "name": "allowed_on_expense",
+      "type": "text"
+    },
+    {
+      "name": "allowed_on_material",
+      "type": "text"
+    },
+    {
+      "name": "allowed_on_service",
+      "type": "text"
+    }
+  ],
+  "object_budget_item_template_object_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "tax_id",
+      "type": "integer"
+    },
+    {
+      "name": "ledger_id",
+      "type": "integer"
+    },
+    {
+      "name": "template_id",
+      "type": "integer"
+    }
+  ],
+  "object_budget_material": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "quantity",
+      "type": "numeric"
+    },
+    {
+      "name": "price",
+      "type": "numeric"
+    },
+    {
+      "name": "cost",
+      "type": "numeric"
+    },
+    {
+      "name": "invoice_item_id",
+      "type": "integer"
+    },
+    {
+      "name": "allow_link",
+      "type": "text"
+    },
+    {
+      "name": "ledger_id",
+      "type": "integer"
+    },
+    {
+      "name": "tax_id",
+      "type": "integer"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "foreign_price",
+      "type": "numeric"
+    },
+    {
+      "name": "foreign_cost",
+      "type": "numeric"
+    },
+    {
+      "name": "include_rate_title",
+      "type": "text"
+    },
+    {
+      "name": "old_id",
+      "type": "integer"
+    },
+    {
+      "name": "old_table",
+      "type": "character varying"
+    },
+    {
+      "name": "template_id",
+      "type": "integer"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    }
+  ],
+  "object_budget_material_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "contract_period_id",
+      "type": "integer"
+    },
+    {
+      "name": "material_id",
+      "type": "integer"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "quantity",
+      "type": "numeric"
+    },
+    {
+      "name": "price",
+      "type": "numeric"
+    }
+  ],
+  "object_budget_service": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "service_time",
+      "type": "integer"
+    },
+    {
+      "name": "service_price",
+      "type": "numeric"
+    },
+    {
+      "name": "value",
+      "type": "numeric"
+    },
+    {
+      "name": "tax_id",
+      "type": "integer"
+    },
+    {
+      "name": "ledger_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "include_rate_title",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "old_id",
+      "type": "integer"
+    },
+    {
+      "name": "old_table",
+      "type": "character varying"
+    },
+    {
+      "name": "template_id",
+      "type": "integer"
+    }
+  ],
+  "object_dependency": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "dependency_table",
+      "type": "character varying"
+    },
+    {
+      "name": "dependency_id",
+      "type": "integer"
+    },
+    {
+      "name": "days",
+      "type": "integer"
+    }
+  ],
+  "object_grouping": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "type",
+      "type": "character varying"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    }
+  ],
+  "object_invoice_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "invoice_id",
+      "type": "integer"
+    },
+    {
+      "name": "invoice_item_id",
+      "type": "integer"
+    }
+  ],
+  "object_lock": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "reason",
+      "type": "text"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    }
+  ],
+  "object_map": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "asset_id",
+      "type": "integer"
+    },
+    {
+      "name": "campaign_id",
+      "type": "integer"
+    },
+    {
+      "name": "company_id",
+      "type": "integer"
+    },
+    {
+      "name": "contact_id",
+      "type": "integer"
+    },
+    {
+      "name": "contract_id",
+      "type": "integer"
+    },
+    {
+      "name": "contract_period_id",
+      "type": "integer"
+    },
+    {
+      "name": "deployment_id",
+      "type": "integer"
+    },
+    {
+      "name": "issue_id",
+      "type": "integer"
+    },
+    {
+      "name": "job_id",
+      "type": "integer"
+    },
+    {
+      "name": "lead_id",
+      "type": "integer"
+    },
+    {
+      "name": "milestone_id",
+      "type": "integer"
+    },
+    {
+      "name": "prospect_id",
+      "type": "integer"
+    },
+    {
+      "name": "site_id",
+      "type": "integer"
+    }
+  ],
+  "object_ordering": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "grouping_table",
+      "type": "character varying"
+    },
+    {
+      "name": "grouping_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "object_schedule": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "planned_duration",
+      "type": "integer"
+    },
+    {
+      "name": "days_from_start",
+      "type": "integer"
+    },
+    {
+      "name": "planned_start",
+      "type": "date"
+    },
+    {
+      "name": "planned_due",
+      "type": "date"
+    },
+    {
+      "name": "asserted_start",
+      "type": "date"
+    },
+    {
+      "name": "asserted_due",
+      "type": "date"
+    },
+    {
+      "name": "boundary_start",
+      "type": "date"
+    },
+    {
+      "name": "boundary_due",
+      "type": "date"
+    },
+    {
+      "name": "user_estimated_start",
+      "type": "date"
+    },
+    {
+      "name": "user_estimated_due",
+      "type": "date"
+    },
+    {
+      "name": "predicted_start",
+      "type": "date"
+    },
+    {
+      "name": "predicted_due",
+      "type": "date"
+    },
+    {
+      "name": "actual_start",
+      "type": "date"
+    },
+    {
+      "name": "actual_due",
+      "type": "date"
+    },
+    {
+      "name": "scheduled_start",
+      "type": "date"
+    },
+    {
+      "name": "scheduled_due",
+      "type": "date"
+    },
+    {
+      "name": "target_start",
+      "type": "date"
+    },
+    {
+      "name": "target_due",
+      "type": "date"
+    }
+  ],
+  "object_search": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "parent_object_id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "text_search",
+      "type": "text"
+    }
+  ],
+  "object_tree": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "ancestor_id",
+      "type": "integer"
+    },
+    {
+      "name": "ancestor_table",
+      "type": "character varying"
+    },
+    {
+      "name": "descendant_id",
+      "type": "integer"
+    },
+    {
+      "name": "descendant_table",
+      "type": "character varying"
+    },
+    {
+      "name": "depth",
+      "type": "boolean"
+    }
+  ],
+  "owner": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_type",
+      "type": "text"
+    },
+    {
+      "name": "ownership_id",
+      "type": "integer"
+    },
+    {
+      "name": "ownership_type",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "password_reset": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "user_id",
+      "type": "integer"
+    },
+    {
+      "name": "user_type",
+      "type": "text"
+    },
+    {
+      "name": "reset_key",
+      "type": "character varying"
+    },
+    {
+      "name": "expiry",
+      "type": "integer"
+    }
+  ],
+  "profile_option": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "structure_id",
+      "type": "integer"
+    },
+    {
+      "name": "value",
+      "type": "character varying"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "default_option",
+      "type": "text"
+    }
+  ],
+  "profile_value": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "structure_id",
+      "type": "integer"
+    },
+    {
+      "name": "link_id",
+      "type": "integer"
+    },
+    {
+      "name": "link_table",
+      "type": "character varying"
+    },
+    {
+      "name": "value",
+      "type": "text"
+    },
+    {
+      "name": "dt_value",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "updated_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "updated_staff",
+      "type": "integer"
+    },
+    {
+      "name": "lookup_id",
+      "type": "integer"
+    }
+  ],
+  "progression_action": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "progression_id",
+      "type": "integer"
+    },
+    {
+      "name": "progression_table",
+      "type": "character varying"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "object",
+      "type": "character varying"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "field",
+      "type": "character varying"
+    },
+    {
+      "name": "notify",
+      "type": "text"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "task_progression_id",
+      "type": "integer"
+    },
+    {
+      "name": "subject",
+      "type": "character varying"
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "class_id",
+      "type": "integer"
+    },
+    {
+      "name": "activity_type",
+      "type": "text"
+    },
+    {
+      "name": "activity_time",
+      "type": "integer"
+    },
+    {
+      "name": "billable",
+      "type": "text"
+    },
+    {
+      "name": "public",
+      "type": "character varying"
+    },
+    {
+      "name": "required",
+      "type": "text"
+    },
+    {
+      "name": "default_value",
+      "type": "text"
+    },
+    {
+      "name": "default_manager",
+      "type": "character varying"
+    },
+    {
+      "name": "fallback_manager",
+      "type": "character varying"
+    },
+    {
+      "name": "default_assignee",
+      "type": "integer"
+    },
+    {
+      "name": "start",
+      "type": "character varying"
+    },
+    {
+      "name": "due",
+      "type": "character varying"
+    },
+    {
+      "name": "hidden",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "webhook_subscription_id",
+      "type": "character varying"
+    },
+    {
+      "name": "rich_content_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_charged",
+      "type": "numeric"
+    }
+  ],
+  "progression_tracking": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "to_id",
+      "type": "integer"
+    },
+    {
+      "name": "to_title",
+      "type": "character varying"
+    }
+  ],
+  "prospect": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "actioned",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "due",
+      "type": "date"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "weighting",
+      "type": "integer"
+    },
+    {
+      "name": "value",
+      "type": "numeric"
+    },
+    {
+      "name": "success",
+      "type": "text"
+    },
+    {
+      "name": "comments",
+      "type": "text"
+    },
+    {
+      "name": "progress",
+      "type": "integer"
+    },
+    {
+      "name": "probability_id",
+      "type": "integer"
+    },
+    {
+      "name": "client_portal_permissions",
+      "type": "text"
+    },
+    {
+      "name": "last_interaction",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "won_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "won_by",
+      "type": "integer"
+    },
+    {
+      "name": "lost_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "lost_by",
+      "type": "integer"
+    },
+    {
+      "name": "cancelled_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "cancelled_by",
+      "type": "integer"
+    },
+    {
+      "name": "abandoned_date",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "abandoned_by",
+      "type": "integer"
+    }
+  ],
+  "prospect_probability": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "value",
+      "type": "integer"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "prospect_progression": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "next_id",
+      "type": "integer"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "link",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "icon",
+      "type": "text"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "progress",
+      "type": "integer"
+    },
+    {
+      "name": "on_create",
+      "type": "text"
+    }
+  ],
+  "prospect_status": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "prospect_type": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "forms_api",
+      "type": "text"
+    }
+  ],
+  "quote": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "manager_id",
+      "type": "integer"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "expiry",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "notes",
+      "type": "text"
+    },
+    {
+      "name": "introduction",
+      "type": "text"
+    },
+    {
+      "name": "conclusion",
+      "type": "text"
+    },
+    {
+      "name": "terms_and_conditions",
+      "type": "text"
+    },
+    {
+      "name": "settings",
+      "type": "text"
+    },
+    {
+      "name": "client_portal_access",
+      "type": "text"
+    },
+    {
+      "name": "service_price_total",
+      "type": "numeric"
+    },
+    {
+      "name": "service_time_total",
+      "type": "integer"
+    },
+    {
+      "name": "material_price_total",
+      "type": "numeric"
+    },
+    {
+      "name": "total_price",
+      "type": "numeric"
+    },
+    {
+      "name": "exchange_rate",
+      "type": "double precision"
+    },
+    {
+      "name": "exchange_rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "template_id",
+      "type": "integer"
+    },
+    {
+      "name": "expense_price_total",
+      "type": "numeric"
+    },
+    {
+      "name": "discount_percentage",
+      "type": "numeric"
+    },
+    {
+      "name": "fee_percentage",
+      "type": "numeric"
+    },
+    {
+      "name": "discount_amount",
+      "type": "numeric"
+    },
+    {
+      "name": "fee_amount",
+      "type": "numeric"
+    },
+    {
+      "name": "material_price_included_total",
+      "type": "numeric"
+    },
+    {
+      "name": "estimated_start",
+      "type": "date"
+    },
+    {
+      "name": "is_scheduled",
+      "type": "boolean"
+    },
+    {
+      "name": "estimated_due",
+      "type": "date"
+    }
+  ],
+  "quote_comment": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "quote_id",
+      "type": "integer"
+    },
+    {
+      "name": "activity_id",
+      "type": "integer"
+    }
+  ],
+  "quote_converted": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "template_table",
+      "type": "character varying"
+    },
+    {
+      "name": "template_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "converted",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "quote_pdf_rte_row": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "quote_pdf_setting_id",
+      "type": "integer"
+    },
+    {
+      "name": "ordering",
+      "type": "boolean"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "value",
+      "type": "character varying"
+    },
+    {
+      "name": "show_row",
+      "type": "text"
+    }
+  ],
+  "quote_pdf_setting": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "style_font",
+      "type": "character varying"
+    },
+    {
+      "name": "style_theme",
+      "type": "character varying"
+    },
+    {
+      "name": "service_rollup_objects",
+      "type": "text"
+    },
+    {
+      "name": "show_job_hours",
+      "type": "text"
+    },
+    {
+      "name": "show_job_amount",
+      "type": "text"
+    },
+    {
+      "name": "show_task_description",
+      "type": "text"
+    },
+    {
+      "name": "show_task_rate",
+      "type": "text"
+    },
+    {
+      "name": "show_task_hours",
+      "type": "text"
+    },
+    {
+      "name": "show_task_amount",
+      "type": "text"
+    },
+    {
+      "name": "show_milestone_description",
+      "type": "text"
+    },
+    {
+      "name": "show_milestone_rate",
+      "type": "text"
+    },
+    {
+      "name": "show_milestone_hours",
+      "type": "text"
+    },
+    {
+      "name": "show_milestone_amount",
+      "type": "text"
+    },
+    {
+      "name": "show_material",
+      "type": "text"
+    },
+    {
+      "name": "show_material_price",
+      "type": "text"
+    },
+    {
+      "name": "show_material_qty",
+      "type": "text"
+    },
+    {
+      "name": "show_material_amount",
+      "type": "text"
+    },
+    {
+      "name": "file_name",
+      "type": "character varying"
+    },
+    {
+      "name": "rte_left_section",
+      "type": "text"
+    },
+    {
+      "name": "rte_right_section",
+      "type": "text"
+    },
+    {
+      "name": "rte_bottom_section",
+      "type": "text"
+    },
+    {
+      "name": "rte_description_section",
+      "type": "text"
+    },
+    {
+      "name": "tax_type",
+      "type": "text"
+    },
+    {
+      "name": "tax",
+      "type": "numeric"
+    },
+    {
+      "name": "rte_header_split_percentage",
+      "type": "integer"
+    },
+    {
+      "name": "style_header_theme",
+      "type": "character varying"
+    },
+    {
+      "name": "tax_rate",
+      "type": "numeric"
+    },
+    {
+      "name": "style_heading_font",
+      "type": "character varying"
+    },
+    {
+      "name": "style_color",
+      "type": "character varying"
+    },
+    {
+      "name": "show_milestone_materials_under_services",
+      "type": "text"
+    },
+    {
+      "name": "service_milestone_task_rate_title",
+      "type": "character varying"
+    },
+    {
+      "name": "service_milestone_task_hours_title",
+      "type": "character varying"
+    },
+    {
+      "name": "service_milestone_task_amount_title",
+      "type": "character varying"
+    },
+    {
+      "name": "service_title",
+      "type": "character varying"
+    },
+    {
+      "name": "material_title",
+      "type": "character varying"
+    },
+    {
+      "name": "material_price_title",
+      "type": "character varying"
+    },
+    {
+      "name": "material_quantity_title",
+      "type": "character varying"
+    },
+    {
+      "name": "material_amount_title",
+      "type": "character varying"
+    },
+    {
+      "name": "show_milestone_duration",
+      "type": "text"
+    },
+    {
+      "name": "show_task_duration",
+      "type": "text"
+    },
+    {
+      "name": "service_milestone_task_duration_title",
+      "type": "character varying"
+    },
+    {
+      "name": "show_as_days",
+      "type": "text"
+    },
+    {
+      "name": "no_hours_per_day",
+      "type": "numeric"
+    },
+    {
+      "name": "show_table_headings_on_each_page",
+      "type": "text"
+    },
+    {
+      "name": "page_breaks",
+      "type": "character varying"
+    }
+  ],
+  "quote_recipient": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "quote_id",
+      "type": "integer"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "response",
+      "type": "text"
+    },
+    {
+      "name": "responded",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "access_key",
+      "type": "character"
+    },
+    {
+      "name": "approver",
+      "type": "text"
+    }
+  ],
+  "quote_status": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "quote_template": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "default_tax_id",
+      "type": "integer"
+    },
+    {
+      "name": "days_valid",
+      "type": "integer"
+    },
+    {
+      "name": "introduction",
+      "type": "text"
+    },
+    {
+      "name": "conclusion",
+      "type": "text"
+    },
+    {
+      "name": "terms_and_conditions",
+      "type": "text"
+    },
+    {
+      "name": "email_subject",
+      "type": "text"
+    },
+    {
+      "name": "email_body",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "rate_card": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    }
+  ],
+  "rate_card_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_card_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "selectable",
+      "type": "text"
+    }
+  ],
+  "rate_card_staff_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_card_id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_charged",
+      "type": "numeric"
+    }
+  ],
+  "recurring_event": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "subject",
+      "type": "character varying"
+    },
+    {
+      "name": "start",
+      "type": "time without time zone"
+    },
+    {
+      "name": "end",
+      "type": "time without time zone"
+    },
+    {
+      "name": "priority",
+      "type": "character varying"
+    },
+    {
+      "name": "visibility",
+      "type": "text"
+    },
+    {
+      "name": "location",
+      "type": "text"
+    },
+    {
+      "name": "timezone",
+      "type": "character varying"
+    },
+    {
+      "name": "rich_content_id",
+      "type": "integer"
+    },
+    {
+      "name": "recurring_rule_id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_table",
+      "type": "text"
+    },
+    {
+      "name": "earliest_instance_date",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "recurring_event_interact": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_table",
+      "type": "character varying"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "recurring_event_id",
+      "type": "integer"
+    },
+    {
+      "name": "service",
+      "type": "character varying"
+    }
+  ],
+  "recurring_rule": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "start",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "end",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "until",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "freq",
+      "type": "text"
+    },
+    {
+      "name": "by_second",
+      "type": "character varying"
+    },
+    {
+      "name": "by_minute",
+      "type": "character varying"
+    },
+    {
+      "name": "by_hour",
+      "type": "character varying"
+    },
+    {
+      "name": "by_day",
+      "type": "character varying"
+    },
+    {
+      "name": "by_month_day",
+      "type": "character varying"
+    },
+    {
+      "name": "by_year_day",
+      "type": "character varying"
+    },
+    {
+      "name": "by_week_no",
+      "type": "character varying"
+    },
+    {
+      "name": "by_month",
+      "type": "character varying"
+    },
+    {
+      "name": "by_set_pos",
+      "type": "character varying"
+    },
+    {
+      "name": "week_start",
+      "type": "text"
+    },
+    {
+      "name": "interval",
+      "type": "integer"
+    },
+    {
+      "name": "count",
+      "type": "integer"
+    },
+    {
+      "name": "recurrence_rule",
+      "type": "text"
+    },
+    {
+      "name": "timezone",
+      "type": "character varying"
+    }
+  ],
+  "recurring_rule_exception": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "recurring_rule_id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "start",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "end",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "referral": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "referrer_id",
+      "type": "integer"
+    },
+    {
+      "name": "referrer_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    },
+    {
+      "name": "updated",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "updated_by",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "value",
+      "type": "numeric"
+    },
+    {
+      "name": "probability",
+      "type": "integer"
+    }
+  ],
+  "region": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "region_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "region_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_table",
+      "type": "character varying"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    }
+  ],
+  "report_template": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "character varying"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "file",
+      "type": "text"
+    },
+    {
+      "name": "output_title",
+      "type": "character varying"
+    }
+  ],
+  "request": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "progressed_by",
+      "type": "integer"
+    },
+    {
+      "name": "conversion_id",
+      "type": "integer"
+    },
+    {
+      "name": "conversion_table",
+      "type": "character varying"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "body",
+      "type": "text"
+    },
+    {
+      "name": "lead_id",
+      "type": "integer"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "priority_id",
+      "type": "integer"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "source",
+      "type": "character varying"
+    },
+    {
+      "name": "raw_data",
+      "type": "text"
+    },
+    {
+      "name": "claimer_id",
+      "type": "integer"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "request_conversion": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "object_table",
+      "type": "text"
+    },
+    {
+      "name": "object_type_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_progression_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_class_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_priority_id",
+      "type": "integer"
+    },
+    {
+      "name": "defaults",
+      "type": "text"
+    },
+    {
+      "name": "automated",
+      "type": "text"
+    },
+    {
+      "name": "override",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "add_contributors",
+      "type": "text"
+    },
+    {
+      "name": "contributor_type_id",
+      "type": "integer"
+    }
+  ],
+  "request_notification": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "notify_id",
+      "type": "integer"
+    },
+    {
+      "name": "notify_type",
+      "type": "text"
+    }
+  ],
+  "request_priority": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "icon",
+      "type": "character varying"
+    },
+    {
+      "name": "factor",
+      "type": "integer"
+    }
+  ],
+  "request_rule": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "trigger_id",
+      "type": "integer"
+    },
+    {
+      "name": "condition",
+      "type": "text"
+    },
+    {
+      "name": "field",
+      "type": "character varying"
+    },
+    {
+      "name": "value1",
+      "type": "character varying"
+    },
+    {
+      "name": "value2",
+      "type": "character varying"
+    }
+  ],
+  "request_trigger": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "logic",
+      "type": "text"
+    },
+    {
+      "name": "exclusivity",
+      "type": "text"
+    },
+    {
+      "name": "run_repeat",
+      "type": "text"
+    },
+    {
+      "name": "run_every",
+      "type": "integer"
+    },
+    {
+      "name": "run_every_interval",
+      "type": "text"
+    },
+    {
+      "name": "conversion_id",
+      "type": "integer"
+    },
+    {
+      "name": "activity_from_name",
+      "type": "character varying"
+    },
+    {
+      "name": "activity_from_email",
+      "type": "character varying"
+    },
+    {
+      "name": "activity_subject",
+      "type": "character varying"
+    },
+    {
+      "name": "activity_body",
+      "type": "text"
+    },
+    {
+      "name": "activity_to_sender",
+      "type": "text"
+    },
+    {
+      "name": "activity_to_notified",
+      "type": "text"
+    },
+    {
+      "name": "defaults",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "request_type": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "allow_email",
+      "type": "text"
+    },
+    {
+      "name": "email_alias",
+      "type": "character varying"
+    },
+    {
+      "name": "unknown",
+      "type": "text"
+    },
+    {
+      "name": "allow_portal",
+      "type": "text"
+    },
+    {
+      "name": "portal_invite",
+      "type": "text"
+    },
+    {
+      "name": "autoreply",
+      "type": "text"
+    },
+    {
+      "name": "autoreply_body",
+      "type": "text"
+    },
+    {
+      "name": "autoreply_subject",
+      "type": "character varying"
+    },
+    {
+      "name": "autoreply_from_name",
+      "type": "character varying"
+    },
+    {
+      "name": "autoreply_from_email",
+      "type": "character varying"
+    },
+    {
+      "name": "all_from_address",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "request_type_conversion_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "conversion_id",
+      "type": "integer"
+    },
+    {
+      "name": "defaults",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "resource": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "collection_id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_type",
+      "type": "text"
+    },
+    {
+      "name": "version",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "content",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "public",
+      "type": "text"
+    },
+    {
+      "name": "embargo",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "expiry",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "filekey",
+      "type": "character varying"
+    },
+    {
+      "name": "filesize",
+      "type": "integer"
+    },
+    {
+      "name": "icon",
+      "type": "character varying"
+    },
+    {
+      "name": "contact_access",
+      "type": "text"
+    },
+    {
+      "name": "mimetype",
+      "type": "character varying"
+    },
+    {
+      "name": "url",
+      "type": "character varying"
+    },
+    {
+      "name": "filechecksum",
+      "type": "character"
+    },
+    {
+      "name": "s3_bucket",
+      "type": "character varying"
+    },
+    {
+      "name": "s3_key",
+      "type": "character varying"
+    },
+    {
+      "name": "uuid",
+      "type": "character"
+    }
+  ],
+  "resource_access": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "resource_id",
+      "type": "integer"
+    },
+    {
+      "name": "access_table",
+      "type": "text"
+    },
+    {
+      "name": "access_id",
+      "type": "integer"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    },
+    {
+      "name": "created_note",
+      "type": "character varying"
+    }
+  ],
+  "resource_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "resource_id",
+      "type": "integer"
+    },
+    {
+      "name": "service",
+      "type": "character varying"
+    },
+    {
+      "name": "service_id",
+      "type": "character varying"
+    },
+    {
+      "name": "writeable",
+      "type": "boolean"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "updated",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "filename",
+      "type": "character varying"
+    },
+    {
+      "name": "mimetype",
+      "type": "character varying"
+    }
+  ],
+  "rich_content": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "name",
+      "type": "character varying"
+    },
+    {
+      "name": "user_id",
+      "type": "integer"
+    },
+    {
+      "name": "user_type",
+      "type": "text"
+    },
+    {
+      "name": "content",
+      "type": "text"
+    },
+    {
+      "name": "parsed_content",
+      "type": "text"
+    },
+    {
+      "name": "in_use",
+      "type": "boolean"
+    }
+  ],
+  "rule": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "ruleset_id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "activity_break",
+      "type": "integer"
+    },
+    {
+      "name": "field_name",
+      "type": "character varying"
+    },
+    {
+      "name": "field_comparison",
+      "type": "character varying"
+    },
+    {
+      "name": "field_value",
+      "type": "text"
+    }
+  ],
+  "ruleset": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "integration_direction",
+      "type": "text"
+    },
+    {
+      "name": "warning",
+      "type": "character varying"
+    }
+  ],
+  "segmentation": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "required",
+      "type": "text"
+    },
+    {
+      "name": "exclusive",
+      "type": "text"
+    },
+    {
+      "name": "leaf",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "segmentation_option": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "segmentation_id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "ranking",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "site": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "manager_id",
+      "type": "integer"
+    }
+  ],
+  "site_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "site_id",
+      "type": "integer"
+    },
+    {
+      "name": "location_id",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "site_type": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "icon",
+      "type": "character varying"
+    },
+    {
+      "name": "manager_id",
+      "type": "integer"
+    }
+  ],
+  "skill": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    }
+  ],
+  "skill_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "skill_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    }
+  ],
+  "staff_bookmark": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "reference_id",
+      "type": "integer"
+    },
+    {
+      "name": "reference_table",
+      "type": "character varying"
+    },
+    {
+      "name": "reference_url",
+      "type": "text"
+    }
+  ],
+  "staff_licence": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "product",
+      "type": "character varying"
+    },
+    {
+      "name": "access_level",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    }
+  ],
+  "staff_membership": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "group_id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "join_date",
+      "type": "date"
+    }
+  ],
+  "state": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "country_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "abbreviation",
+      "type": "character varying"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "timezone",
+      "type": "character varying"
+    }
+  ],
+  "tag": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "name",
+      "type": "character varying"
+    }
+  ],
+  "tag_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "tag_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "task": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "custom_id",
+      "type": "character varying"
+    },
+    {
+      "name": "type_id",
+      "type": "character varying"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "creator_table",
+      "type": "text"
+    },
+    {
+      "name": "creator_id",
+      "type": "integer"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "affiliation_id",
+      "type": "integer"
+    },
+    {
+      "name": "manager_id",
+      "type": "integer"
+    },
+    {
+      "name": "budgeted",
+      "type": "integer"
+    },
+    {
+      "name": "remaining_offset",
+      "type": "integer"
+    },
+    {
+      "name": "remaining",
+      "type": "integer"
+    },
+    {
+      "name": "billable",
+      "type": "integer"
+    },
+    {
+      "name": "nonbillable",
+      "type": "integer"
+    },
+    {
+      "name": "rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "start",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "due",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "commenced",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "accepted",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "completed",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "priority_id",
+      "type": "integer"
+    }
+  ],
+  "task_priority": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "icon",
+      "type": "character varying"
+    },
+    {
+      "name": "level",
+      "type": "integer"
+    }
+  ],
+  "task_progression": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "next_id",
+      "type": "integer"
+    },
+    {
+      "name": "status_id",
+      "type": "integer"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "icon",
+      "type": "text"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "on_create",
+      "type": "text"
+    },
+    {
+      "name": "auto_trigger",
+      "type": "character varying"
+    }
+  ],
+  "task_status": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "task_template": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type_id",
+      "type": "character varying"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "staff",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "manager",
+      "type": "character varying"
+    },
+    {
+      "name": "budgeted",
+      "type": "integer"
+    },
+    {
+      "name": "start",
+      "type": "character varying"
+    },
+    {
+      "name": "due",
+      "type": "character varying"
+    },
+    {
+      "name": "duration",
+      "type": "integer"
+    },
+    {
+      "name": "is_billable",
+      "type": "text"
+    },
+    {
+      "name": "rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "progression_id",
+      "type": "integer"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    },
+    {
+      "name": "foreign_rate_charged",
+      "type": "numeric"
+    }
+  ],
+  "task_type": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "time_allocation": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "billable",
+      "type": "integer"
+    },
+    {
+      "name": "nonbillable",
+      "type": "integer"
+    },
+    {
+      "name": "charged",
+      "type": "numeric"
+    },
+    {
+      "name": "costing",
+      "type": "numeric"
+    },
+    {
+      "name": "final_billable",
+      "type": "integer"
+    },
+    {
+      "name": "final_nonbillable",
+      "type": "integer"
+    },
+    {
+      "name": "final_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "final_costing",
+      "type": "numeric"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "locked",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "comments",
+      "type": "text"
+    }
+  ],
+  "time_allocation_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "time_allocation_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "billable",
+      "type": "integer"
+    },
+    {
+      "name": "nonbillable",
+      "type": "integer"
+    },
+    {
+      "name": "charged",
+      "type": "numeric"
+    },
+    {
+      "name": "costing",
+      "type": "numeric"
+    },
+    {
+      "name": "final_billable",
+      "type": "integer"
+    },
+    {
+      "name": "final_nonbillable",
+      "type": "integer"
+    },
+    {
+      "name": "final_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "final_costing",
+      "type": "numeric"
+    },
+    {
+      "name": "comments",
+      "type": "text"
+    },
+    {
+      "name": "rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "cost_rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "cost_rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "invoice_item_id",
+      "type": "integer"
+    },
+    {
+      "name": "contract_id",
+      "type": "integer"
+    },
+    {
+      "name": "contract_period_id",
+      "type": "integer"
+    },
+    {
+      "name": "invoice_id",
+      "type": "integer"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    }
+  ],
+  "time_external": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "service",
+      "type": "character varying"
+    },
+    {
+      "name": "external_id",
+      "type": "character varying"
+    },
+    {
+      "name": "permalink",
+      "type": "character varying"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "updated",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "url",
+      "type": "character varying"
+    },
+    {
+      "name": "start",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "end",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "recurring_id",
+      "type": "integer"
+    },
+    {
+      "name": "ewsuid",
+      "type": "character varying"
+    },
+    {
+      "name": "time_external_group_id",
+      "type": "integer"
+    }
+  ],
+  "time_external_group": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "updated",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "start",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "end",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "recurring_event_id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "location",
+      "type": "character varying"
+    },
+    {
+      "name": "priority",
+      "type": "character varying"
+    },
+    {
+      "name": "visibility",
+      "type": "text"
+    }
+  ],
+  "time_external_recurring": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "freq",
+      "type": "character varying"
+    },
+    {
+      "name": "freq_interval",
+      "type": "boolean"
+    },
+    {
+      "name": "freq_type",
+      "type": "character varying"
+    },
+    {
+      "name": "freq_type_value",
+      "type": "character varying"
+    },
+    {
+      "name": "start",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "end",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "until",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "raw_rule",
+      "type": "text"
+    },
+    {
+      "name": "updated",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "time_holiday": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "start_date",
+      "type": "date"
+    },
+    {
+      "name": "end_date",
+      "type": "date"
+    },
+    {
+      "name": "duration",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "locked",
+      "type": "text"
+    },
+    {
+      "name": "is_public_holiday",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "calendar_profile",
+      "type": "character varying"
+    }
+  ],
+  "time_schedule": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "task_id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "duration",
+      "type": "integer"
+    },
+    {
+      "name": "year",
+      "type": "integer"
+    },
+    {
+      "name": "month",
+      "type": "integer"
+    },
+    {
+      "name": "week",
+      "type": "integer"
+    },
+    {
+      "name": "day",
+      "type": "integer"
+    },
+    {
+      "name": "schedule_date",
+      "type": "date"
+    },
+    {
+      "name": "rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "charged",
+      "type": "numeric"
+    },
+    {
+      "name": "cost_rate_id",
+      "type": "integer"
+    },
+    {
+      "name": "cost_rate_charged",
+      "type": "numeric"
+    },
+    {
+      "name": "costing",
+      "type": "numeric"
+    },
+    {
+      "name": "created",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "created_by",
+      "type": "integer"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "task_template_id",
+      "type": "integer"
+    }
+  ],
+  "time_schedule_link": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "activity_id",
+      "type": "integer"
+    },
+    {
+      "name": "schedule_id",
+      "type": "integer"
+    }
+  ],
+  "time_work_week": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "weekday",
+      "type": "integer"
+    },
+    {
+      "name": "work",
+      "type": "text"
+    },
+    {
+      "name": "time_threshold",
+      "type": "integer"
+    }
+  ],
+  "timeline_entry": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_id",
+      "type": "integer"
+    },
+    {
+      "name": "owner_table",
+      "type": "character varying"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "date_actioned",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "timeline_entry_action": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "action",
+      "type": "character varying"
+    },
+    {
+      "name": "timeline_entry_id",
+      "type": "integer"
+    }
+  ],
+  "timeline_entry_change": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "action_id",
+      "type": "integer"
+    },
+    {
+      "name": "field",
+      "type": "character varying"
+    },
+    {
+      "name": "from_value",
+      "type": "bytea"
+    },
+    {
+      "name": "to_value",
+      "type": "bytea"
+    }
+  ],
+  "timeline_entry_metadata": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "entry_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "color",
+      "type": "character varying"
+    },
+    {
+      "name": "table_value",
+      "type": "character varying"
+    },
+    {
+      "name": "id_value",
+      "type": "integer"
+    },
+    {
+      "name": "str_value",
+      "type": "text"
+    },
+    {
+      "name": "currency_value",
+      "type": "numeric"
+    },
+    {
+      "name": "timestamp_value",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "timer": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "start_time",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "extra_time",
+      "type": "integer"
+    },
+    {
+      "name": "timer_limit",
+      "type": "integer"
+    },
+    {
+      "name": "staff_id",
+      "type": "integer"
+    },
+    {
+      "name": "subject",
+      "type": "character varying"
+    },
+    {
+      "name": "body_rich_content_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_id",
+      "type": "integer"
+    },
+    {
+      "name": "engagement_table",
+      "type": "character varying"
+    },
+    {
+      "name": "date_updated",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "ordering",
+      "type": "smallint"
+    }
+  ],
+  "trigger_event": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "trigger_id",
+      "type": "integer"
+    }
+  ],
+  "trigger_history": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "trigger_id",
+      "type": "integer"
+    },
+    {
+      "name": "object_id",
+      "type": "integer"
+    },
+    {
+      "name": "execute_timestamp",
+      "type": "timestamp without time zone"
+    }
+  ],
+  "trigger_progression": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    }
+  ],
+  "trigger_rule": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "trigger_id",
+      "type": "integer"
+    },
+    {
+      "name": "type",
+      "type": "text"
+    },
+    {
+      "name": "activity_break",
+      "type": "integer"
+    },
+    {
+      "name": "field_name",
+      "type": "character varying"
+    },
+    {
+      "name": "field_comparison",
+      "type": "character varying"
+    },
+    {
+      "name": "field_value",
+      "type": "character varying"
+    }
+  ],
+  "triggers": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "object_type",
+      "type": "character varying"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "modified",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "modified_by",
+      "type": "integer"
+    },
+    {
+      "name": "delay_minutes",
+      "type": "integer"
+    },
+    {
+      "name": "delay_hours",
+      "type": "integer"
+    },
+    {
+      "name": "delay_days",
+      "type": "integer"
+    },
+    {
+      "name": "cycle",
+      "type": "text"
+    },
+    {
+      "name": "retrigger_delay_minutes",
+      "type": "integer"
+    },
+    {
+      "name": "retrigger_delay_hours",
+      "type": "integer"
+    },
+    {
+      "name": "retrigger_delay_days",
+      "type": "integer"
+    },
+    {
+      "name": "active_days",
+      "type": "character varying"
+    },
+    {
+      "name": "active_hours",
+      "type": "character varying"
+    },
+    {
+      "name": "progression_id",
+      "type": "integer"
+    },
+    {
+      "name": "archived",
+      "type": "text"
+    },
+    {
+      "name": "event",
+      "type": "text"
+    }
+  ],
+  "upload_file": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "section_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "path",
+      "type": "character varying"
+    },
+    {
+      "name": "multiple",
+      "type": "boolean"
+    },
+    {
+      "name": "max_size",
+      "type": "integer"
+    },
+    {
+      "name": "formats",
+      "type": "character varying"
+    },
+    {
+      "name": "required",
+      "type": "boolean"
+    }
+  ],
+  "upload_section": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "code",
+      "type": "character varying"
+    },
+    {
+      "name": "ordering",
+      "type": "integer"
+    }
+  ],
+  "view_date": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "view_table",
+      "type": "character varying"
+    },
+    {
+      "name": "type_id",
+      "type": "integer"
+    },
+    {
+      "name": "view_date_type",
+      "type": "character varying"
+    },
+    {
+      "name": "view_date_key",
+      "type": "character varying"
+    }
+  ]
+}
