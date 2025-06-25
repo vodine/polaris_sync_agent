@@ -84,6 +84,7 @@ local_settings.py
 # Custom Folders
 archive/
 polarisforensics.accelo.com-2025-06-16T23_11_46/
+sql_parts/
 
 # Custom files
 test_auth.py
