@@ -1,9 +1,4 @@
 🔍 MISSING TABLES:
-  - campaign_rule
-  - issue_class
-  - profile_structure
-  - rate
-  - staff
 
 🧩 COLUMN DIFFERENCES:
 
@@ -415,6 +410,12 @@
     - has_manager: PG=text | MySQL=enum('no','yes') | Compatibility=compatible
     - has_address: PG=text | MySQL=enum('no','yes') | Compatibility=compatible
 
+📦 Table: auth_history
+  ⚠️ Mismatched Types:
+    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - username: PG=character varying | MySQL=varchar(255) | Compatibility=compatible
+    - failed_login_attempts: PG=integer | MySQL=int(11) | Compatibility=compatible
+
 📦 Table: authority
   ⚠️ Mismatched Types:
     - id: PG=integer | MySQL=int(11) | Compatibility=compatible
@@ -436,12 +437,6 @@
     - title: PG=text | MySQL=mediumtext | Compatibility=incompatible
     - status: PG=text | MySQL=enum('active','inactive') | Compatibility=compatible
     - required: PG=text | MySQL=enum('yes','no') | Compatibility=compatible
-
-📦 Table: auth_history
-  ⚠️ Mismatched Types:
-    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - username: PG=character varying | MySQL=varchar(255) | Compatibility=compatible
-    - failed_login_attempts: PG=integer | MySQL=int(11) | Compatibility=compatible
 
 📦 Table: calculation
   ⚠️ Mismatched Types:
@@ -529,6 +524,13 @@
     - ordering: PG=integer | MySQL=int(11) | Compatibility=compatible
     - icon: PG=text | MySQL=enum('forward','back','delete','add','new','pause','play') | Compatibility=compatible
     - targets: PG=text | MySQL=enum('yes','no') | Compatibility=compatible
+
+📦 Table: campaign_rule
+  ⚠️ Mismatched Types:
+    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - ruleset_id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - start: PG=timestamp without time zone | MySQL=timestamp | Compatibility=compatible
+    - end: PG=timestamp without time zone | MySQL=timestamp | Compatibility=compatible
 
 📦 Table: campaign_ruleset
   ⚠️ Mismatched Types:
@@ -1052,6 +1054,12 @@
   ⚠️ Mismatched Types:
     - id: PG=integer | MySQL=int(11) | Compatibility=compatible
 
+📦 Table: issue_class
+  ⚠️ Mismatched Types:
+    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - parent_id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - title: PG=character varying | MySQL=varchar(255) | Compatibility=compatible
+
 📦 Table: issue_priority
   ⚠️ Mismatched Types:
     - id: PG=integer | MySQL=int(11) | Compatibility=compatible
@@ -1425,6 +1433,14 @@
     - value: PG=character varying | MySQL=varchar(50) | Compatibility=compatible
     - ordering: PG=integer | MySQL=int(11) | Compatibility=compatible
 
+📦 Table: profile_structure
+  ⚠️ Mismatched Types:
+    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - parent_id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - title: PG=character varying | MySQL=varchar(255) | Compatibility=compatible
+    - description: PG=text | MySQL=mediumtext | Compatibility=incompatible
+    - exclusive: PG=text | MySQL=enum('yes','no') | Compatibility=compatible
+
 📦 Table: profile_value
   ⚠️ Mismatched Types:
     - id: PG=integer | MySQL=int(11) | Compatibility=compatible
@@ -1589,6 +1605,14 @@
     - terms_and_conditions: PG=text | MySQL=mediumtext | Compatibility=incompatible
     - email_subject: PG=text | MySQL=mediumtext | Compatibility=incompatible
     - email_body: PG=text | MySQL=mediumtext | Compatibility=incompatible
+
+📦 Table: rate
+  ⚠️ Mismatched Types:
+    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - title: PG=character varying | MySQL=varchar(100) | Compatibility=compatible
+    - charged: PG=numeric | MySQL=decimal(10,2) | Compatibility=compatible
+    - status: PG=text | MySQL=enum('active','inactive') | Compatibility=compatible
+    - object: PG=text | MySQL=set('staff','issue','job','milestone','contract_period') | Compatibility=incompatible
 
 📦 Table: rate_card
   ⚠️ Mismatched Types:
@@ -1825,6 +1849,12 @@
     - id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - skill_id: PG=integer | MySQL=int(11) | Compatibility=compatible
 
+📦 Table: staff
+  ⚠️ Mismatched Types:
+    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - firstname: PG=character varying | MySQL=varchar(30) | Compatibility=compatible
+    - surname: PG=character varying | MySQL=varchar(30) | Compatibility=compatible
+
 📦 Table: staff_bookmark
   ⚠️ Mismatched Types:
     - id: PG=integer | MySQL=int(11) | Compatibility=compatible
@@ -1905,43 +1935,6 @@
     - id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - title: PG=character varying | MySQL=varchar(255) | Compatibility=compatible
     - status: PG=text | MySQL=enum('active','inactive') | Compatibility=compatible
-
-📦 Table: timeline_entry
-  ⚠️ Mismatched Types:
-    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - owner_id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - owner_table: PG=character varying | MySQL=varchar(45) | Compatibility=compatible
-    - engagement_id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - engagement_table: PG=character varying | MySQL=varchar(45) | Compatibility=compatible
-
-📦 Table: timeline_entry_action
-  ⚠️ Mismatched Types:
-    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - action: PG=character varying | MySQL=varchar(45) | Compatibility=compatible
-
-📦 Table: timeline_entry_change
-  ⚠️ Mismatched Types:
-    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - action_id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - field: PG=character varying | MySQL=varchar(45) | Compatibility=compatible
-    - from_value: PG=bytea | MySQL=blob | Compatibility=incompatible
-
-📦 Table: timeline_entry_metadata
-  ⚠️ Mismatched Types:
-    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - entry_id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - title: PG=character varying | MySQL=varchar(45) | Compatibility=compatible
-
-📦 Table: timer
-  ⚠️ Mismatched Types:
-    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - start_time: PG=timestamp without time zone | MySQL=timestamp | Compatibility=compatible
-    - extra_time: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - timer_limit: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - staff_id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - subject: PG=character varying | MySQL=varchar(256) | Compatibility=compatible
-    - body_rich_content_id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - engagement_id: PG=integer | MySQL=int(11) | Compatibility=compatible
 
 📦 Table: time_allocation
   ⚠️ Mismatched Types:
@@ -2033,25 +2026,42 @@
     - weekday: PG=integer | MySQL=int(11) | Compatibility=compatible
     - work: PG=text | MySQL=enum('yes','no') | Compatibility=compatible
 
-📦 Table: triggers
+📦 Table: timeline_entry
   ⚠️ Mismatched Types:
     - id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - object_type: PG=character varying | MySQL=varchar(50) | Compatibility=compatible
-    - type_id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - title: PG=character varying | MySQL=varchar(255) | Compatibility=compatible
-    - status: PG=text | MySQL=enum('active','inactive') | Compatibility=compatible
-    - modified: PG=timestamp without time zone | MySQL=timestamp | Compatibility=compatible
-    - modified_by: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - delay_minutes: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - delay_hours: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - delay_days: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - cycle: PG=text | MySQL=enum('once','ongoing','manual') | Compatibility=compatible
-    - retrigger_delay_minutes: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - retrigger_delay_hours: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - retrigger_delay_days: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - active_days: PG=character varying | MySQL=varchar(30) | Compatibility=compatible
-    - active_hours: PG=character varying | MySQL=varchar(70) | Compatibility=compatible
-    - progression_id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - owner_id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - owner_table: PG=character varying | MySQL=varchar(45) | Compatibility=compatible
+    - engagement_id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - engagement_table: PG=character varying | MySQL=varchar(45) | Compatibility=compatible
+
+📦 Table: timeline_entry_action
+  ⚠️ Mismatched Types:
+    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - action: PG=character varying | MySQL=varchar(45) | Compatibility=compatible
+
+📦 Table: timeline_entry_change
+  ⚠️ Mismatched Types:
+    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - action_id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - field: PG=character varying | MySQL=varchar(45) | Compatibility=compatible
+    - from_value: PG=bytea | MySQL=blob | Compatibility=incompatible
+
+📦 Table: timeline_entry_metadata
+  ⚠️ Mismatched Types:
+    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - entry_id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - title: PG=character varying | MySQL=varchar(45) | Compatibility=compatible
+
+📦 Table: timer
+  ⚠️ Mismatched Types:
+    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - start_time: PG=timestamp without time zone | MySQL=timestamp | Compatibility=compatible
+    - extra_time: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - timer_limit: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - staff_id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - subject: PG=character varying | MySQL=varchar(256) | Compatibility=compatible
+    - body_rich_content_id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - engagement_id: PG=integer | MySQL=int(11) | Compatibility=compatible
 
 📦 Table: trigger_event
   ⚠️ Mismatched Types:
@@ -2075,6 +2085,26 @@
     - trigger_id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - type: PG=text | MySQL=enum('activity','field') | Compatibility=compatible
     - activity_break: PG=integer | MySQL=int(11) | Compatibility=compatible
+
+📦 Table: triggers
+  ⚠️ Mismatched Types:
+    - id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - object_type: PG=character varying | MySQL=varchar(50) | Compatibility=compatible
+    - type_id: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - title: PG=character varying | MySQL=varchar(255) | Compatibility=compatible
+    - status: PG=text | MySQL=enum('active','inactive') | Compatibility=compatible
+    - modified: PG=timestamp without time zone | MySQL=timestamp | Compatibility=compatible
+    - modified_by: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - delay_minutes: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - delay_hours: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - delay_days: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - cycle: PG=text | MySQL=enum('once','ongoing','manual') | Compatibility=compatible
+    - retrigger_delay_minutes: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - retrigger_delay_hours: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - retrigger_delay_days: PG=integer | MySQL=int(11) | Compatibility=compatible
+    - active_days: PG=character varying | MySQL=varchar(30) | Compatibility=compatible
+    - active_hours: PG=character varying | MySQL=varchar(70) | Compatibility=compatible
+    - progression_id: PG=integer | MySQL=int(11) | Compatibility=compatible
 
 📦 Table: upload_file
   ⚠️ Mismatched Types:

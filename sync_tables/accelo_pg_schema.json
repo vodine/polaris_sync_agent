@@ -1090,7 +1090,7 @@
     },
     {
       "name": "ordering",
-      "type": "boolean"
+      "type": "text"
     },
     {
       "name": "status",
@@ -1296,7 +1296,7 @@
     },
     {
       "name": "ordering",
-      "type": "boolean"
+      "type": "text"
     },
     {
       "name": "title",
@@ -1720,7 +1720,7 @@
     },
     {
       "name": "ordering",
-      "type": "boolean"
+      "type": "text"
     },
     {
       "name": "active",
@@ -2658,7 +2658,7 @@
     },
     {
       "name": "outcome",
-      "type": "USER-DEFINED"
+      "type": "text"
     },
     {
       "name": "outcome_id",
@@ -2815,6 +2815,24 @@
     {
       "name": "campaign_actions",
       "type": "text"
+    }
+  ],
+  "campaign_rule": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "ruleset_id",
+      "type": "integer"
+    },
+    {
+      "name": "start",
+      "type": "timestamp without time zone"
+    },
+    {
+      "name": "end",
+      "type": "timestamp without time zone"
     }
   ],
   "campaign_ruleset": [
@@ -4192,7 +4210,7 @@
     },
     {
       "name": "ordering",
-      "type": "boolean"
+      "type": "text"
     },
     {
       "name": "icon",
@@ -4218,7 +4236,7 @@
     },
     {
       "name": "ordering",
-      "type": "boolean"
+      "type": "text"
     },
     {
       "name": "start",
@@ -4236,7 +4254,7 @@
     },
     {
       "name": "ordering",
-      "type": "boolean"
+      "type": "text"
     },
     {
       "name": "auto_link",
@@ -5291,6 +5309,20 @@
     {
       "name": "billing_affiliation_id",
       "type": "integer"
+    }
+  ],
+  "issue_class": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
     }
   ],
   "issue_priority": [
@@ -7273,6 +7305,28 @@
       "type": "text"
     }
   ],
+  "profile_structure": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "parent_id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "exclusive",
+      "type": "text"
+    }
+  ],
   "profile_value": [
     {
       "name": "id",
@@ -7874,7 +7928,7 @@
     },
     {
       "name": "ordering",
-      "type": "boolean"
+      "type": "text"
     },
     {
       "name": "title",
@@ -8170,6 +8224,28 @@
     },
     {
       "name": "status",
+      "type": "text"
+    }
+  ],
+  "rate": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "title",
+      "type": "character varying"
+    },
+    {
+      "name": "charged",
+      "type": "numeric"
+    },
+    {
+      "name": "status",
+      "type": "text"
+    },
+    {
+      "name": "object",
       "type": "text"
     }
   ],
@@ -9281,6 +9357,20 @@
       "type": "integer"
     }
   ],
+  "staff": [
+    {
+      "name": "id",
+      "type": "integer"
+    },
+    {
+      "name": "firstname",
+      "type": "character varying"
+    },
+    {
+      "name": "surname",
+      "type": "character varying"
+    }
+  ],
   "staff_bookmark": [
     {
       "name": "id",
@@ -10262,7 +10352,7 @@
     },
     {
       "name": "from_value",
-      "type": "bytea"
+      "type": "text"
     },
     {
       "name": "to_value",

@@ -14,7 +14,7 @@ BACKUP_AFTER = "C:/polaris_sync_agent/sync_tables/schema_diff_report_after.txt"
 COMPARE_SCRIPT = "C:/polaris_sync_agent/sync_tables/compare_db.py"
 LOG_PATH = "C:/polaris_sync_agent/sync_tables/create_missing_tables.log"
 
-# --- TYPE MAPPING ---
+# --- Helpers ---
 def mysql_to_pg_type(mysql_type):
     mysql_type = mysql_type.lower()
     if mysql_type.startswith("int"):
@@ -29,7 +29,7 @@ def mysql_to_pg_type(mysql_type):
         return "VARCHAR"
     elif mysql_type.startswith("char"):
         return "CHAR"
-    elif mysql_type == "text":
+    elif mysql_type in ["text", "mediumtext"]:
         return "TEXT"
     elif mysql_type.startswith("enum("):
         return "TEXT"
@@ -43,102 +43,116 @@ def mysql_to_pg_type(mysql_type):
         return "REAL"
     elif mysql_type.startswith("date"):
         return "DATE"
-    else:
-        return "TEXT"
+    return "TEXT"
 
-# --- PARSE DIFF REPORT ---
-def get_missing_tables_from_report(report_path):
-    missing = []
-    with open(report_path, "r", encoding="utf-8") as f:
-        in_missing_section = False
-        for line in f:
-            line = line.strip()
-            if "MISSING TABLES" in line:
-                in_missing_section = True
-                continue
-            elif line.startswith("\U0001f4e9") or line.startswith("\U0001f4e6"):
-                break
-            elif in_missing_section and line.startswith("-"):
-                missing.append(line.strip("- ").strip().lower())
-    return missing
-
-# --- RUN COMPARISON SCRIPT ---
 def run_compare_script():
     subprocess.run(["python", COMPARE_SCRIPT], check=True)
 
+def load_json(path):
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def get_table_diffs(report_path):
+    diffs = {}
+    current_table = None
+    section = None
+    with open(report_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith("📦 Table: "):
+                current_table = line.replace("📦 Table: ", "").strip().lower()
+                diffs[current_table] = {"missing_columns": [], "type_mismatches": []}
+            elif line.startswith("🚫 Missing Columns"):
+                section = "missing"
+            elif line.startswith("⚠️ Mismatched Types"):
+                section = "mismatch"
+            elif line.startswith("-"):
+                if section == "missing":
+                    diffs[current_table]["missing_columns"].append(line.strip("- "))
+                elif section == "mismatch":
+                    parts = line.strip("- ").split(":")
+                    col = parts[0].strip()
+                    diffs[current_table]["type_mismatches"].append(col)
+    return diffs
+
 # --- MAIN ---
-def create_missing_tables():
-    # Run comparison first and backup initial state
+def create_and_update_tables():
     run_compare_script()
     shutil.copyfile(SCHEMA_DIFF_REPORT_PATH, BACKUP_BEFORE)
 
-    with open(MYSQL_SCHEMA_PATH, "r", encoding="utf-8") as f:
-        mysql_schema_raw = json.load(f)
-
-    mysql_schema = {k.lower(): v for k, v in mysql_schema_raw.items()}
-    missing_tables = get_missing_tables_from_report(SCHEMA_DIFF_REPORT_PATH)
+    mysql_schema = {k.lower(): v for k, v in load_json(MYSQL_SCHEMA_PATH).items()}
+    pg_schema = {k.lower(): v for k, v in load_json(PG_SCHEMA_PATH).items()}
+    diffs = get_table_diffs(SCHEMA_DIFF_REPORT_PATH)
 
     conn = get_pg_connection()
     cursor = conn.cursor()
 
     created = []
-    skipped = []
+    added_cols = []
+    fixed_types = []
     failed = []
 
     with open(LOG_PATH, "w", encoding="utf-8") as log:
-        for table in tqdm(missing_tables, desc="Creating missing tables"):
-            if table not in mysql_schema:
-                msg = f"❌ {table} not found in MySQL schema JSON."
-                print(msg)
-                log.write(msg + "\n")
-                skipped.append(table)
-                continue
-
-            columns = mysql_schema[table]
-            if not columns:
-                msg = f"⚠️ Skipping empty table definition: {table}"
-                print(msg)
-                log.write(msg + "\n")
-                skipped.append(table)
-                continue
-
+        for table, detail in tqdm(diffs.items(), desc="Syncing tables"):
             try:
-                col_defs = [f'"{col["name"]}" {mysql_to_pg_type(col["type"])}' for col in columns]
-                sql = f'CREATE TABLE IF NOT EXISTS accelo_tap."{table}" (\n  ' + ",\n  ".join(col_defs) + "\n);"
-                cursor.execute(sql)
-                conn.commit()
-                created.append(table)
+                if table not in pg_schema:
+                    columns = mysql_schema.get(table, [])
+                    if not columns:
+                        log.write(f"⚠️ Skipped empty definition: {table}\n")
+                        continue
+                    col_defs = [f'"{col["name"]}" {mysql_to_pg_type(col["type"])}' for col in columns]
+                    sql = f'CREATE TABLE IF NOT EXISTS accelo_tap."{table}" (\n  ' + ",\n  ".join(col_defs) + "\n);"
+                    cursor.execute(sql)
+                    conn.commit()
+                    created.append(table)
+                    log.write(f"✅ Created table: {table}\n")
+                else:
+                    for col_name in detail.get("missing_columns", []):
+                        match = next((c for c in mysql_schema[table] if c["name"] == col_name), None)
+                        if not match:
+                            log.write(f"⚠️ No definition found for {col_name} in {table}\n")
+                            continue
+                        pg_type = mysql_to_pg_type(match["type"])
+                        alter_sql = f'ALTER TABLE accelo_tap."{table}" ADD COLUMN IF NOT EXISTS "{col_name}" {pg_type};'
+                        cursor.execute(alter_sql)
+                        conn.commit()
+                        added_cols.append(f"{table}.{col_name}")
+                        log.write(f"🛠️ Added column: {table}.{col_name}\n")
+
+                    for col_name in detail.get("type_mismatches", []):
+                        match = next((c for c in mysql_schema[table] if c["name"] == col_name), None)
+                        if not match:
+                            log.write(f"⚠️ No type definition for mismatch {col_name} in {table}\n")
+                            continue
+                        pg_type = mysql_to_pg_type(match["type"])
+                        alter_type_sql = f'ALTER TABLE accelo_tap."{table}" ALTER COLUMN "{col_name}" TYPE {pg_type};'
+                        try:
+                            cursor.execute(alter_type_sql)
+                            conn.commit()
+                            fixed_types.append(f"{table}.{col_name}")
+                            log.write(f"🔁 Fixed type: {table}.{col_name} to {pg_type}\n")
+                        except Exception as e:
+                            conn.rollback()
+                            failed.append((table, col_name, str(e)))
+                            log.write(f"❌ Failed to alter type {table}.{col_name}: {e}\n")
             except Exception as e:
-                msg = f"❌ Failed to create {table}: {e}"
-                print(msg)
-                log.write(msg + "\n")
                 conn.rollback()
-                failed.append(table)
+                failed.append((table, str(e)))
+                log.write(f"❌ Failed to process {table}: {e}\n")
 
     cursor.close()
     conn.close()
 
-    # Run comparison again and take after snapshot
     run_compare_script()
     shutil.copyfile(SCHEMA_DIFF_REPORT_PATH, BACKUP_AFTER)
 
-    # Check difference
-    before = set(get_missing_tables_from_report(BACKUP_BEFORE))
-    after = set(get_missing_tables_from_report(BACKUP_AFTER))
-    resolved = sorted(before - after)
-
-    with open(LOG_PATH, "a", encoding="utf-8") as log:
-        log.write("\n=== TABLES RESOLVED ===\n")
-        for table in resolved:
-            log.write(f"✅ {table}\n")
-
-    print("\n✅ Completed.")
+    print("\n✅ Done.")
     print(f"🆕 Tables created: {len(created)}")
-    print(f"⚠️ Skipped: {len(skipped)}")
-    print(f"❌ Failed: {len(failed)}")
-    print(f"✅ Resolved tables: {len(resolved)}")
-    print(f"📄 Log written to: {LOG_PATH}")
+    print(f"🛠️ Columns added: {len(added_cols)}")
+    print(f"🔁 Types fixed: {len(fixed_types)}")
+    print(f"❌ Tables failed: {len(failed)}")
+    print(f"📄 See log: {LOG_PATH}")
 
 # --- ENTRY ---
 if __name__ == "__main__":
-    create_missing_tables()
+    create_and_update_tables()

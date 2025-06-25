@@ -31,35 +31,40 @@ def is_compatible(mysql_type, pg_type):
     return False, "incompatible"
 
 def compare_schemas(pg_schema, mysql_schema):
+    # Normalize both schema keys to lowercase for comparison
+    pg_schema_lc = {k.lower(): v for k, v in pg_schema.items()}
+    mysql_schema_lc = {k.lower(): v for k, v in mysql_schema.items()}
+
     missing_tables = []
     table_diffs = {}
 
-    for table, mysql_columns in mysql_schema.items():
-        if table not in pg_schema:
-            missing_tables.append(table)
+    for table_lc, mysql_columns in mysql_schema_lc.items():
+        if table_lc not in pg_schema_lc:
+            missing_tables.append(table_lc)
             continue
 
-        pg_columns = {col["name"]: col["type"] for col in pg_schema[table]}
+        pg_columns = {col["name"].lower(): col["type"] for col in pg_schema_lc[table_lc]}
         missing_columns = []
         mismatched_columns = []
 
         for col in mysql_columns:
-            name, m_type = col["name"], col["type"]
-            if name not in pg_columns:
-                missing_columns.append(name)
+            name_lc = col["name"].lower()
+            m_type = col["type"]
+            if name_lc not in pg_columns:
+                missing_columns.append(col["name"])  # original name
             else:
-                pg_type = pg_columns[name]
+                pg_type = pg_columns[name_lc]
                 if pg_type != m_type:
                     compatible, reason = is_compatible(m_type, pg_type)
                     mismatched_columns.append({
-                        "column": name,
+                        "column": col["name"],
                         "pg_type": pg_type,
                         "mysql_type": m_type,
                         "compatibility": reason
                     })
 
         if missing_columns or mismatched_columns:
-            table_diffs[table] = {
+            table_diffs[table_lc] = {
                 "missing_columns": missing_columns,
                 "type_mismatches": mismatched_columns
             }
@@ -69,11 +74,12 @@ def compare_schemas(pg_schema, mysql_schema):
 def write_report(missing_tables, table_diffs, output_path):
     with open(output_path, "w", encoding="utf-8") as f:
         f.write("🔍 MISSING TABLES:\n")
-        for t in missing_tables:
+        for t in sorted(missing_tables):
             f.write(f"  - {t}\n")
 
         f.write("\n🧩 COLUMN DIFFERENCES:\n")
-        for table, diffs in table_diffs.items():
+        for table in sorted(table_diffs.keys()):
+            diffs = table_diffs[table]
             f.write(f"\n📦 Table: {table}\n")
             if diffs["missing_columns"]:
                 f.write("  🚫 Missing Columns:\n")
