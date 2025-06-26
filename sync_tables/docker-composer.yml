@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  mysql_ghost:
+    image: mysql:8
+    container_name: mysql_ghost
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: legacy_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./sql_parts:/docker-entrypoint-initdb.d

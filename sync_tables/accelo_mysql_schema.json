@@ -2,971 +2,355 @@
   "account_category": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL"
+    },
+    {
+      "name": "status",
+      "type": "enum('active'"
     }
   ],
   "account_category_option": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "account_category_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL"
+    },
+    {
+      "name": "status",
+      "type": "enum('active'"
     }
   ],
   "account_category_value": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(35)"
+      "type": "varchar(35) NOT NULL"
     },
     {
       "name": "object_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "account_category_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
+    },
+    {
+      "name": "account_category_option_id",
+      "type": "int(11) NOT NULL"
     }
   ],
   "account_invoice": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "account_invoice_item": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "invoice_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "account_invoice_recipient": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "affiliation_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "engagement_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "engagement_table",
+      "type": "varchar(100) NOT NULL"
     }
   ],
   "account_invoice_template": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(100)"
-    },
-    {
-      "name": "staff_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "default_term_duration",
-      "type": "int(11)"
-    },
-    {
-      "name": "show_profile_fields",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "customer_notes",
-      "type": "mediumtext"
-    },
-    {
-      "name": "internal_notes",
-      "type": "mediumtext"
-    },
-    {
-      "name": "email_subject",
-      "type": "text"
-    },
-    {
-      "name": "email_body",
-      "type": "text"
-    },
-    {
-      "name": "material_include_materials",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "material_template_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "expense_include_expenses",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "expense_status",
-      "type": "enum('approved_only','all_expenses')"
-    },
-    {
-      "name": "customer_activity_budget_date_range",
-      "type": "enum('last_month','last_week','before_first_of_month','before_today','all')"
-    },
-    {
-      "name": "customer_activity_budget_status",
-      "type": "enum('all','approved_only','all_uninvoiced')"
-    },
-    {
-      "name": "customer_theme",
-      "type": "varchar(45)"
-    },
-    {
-      "name": "customer_show_invoice_items",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_service_show_item_quantity",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_service_show_unit_price",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_service_show_tax_code",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_service_show_tax_amount",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_service_show_item_amount",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_service_show_item_total",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_material_show_item_quantity",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_material_show_unit_price",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_material_show_tax_code",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_material_show_tax_amount",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_material_show_template_code",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_material_show_item_amount",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_material_show_item_total",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_expense_show_item_quantity",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_expense_show_unit_price",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_expense_show_tax_code",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_expense_show_tax_amount",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_expense_show_item_amount",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_expense_show_item_total",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_show_related_invoices",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_show_payments",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_show_work_summary",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_work_summary_show_description",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_work_summary_show_resolution",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_activity_group_by",
-      "type": "enum('none','staff','rate','object','date')"
-    },
-    {
-      "name": "customer_activity_sort_by",
-      "type": "enum('none','date','subject','amount')"
-    },
-    {
-      "name": "customer_activity_show_type",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_activity_show_date",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_activity_show_hours",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_activity_show_rate_per_hour",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_activity_show_amount",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_activity_show_description",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_activity_show_subject",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_activity_show_owner",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_activity_show_avatar",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_activity_include_nonbillable",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_pdf_filename",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "customer_rte_left_section",
-      "type": "text"
-    },
-    {
-      "name": "customer_rte_right_section",
-      "type": "text"
-    },
-    {
-      "name": "customer_rte_bottom_section",
-      "type": "text"
-    },
-    {
-      "name": "customer_rte_total_section_first_line_title",
-      "type": "text"
-    },
-    {
-      "name": "customer_rte_total_section_first_line_value",
-      "type": "text"
-    },
-    {
-      "name": "customer_rte_total_section_second_line_title",
-      "type": "text"
-    },
-    {
-      "name": "customer_rte_total_section_second_line_value",
-      "type": "text"
-    },
-    {
-      "name": "customer_rte_total_section_third_line_title",
-      "type": "text"
-    },
-    {
-      "name": "customer_rte_total_section_third_line_value",
-      "type": "text"
-    },
-    {
-      "name": "customer_rte_total_section_fourth_line_title",
-      "type": "text"
-    },
-    {
-      "name": "customer_rte_total_section_fourth_line_value",
-      "type": "text"
-    },
-    {
-      "name": "customer_rte_description_section",
-      "type": "text"
-    },
-    {
-      "name": "customer_invoice_font",
-      "type": "enum('arial','timesnewroman','roboto','verdana','opensans','pathwaygothicone','raleway','alfaslabone','playfairdisplay','arvo','sourcesans','robotoslab','montserrat','poppins','dmsans','dmserifdisplay','ebgaramond')"
-    },
-    {
-      "name": "customer_activity_table_style",
-      "type": "enum('grey','black')"
-    },
-    {
-      "name": "customer_invoice_table_style",
-      "type": "enum('default','bordered')"
-    },
-    {
-      "name": "customer_include_work_summary_contract",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_include_work_summary_bulk",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "invoice_owner_type",
-      "type": "enum('invoice_creator','manager','defined_user')"
-    },
-    {
-      "name": "default_invoice_subject",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "status",
-      "type": "enum('active','inactive')"
-    },
-    {
-      "name": "customer_service_show_agreed_fee",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_service_show_percentage_complete",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_service_show_value_complete",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_service_show_value_previously_claimed",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_expense_show_date",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_expense_show_type",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_expense_show_owner",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_expense_show_avatar",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_expense_group_by",
-      "type": "enum('none','owner','date','type')"
-    },
-    {
-      "name": "customer_expense_sort_by",
-      "type": "enum('none','owner','date','type','amount')"
-    },
-    {
-      "name": "customer_expense_show_item_title",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "customer_expense_summarize_by",
-      "type": "enum('none','type','owner','date','tax_title')"
+      "type": "varchar(100) NOT NULL"
     }
   ],
   "account_invoice_template_service": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "template_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "service_type",
-      "type": "enum('job','issue','contract')"
+      "type": "enum('job'"
+    },
+    {
+      "name": "invoice_type",
+      "type": "enum('work_done'"
     }
   ],
   "account_item_template": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "account_item_type_preference": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "account_preference_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "type",
-      "type": "enum('service','material','expense')"
+      "type": "enum('service'"
     }
   ],
   "account_ledger": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "mediumtext"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "account_payment": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "currency_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "method_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "receipt_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "reference_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "account_payment_method": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "mediumtext"
-    },
-    {
-      "name": "direction",
-      "type": "enum('debit','credit')"
-    },
-    {
-      "name": "ordering",
-      "type": "tinyint(3)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "account_preference": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(35)"
+      "type": "varchar(35) NOT NULL"
     },
     {
       "name": "object_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "type",
-      "type": "enum('invoice','purchase')"
-    },
-    {
-      "name": "default_billing_affiliation_id",
-      "type": "int(11)"
+      "type": "enum('invoice'"
     }
   ],
   "account_purchase": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "purchase_number",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL"
     }
   ],
   "account_purchase_item": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "purchase_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "account_purchase_item_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "account_purchase_item_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "link_table",
-      "type": "varchar(45)"
+      "type": "varchar(45) NOT NULL"
+    },
+    {
+      "name": "link_id",
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "account_purchase_order_rte_row": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "account_purchase_order_setting_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "ordering",
-      "type": "tinyint(3)"
+      "type": "tinyint(3) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL"
+    },
+    {
+      "name": "value",
+      "type": "varchar(255) NOT NULL"
     }
   ],
   "account_purchase_order_setting": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(45)"
-    },
-    {
-      "name": "style_font",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "style_theme",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "item_show_quantity",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "item_show_rate",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "item_show_amount",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "item_show_tax_code",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "item_show_tax_amount",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "item_show_total",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "item_show_material_code",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "file_name",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "rte_left_section",
-      "type": "text"
-    },
-    {
-      "name": "rte_right_section",
-      "type": "text"
-    },
-    {
-      "name": "rte_bottom_section",
-      "type": "text"
+      "type": "varchar(45) NOT NULL"
     }
   ],
   "account_purchase_template": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL"
     },
     {
       "name": "purchase_title",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "affiliation_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "owner_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "owner_type",
-      "type": "enum('purchase_creator','manager','defined_user')"
-    },
-    {
-      "name": "internal_notes",
-      "type": "mediumtext"
-    },
-    {
-      "name": "expand_advance_options",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "create_pdf",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "populate_existing_items",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "shipping_details",
-      "type": "mediumtext"
-    },
-    {
-      "name": "public_notes",
-      "type": "mediumtext"
-    },
-    {
-      "name": "email_subject",
-      "type": "mediumtext"
-    },
-    {
-      "name": "email_body",
-      "type": "text"
-    },
-    {
-      "name": "status",
-      "type": "enum('active','inactive')"
+      "type": "varchar(255) NOT NULL"
     }
   ],
   "account_receipt": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "currency_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "method_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "affiliation_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "owner_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "account_receipt_method": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "mediumtext"
-    },
-    {
-      "name": "description",
-      "type": "mediumtext"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "account_tax": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(40)"
+      "type": "varchar(40) NOT NULL"
     },
     {
       "name": "rate",
-      "type": "decimal(7,5)"
-    },
-    {
-      "name": "is_invoice",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "is_purchase",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "account_table",
-      "type": "enum('invoice','purchase')"
-    },
-    {
-      "name": "status",
-      "type": "enum('active','inactive')"
-    },
-    {
-      "name": "external",
-      "type": "varchar(50)"
+      "type": "decimal(7"
     }
   ],
   "activity": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "thread_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "engagement_table",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "engagement_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "owner_table",
-      "type": "enum('staff','affiliation','lead','lead_candidate')"
-    },
-    {
-      "name": "owner_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "staff_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "medium",
-      "type": "enum('note','meeting','report','email','call','postal','fax','sms','twitter','event_log','comment')"
-    },
-    {
-      "name": "scheduled",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "subject",
-      "type": "varchar(200)"
-    },
-    {
-      "name": "body",
-      "type": "mediumtext"
-    },
-    {
-      "name": "priority_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "class_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "task_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "visibility",
-      "type": "enum('all','confidential','private')"
-    },
-    {
-      "name": "details",
-      "type": "mediumtext"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "activity_class": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "text"
-    },
-    {
-      "name": "icon",
-      "type": "text"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "activity_class_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "class_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "engagement_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "ordering",
-      "type": "tinyint(3)"
+      "type": "tinyint(3) NOT NULL"
+    },
+    {
+      "name": "active",
+      "type": "enum('yes'"
     }
   ],
   "activity_event": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "interact_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "type",
-      "type": "enum('delivered','open','click','unsubscribe','spam','bounce')"
+      "type": "enum('delivered'"
     }
   ],
   "activity_file": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "activity_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "activity_interact": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "activity_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "owner_table",
-      "type": "enum('staff','affiliation','lead','lead_candidate')"
-    },
-    {
-      "name": "owner_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "actioned",
-      "type": "timestamp"
-    },
-    {
-      "name": "type",
-      "type": "enum('creator','from','to','cc','bcc','attendee','attended','did_not_attend')"
-    },
-    {
-      "name": "invitation",
-      "type": "enum('none','pending','sent','accepted','declined')"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "activity_invoice_link": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "activity_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "invoice_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "activity_priority": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "text"
+      "type": "text NOT NULL"
     },
     {
       "name": "icon",
@@ -976,441 +360,301 @@
   "activity_template": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(200)"
+      "type": "varchar(200) NOT NULL"
     },
     {
       "name": "activity_body",
-      "type": "mediumtext"
+      "type": "mediumtext COMMENT 'This is always rich text'"
     }
   ],
   "activity_template_category": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(200)"
+      "type": "varchar(200) NOT NULL"
     }
   ],
   "activity_template_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "activity_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "activity_template_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "created_by",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     }
   ],
   "address": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "state_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "country_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "company_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "affiliation": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "country_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "physical_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "postal_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "contact_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "company_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "phone",
-      "type": "varchar(100)"
-    },
-    {
-      "name": "fax",
-      "type": "varchar(100)"
-    },
-    {
-      "name": "mobile",
-      "type": "varchar(100)"
-    },
-    {
-      "name": "email",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "status",
-      "type": "enum('active','inactive')"
-    },
-    {
-      "name": "title",
-      "type": "mediumtext"
-    },
-    {
-      "name": "communication",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "modified",
-      "type": "timestamp"
-    },
-    {
-      "name": "status_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "invoice_method",
-      "type": "enum('email','fax','postal')"
-    },
-    {
-      "name": "client_portal_access",
-      "type": "enum('yes','no')"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "affiliation_progression": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "next_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "status_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "link",
       "type": "mediumtext"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
     }
   ],
   "affiliation_segmentation": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "affiliation_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "reference_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "affiliation_status": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "color",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('active','inactive')"
+      "type": "enum('active'"
     }
   ],
   "annex": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "type_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "manager_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(200)"
+      "type": "varchar(200) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('pending','active','closed','inactive')"
-    },
-    {
-      "name": "engagement_table",
-      "type": "varchar(50)"
+      "type": "enum('pending'"
     }
   ],
   "annex_type": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "parent_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "mediumtext"
+      "type": "mediumtext NOT NULL"
+    },
+    {
+      "name": "status",
+      "type": "enum('active'"
     }
   ],
   "asset": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "type_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(200)"
+      "type": "varchar(200) NOT NULL"
     },
     {
       "name": "engagement_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "engagement_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('active','inactive')"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
+      "type": "enum('active'"
     }
   ],
   "asset_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "asset_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "engagement_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "engagement_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('active','inactive')"
+      "type": "enum('active'"
     }
   ],
   "asset_type": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('active','inactive')"
-    },
-    {
-      "name": "has_affiliation",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "has_manager",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "has_address",
-      "type": "enum('no','yes')"
+      "type": "enum('active'"
     }
   ],
   "authority": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "type_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "company_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "parent_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(200)"
+      "type": "varchar(200) NOT NULL"
+    },
+    {
+      "name": "status",
+      "type": "enum('active'"
     }
   ],
   "authority_role": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "authority_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "location_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "title",
+      "type": "varchar(200) NOT NULL"
     }
   ],
   "authority_type": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "parent_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "mediumtext"
+      "type": "mediumtext NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('active','inactive')"
-    },
-    {
-      "name": "required",
-      "type": "enum('yes','no')"
+      "type": "enum('active'"
     }
   ],
   "auth_history": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "username",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "failed_login_attempts",
-      "type": "int(11)"
+      "type": "varchar(255) NOT NULL"
     }
   ],
   "calculation": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "module",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "title",
-      "type": "mediumtext"
-    },
-    {
-      "name": "object_1",
-      "type": "mediumtext"
-    },
-    {
-      "name": "value_1",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "object_2",
-      "type": "mediumtext"
-    },
-    {
-      "name": "value_2",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "operation",
-      "type": "enum('add','subtract','multiple','divide')"
-    },
-    {
-      "name": "format",
-      "type": "enum('int','decimal','percentage','date','time')"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "campaign": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "manager_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "campaign_action": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "manager_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "campaign_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
@@ -1418,1295 +662,653 @@
     },
     {
       "name": "status",
-      "type": "enum('draft','sent','inactive')"
+      "type": "enum('draft'"
     }
   ],
   "campaign_action_dispatch": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "action_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "platform",
-      "type": "enum('direct','mailchimp','campaignmonitor')"
+      "type": "enum('direct'"
     }
   ],
   "campaign_action_dispatch_file": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "dispatch_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "resource_id",
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "campaign_action_target": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "target_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "action_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "staff_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "actioned",
-      "type": "timestamp"
-    },
-    {
-      "name": "converted",
-      "type": "timestamp"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "campaign_action_target_call": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "target_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "started",
-      "type": "timestamp"
-    },
-    {
-      "name": "caller",
-      "type": "int(11)"
-    },
-    {
-      "name": "outcome",
-      "type": "enum('started','scheduled','busy','blocked','no"
-    },
-    {
-      "name": "outcome_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "number",
-      "type": "varchar(20)"
-    },
-    {
-      "name": "notes",
-      "type": "mediumtext"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "campaign_action_target_event": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "target_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "type",
-      "type": "enum('delivered','open','click','unsubscribe','spam','bounce')"
+      "type": "enum('delivered'"
     }
   ],
   "campaign_conversion": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "action_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "converted_by",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(100)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "campaign_monitor_target": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "target_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "action",
-      "type": "enum('create','update','delete')"
-    },
-    {
-      "name": "remote_list_id",
-      "type": "varchar(50)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "campaign_progression": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "next_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "status_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "link",
       "type": "mediumtext"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
-    },
-    {
-      "name": "icon",
-      "type": "enum('forward','back','delete','add','new','pause','play')"
-    },
-    {
-      "name": "targets",
-      "type": "enum('yes','no')"
     }
   ],
   "campaign_rule": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "ruleset_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "start",
-      "type": "timestamp"
-    },
-    {
-      "name": "end",
-      "type": "timestamp"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "campaign_ruleset": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "action_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "mediumtext"
+      "type": "mediumtext NOT NULL"
     },
     {
       "name": "ordering",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "join_operator",
-      "type": "enum('any','all','none')"
-    },
-    {
-      "name": "medium",
-      "type": "enum('open','click','reply','web','conversion','other')"
+      "type": "enum('any'"
     }
   ],
   "campaign_ruleset_conversion": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "ruleset_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
+    },
+    {
+      "name": "conversion_id",
+      "type": "int(11) NOT NULL"
     }
   ],
   "campaign_status": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "color",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('pending','active','paused','complete','inactive','other')"
+      "type": "enum('pending'"
     },
     {
       "name": "ordering",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
+    },
+    {
+      "name": "start",
+      "type": "enum('yes'"
     }
   ],
   "campaign_target": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "campaign_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "target_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "target_table",
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "campaign_target_conversion": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "action_target_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "checklist": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "engagement_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "checklist_item": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "checklist_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "mediumtext"
-    },
-    {
-      "name": "ordering",
-      "type": "int(5)"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "created_by",
-      "type": "int(11)"
-    },
-    {
-      "name": "modified",
-      "type": "timestamp"
-    },
-    {
-      "name": "modified_by",
-      "type": "int(11)"
-    },
-    {
-      "name": "completed",
-      "type": "timestamp"
+      "type": "mediumtext NOT NULL"
     }
   ],
   "client_portal_group": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(150)"
+      "type": "varchar(150) NOT NULL"
     },
     {
       "name": "permissions",
-      "type": "text"
+      "type": "text COMMENT 'HVE::Client::Portal::Permission ids delimited by commas'"
     }
   ],
   "client_portal_group_membership": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "affiliation_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "group_id",
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "client_portal_invitation": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "firstname",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL COMMENT 'Invitee first name'"
     },
     {
       "name": "email",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL COMMENT 'Email address of the invitee'"
     },
     {
       "name": "affiliation_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL COMMENT 'The affiliation of the inviter'"
     },
     {
       "name": "status",
-      "type": "enum('draft','pending','accepted','declined')"
-    },
-    {
-      "name": "date_created",
-      "type": "timestamp"
-    },
-    {
-      "name": "date_modified",
-      "type": "timestamp"
-    },
-    {
-      "name": "company_id",
-      "type": "int(11)"
+      "type": "enum('draft'"
     }
   ],
   "client_portal_password_reset": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "contact_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "client_portal_signoff": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "subject",
-      "type": "varchar(200)"
-    },
-    {
-      "name": "body",
-      "type": "text"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "created_by",
-      "type": "int(11)"
-    },
-    {
-      "name": "expires",
-      "type": "timestamp"
-    },
-    {
-      "name": "status",
-      "type": "enum('draft','sent','approved','declined')"
-    },
-    {
-      "name": "requires",
-      "type": "enum('any','all')"
-    },
-    {
-      "name": "engagement_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "engagement_table",
-      "type": "varchar(200)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "client_portal_signoff_attachment": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "signoff_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "resource_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "activity_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "status",
+      "type": "enum('active'"
     }
   ],
   "client_portal_signoff_attachment_comment": [
     {
       "name": "activity_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "attachment_id",
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "client_portal_signoff_comment": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "signoff_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "activity_id",
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "client_portal_signoff_recipient": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "signoff_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "recipient_table",
-      "type": "enum('affiliation','staff')"
+      "type": "enum('affiliation'"
     },
     {
       "name": "recipient_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "ip",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "response",
-      "type": "enum('pending','approved','declined')"
-    },
-    {
-      "name": "responded",
-      "type": "timestamp"
+      "type": "enum('pending'"
     }
   ],
   "collection": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "engagement_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "collection_access": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "collection_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "access_table",
-      "type": "enum('staff','contact')"
-    },
-    {
-      "name": "access_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
+      "type": "enum('staff'"
     }
   ],
-  "company": [
-    {
-      "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "default_affiliation_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "country_id",
-      "type": "int(11)"
-    }
-  ],
+  "company": [],
   "company_progression": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "next_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "status_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "link",
       "type": "mediumtext"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
     }
   ],
   "company_segmentation": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "reference_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "company_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "company_status": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "color",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('prospect','interested','active','inactive')"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
+      "type": "enum('prospect'"
     }
   ],
-  "contact": [
-    {
-      "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "default_affiliation_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "country_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "firstname",
-      "type": "varchar(50)"
-    }
-  ],
+  "contact": [],
   "contact_progression": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "next_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "status_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "link",
       "type": "mediumtext"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
     }
   ],
   "contact_segmentation": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "reference_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "contact_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "contact_status": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "color",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('potential','interested','active','inactive')"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
+      "type": "enum('potential'"
     }
   ],
   "contact_title": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(10)"
+      "type": "varchar(10) NOT NULL"
     }
   ],
   "contract": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "type_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "billable_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "owner_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "manager_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "engagement_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "engagement_table",
-      "type": "varchar(20)"
-    },
-    {
-      "name": "title",
-      "type": "mediumtext"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "commenced",
-      "type": "timestamp"
-    },
-    {
-      "name": "expiry",
-      "type": "timestamp"
-    },
-    {
-      "name": "notes",
-      "type": "mediumtext"
-    },
-    {
-      "name": "period_expiry",
-      "type": "timestamp"
-    },
-    {
-      "name": "status",
-      "type": "enum('pending','active','complete','inactive','cancelled')"
-    },
-    {
-      "name": "status_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "value",
-      "type": "decimal(14,2)"
-    },
-    {
-      "name": "auto_renew",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "renew_days",
-      "type": "int(11)"
-    },
-    {
-      "name": "send_invoice",
-      "type": "enum('none','create','email','fax','email_accounts_user')"
-    },
-    {
-      "name": "period_template_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "invoice_template_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "service_tax_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "service_ledger_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "client_portal_permissions",
-      "type": "text"
-    },
-    {
-      "name": "last_interaction",
-      "type": "timestamp"
-    },
-    {
-      "name": "auto_complete_task",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "modified",
-      "type": "timestamp"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "contract_budget": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "engagement_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "engagement_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "time",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL COMMENT 'sum of budget_items time'"
     },
     {
       "name": "time_charged",
-      "type": "decimal(12,2)"
+      "type": "decimal(12"
     },
     {
       "name": "product_charged",
-      "type": "decimal(12,2)"
+      "type": "decimal(12"
+    },
+    {
+      "name": "value",
+      "type": "decimal(12"
     }
   ],
   "contract_budget_item": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "budget_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "type",
-      "type": "enum('time','product')"
-    },
-    {
-      "name": "title",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "time",
-      "type": "int(11)"
-    },
-    {
-      "name": "time_charged",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "product_quantity",
-      "type": "int(11)"
-    },
-    {
-      "name": "product_charged",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "value",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "invoice_item_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "include_rate_title",
-      "type": "enum('yes','no')"
+      "type": "enum('time'"
     }
   ],
   "contract_period": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "contract_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "duration_type",
-      "type": "enum('fixed','unlimited')"
-    },
-    {
-      "name": "commenced",
-      "type": "timestamp"
-    },
-    {
-      "name": "expiry",
-      "type": "timestamp"
-    },
-    {
-      "name": "closed",
-      "type": "timestamp"
-    },
-    {
-      "name": "budget_type",
-      "type": "enum('pre-paid','post-paid')"
-    },
-    {
-      "name": "allowance_type",
-      "type": "enum('unlimited_hours','fixed_hours','fixed_value')"
-    },
-    {
-      "name": "include_material",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "include_expense",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "rate_type",
-      "type": "enum('contract','object')"
-    },
-    {
-      "name": "rate_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "rate_charged",
-      "type": "decimal(10,2)"
-    },
-    {
-      "name": "budget_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "service_item_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "rollover",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "status",
-      "type": "enum('opened','closed')"
-    },
-    {
-      "name": "excess_rate_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "excess_rate_charged",
-      "type": "decimal(10,2)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "contract_period_template": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "duration_type",
-      "type": "enum('fixed','unlimited')"
-    },
-    {
-      "name": "duration",
-      "type": "int(11)"
-    },
-    {
-      "name": "duration_unit",
-      "type": "enum('week','month','quarter','year')"
-    },
-    {
-      "name": "budget_type",
-      "type": "enum('pre-paid','post-paid')"
-    },
-    {
-      "name": "allowance_type",
-      "type": "enum('unlimited_hours','fixed_hours','fixed_value')"
-    },
-    {
-      "name": "include_material",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "include_expense",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "amount",
-      "type": "decimal(10,2)"
-    },
-    {
-      "name": "allowance_time",
-      "type": "int(11)"
-    },
-    {
-      "name": "allowance_amount",
-      "type": "decimal(10,2)"
-    },
-    {
-      "name": "rate_type",
-      "type": "enum('contract','object')"
-    },
-    {
-      "name": "rate_id",
-      "type": "int(11)"
+      "type": "enum('fixed'"
     }
   ],
   "contract_progression": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "next_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "status_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "link",
       "type": "mediumtext"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
-    },
-    {
-      "name": "icon",
-      "type": "enum('forward','back','delete','add','new','pause','play')"
     }
   ],
   "contract_status": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "color",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('pending','active','complete','inactive','cancelled')"
+      "type": "enum('pending'"
     }
   ],
   "contract_type": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
-    },
-    {
-      "name": "status",
-      "type": "enum('active','inactive')"
-    },
-    {
-      "name": "auto_renew",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "renew_days",
-      "type": "int(11)"
-    },
-    {
-      "name": "send_invoice",
-      "type": "enum('none','create','email','fax','email_accounts_user')"
-    },
-    {
-      "name": "period_template_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "invoice_template_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "service_tax_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "service_ledger_id",
-      "type": "int(11)"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "contributor": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "engagement_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "engagement_table",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "reference_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "reference_table",
-      "type": "varchar(100)"
-    },
-    {
-      "name": "title",
-      "type": "mediumtext"
-    },
-    {
-      "name": "auto_link",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "auto_cc",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "status",
-      "type": "enum('pending','active','complete','inactive')"
-    },
-    {
-      "name": "type_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "contributor_progression": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "type_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "next_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "status_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "link",
-      "type": "mediumtext"
-    },
-    {
-      "name": "ordering",
-      "type": "tinyint(3)"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "contributor_status": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "color",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('pending','active','complete','inactive','other')"
-    },
-    {
-      "name": "ordering",
-      "type": "tinyint(3)"
+      "type": "enum('pending'"
     }
   ],
   "contributor_type": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "ordering",
-      "type": "tinyint(3)"
+      "type": "tinyint(3) NOT NULL"
     },
     {
       "name": "auto_link",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "auto_cc",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "has_status",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "default_status_id",
-      "type": "int(11)"
+      "type": "enum('yes'"
     }
   ],
   "country": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "region_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "prefix",
-      "type": "int(11)"
-    },
-    {
-      "name": "suffix",
-      "type": "char(2)"
-    },
-    {
-      "name": "state_name",
-      "type": "varchar(20)"
-    },
-    {
-      "name": "state_required",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "postcode_name",
-      "type": "varchar(20)"
-    },
-    {
-      "name": "postcode_required",
-      "type": "enum('yes','no')"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "currency_type": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
@@ -2716,211 +1318,191 @@
   "custom_locations": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "name",
+      "type": "varchar(200) NOT NULL"
     }
   ],
   "deep_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL"
     },
     {
       "name": "object_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "service_name",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "service_id",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
+    },
+    {
+      "name": "service_id_type",
+      "type": "varchar(100) NOT NULL"
     }
   ],
   "deep_link_service": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "deep_link_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "service_id",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
+    },
+    {
+      "name": "service_id_type",
+      "type": "varchar(100) NOT NULL"
     }
   ],
   "division": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
     }
   ],
   "division_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "link_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "link_table",
-      "type": "varchar(20)"
+      "type": "varchar(20) NOT NULL"
     },
     {
       "name": "division_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "status",
+      "type": "enum('active'"
     }
   ],
   "division_membership": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "division_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "staff_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "expense": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "engagement_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "engagement_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "submitter_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "expense_file": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "expense_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "resource_id",
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "expense_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "quantity",
-      "type": "decimal(14,4)"
-    },
-    {
-      "name": "price",
-      "type": "decimal(14,4)"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "expense_id",
-      "type": "int(11)"
+      "type": "decimal(14"
     }
   ],
   "expense_type": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "default_item_template_link_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "quantity_enabled",
-      "type": "enum('yes','no')"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "expense_type_item_template_link": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "expense_type_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "object_budget_item_template_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "lock_price",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "lock_cost",
-      "type": "enum('yes','no')"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "extension_formula": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     }
   ],
   "extension_formula_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "structure_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "extension_group": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "extension_option": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "structure_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "value",
@@ -2930,345 +1512,185 @@
   "extension_status_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "structure_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "link_status_id",
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "extension_structure": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "field_name",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL"
+    },
+    {
+      "name": "field_type",
+      "type": "enum('text'"
     }
   ],
   "extension_value": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "structure_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "link_table",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "link_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "modified",
-      "type": "timestamp"
-    },
-    {
-      "name": "modified_by",
-      "type": "int(11)"
-    },
-    {
-      "name": "value_text",
-      "type": "mediumtext"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "extension_value_history": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "structure_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "link_table",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "link_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "modified",
-      "type": "timestamp"
-    },
-    {
-      "name": "modified_by",
-      "type": "int(11)"
-    },
-    {
-      "name": "value_text",
-      "type": "mediumtext"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "field_tracking": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(100)"
-    },
-    {
-      "name": "object_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "modified",
-      "type": "timestamp"
-    },
-    {
-      "name": "modified_by",
-      "type": "int(11)"
-    },
-    {
-      "name": "field_name",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
     }
   ],
   "filter": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "staff_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "shared",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "object_type",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "json_data",
-      "type": "text"
-    },
-    {
-      "name": "title",
-      "type": "varchar(50)"
+      "type": "enum('yes'"
     }
   ],
   "google_watched_channel": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     }
   ],
   "issue": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "issue_class": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(255)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "issue_priority": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "color",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "icon",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "factor",
-      "type": "int(11)"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "issue_progression": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "next_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "status_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "link",
       "type": "mediumtext"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
-    },
-    {
-      "name": "icon",
-      "type": "enum('forward','back','delete','add','new','pause','play')"
-    },
-    {
-      "name": "type_id",
-      "type": "int(11)"
     }
   ],
   "issue_resolution": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "description",
-      "type": "mediumtext"
-    },
-    {
-      "name": "report",
-      "type": "mediumtext"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "issue_status": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "color",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('submitted','open','resolved','closed','inactive')"
+      "type": "enum('submitted'"
     }
   ],
   "issue_type": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "status",
-      "type": "enum('active','inactive')"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
-    },
-    {
-      "name": "notes",
-      "type": "mediumtext"
-    },
-    {
-      "name": "has_custom_id",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "budget",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "forms_api",
-      "type": "enum('default','captcha','open','disabled')"
-    },
-    {
-      "name": "default_class_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "start_after_creation",
-      "type": "int(11)"
-    },
-    {
-      "name": "deadline_after_creation",
-      "type": "int(11)"
-    },
-    {
-      "name": "defined_price_subtotal",
-      "type": "decimal(12,4)"
-    },
-    {
-      "name": "include_material",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "include_expense",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "rate_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "job": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "job_progression": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "next_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "status_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "link",
@@ -3276,2903 +1698,1424 @@
     },
     {
       "name": "ordering",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "icon",
-      "type": "enum('add','forward','play','pause','new','delete','back')"
-    },
-    {
-      "name": "type_id",
-      "type": "int(11)"
+      "type": "enum('add'"
     }
   ],
   "job_settings": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "job_status": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "color",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('pending','active','paused','complete','inactive')"
+      "type": "enum('pending'"
     }
   ],
   "job_template": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
     }
   ],
   "job_type": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('active','inactive')"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
-    },
-    {
-      "name": "has_custom_id",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "has_milestone_custom_id",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "job_template_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "is_billable",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "defined_price_subtotal",
-      "type": "decimal(12,4)"
-    },
-    {
-      "name": "include_material",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "include_expense",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "budget_default",
-      "type": "enum('no_default','job_template','custom_budget')"
-    },
-    {
-      "name": "default_manager_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "comments",
-      "type": "mediumtext"
+      "type": "enum('active'"
     }
   ],
   "lead": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "location": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "country_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "state_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL"
     }
   ],
   "manager": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "manager_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "manager_table",
-      "type": "enum('staff','group')"
-    },
-    {
-      "name": "link_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(30)"
-    },
-    {
-      "name": "link_table",
-      "type": "enum('company','contact','staff')"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "milestone": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "job_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "manager_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "description",
-      "type": "mediumtext"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "milestone_progression": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "next_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "status_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "ordering",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "icon",
-      "type": "enum('add','forward','play','pause','new','delete','back')"
-    },
-    {
-      "name": "on_create",
-      "type": "enum('no','yes')"
+      "type": "enum('add'"
     }
   ],
   "milestone_status": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "color",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('pending','active','paused','complete','inactive')"
+      "type": "enum('pending'"
     }
   ],
   "milestone_template": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "job_template_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "description",
-      "type": "mediumtext"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "multicurrency_object_transaction_rate": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "object_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "multicurrency_transaction_rate_id",
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "multicurrency_transaction_rate": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "base_currency_code",
-      "type": "varchar(10)"
+      "type": "varchar(10) NOT NULL"
     },
     {
       "name": "transaction_currency_code",
-      "type": "varchar(10)"
+      "type": "varchar(10) NOT NULL"
     },
     {
       "name": "source",
-      "type": "enum('live','manual','contracted','locked')"
-    },
-    {
-      "name": "live_exchange_rate",
-      "type": "decimal(18,6)"
+      "type": "enum('live'"
     }
   ],
   "notification": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "staff_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "message",
-      "type": "text"
+      "type": "text NOT NULL"
     },
     {
       "name": "showing",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "actioned",
-      "type": "timestamp"
-    },
-    {
-      "name": "type",
-      "type": "enum('integration','common','warning')"
+      "type": "enum('yes'"
     }
   ],
   "object_budget": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "object_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "is_billable",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "include_material",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "include_expense",
-      "type": "enum('no','yes')"
-    },
-    {
-      "name": "defined_price",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "defined_price_subtotal",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "service_time",
-      "type": "int(11)"
-    },
-    {
-      "name": "service_price",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "service_price_subtotal",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "expense_estimate",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "expense_price",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "unapproved_expense_price",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "expense_price_subtotal",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "unapproved_expense_price_subtotal",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "expense_cost",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "expense_cost_subtotal",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "assigned_time",
-      "type": "int(11)"
-    },
-    {
-      "name": "assigned_time_subtotal",
-      "type": "int(11)"
-    },
-    {
-      "name": "unassigned_time",
-      "type": "int(11)"
-    },
-    {
-      "name": "unassigned_time_subtotal",
-      "type": "int(11)"
-    },
-    {
-      "name": "expense_invoiced",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "expense_invoiced_subtotal",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "material_cost",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "material_cost_subtotal",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "material_price",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "material_price_subtotal",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "material_invoiced",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "material_invoiced_subtotal",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "billable",
-      "type": "int(11)"
-    },
-    {
-      "name": "nonbillable",
-      "type": "int(11)"
-    },
-    {
-      "name": "charged",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "costing",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "unapproved_price",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "service_time_estimate",
-      "type": "int(11)"
-    },
-    {
-      "name": "service_time_subtotal_estimate",
-      "type": "int(11)"
-    },
-    {
-      "name": "service_price_estimate",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "service_price_subtotal_estimate",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "defined_price_subtotal_estimate",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "service_cost_estimate",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "service_cost_subtotal_estimate",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "remaining_subtotal",
-      "type": "int(11)"
-    },
-    {
-      "name": "billable_subtotal",
-      "type": "int(11)"
-    },
-    {
-      "name": "nonbillable_subtotal",
-      "type": "int(11)"
-    },
-    {
-      "name": "charged_subtotal",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "costing_subtotal",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "unapproved_price_subtotal",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "unallocated_time",
-      "type": "int(11)"
-    },
-    {
-      "name": "unallocated_time_subtotal",
-      "type": "int(11)"
-    },
-    {
-      "name": "forecasted_time",
-      "type": "int(11)"
-    },
-    {
-      "name": "forecasted_time_subtotal",
-      "type": "int(11)"
-    },
-    {
-      "name": "forecasted_price",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "forecasted_price_subtotal",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "forecasted_cost",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "forecasted_cost_subtotal",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "material_price_included_subtotal",
-      "type": "decimal(12,2)"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "object_budget_invoiced": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "invoice_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "invoice_item_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "object_budget_item_template": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "tax_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "ledger_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "object_budget_item_template_object_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "object_budget_material": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "object_id",
-      "type": "int(11)"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "object_budget_material_link": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "contract_period_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "material_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "quantity",
-      "type": "decimal(14,4)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "object_budget_service": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "object_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "service_time",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "object_dependency": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(25)"
-    },
-    {
-      "name": "object_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "dependency_table",
-      "type": "varchar(25)"
-    },
-    {
-      "name": "dependency_id",
-      "type": "int(11)"
+      "type": "varchar(25) NOT NULL"
     }
   ],
   "object_grouping": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "object_invoice_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "object_lock": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "object_table",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "reason",
-      "type": "enum('delete','edit','merge')"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "object_map": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "affiliation_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "asset_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "campaign_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "company_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "contact_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "contract_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "contract_period_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "deployment_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "issue_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "job_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "lead_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "milestone_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "prospect_id",
-      "type": "int(11)"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "object_ordering": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "grouping_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "grouping_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "object_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "object_schedule": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(25)"
-    },
-    {
-      "name": "object_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "planned_duration",
-      "type": "int(11)"
+      "type": "varchar(25) NOT NULL"
     }
   ],
   "object_search": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "object_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "object_table",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "parent_object_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_object_table",
-      "type": "varchar(50)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "object_tree": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "ancestor_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "ancestor_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "descendant_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "descendant_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
+    },
+    {
+      "name": "depth",
+      "type": "tinyint(3) unsigned NOT NULL"
     }
   ],
   "owner": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "owner_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "owner_type",
-      "type": "enum('contact','company')"
-    },
-    {
-      "name": "ownership_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "ownership_type",
-      "type": "enum('location','site')"
+      "type": "enum('contact'"
     }
   ],
   "password_reset": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "user_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "user_type",
-      "type": "enum('staff','contact')"
-    },
-    {
-      "name": "reset_key",
-      "type": "varchar(64)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "profile_option": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "structure_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "value",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "profile_structure": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "description",
-      "type": "mediumtext"
-    },
-    {
-      "name": "exclusive",
-      "type": "enum('yes','no')"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "profile_value": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "structure_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "link_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "link_table",
-      "type": "varchar(30)"
-    },
-    {
-      "name": "value",
-      "type": "mediumtext"
-    },
-    {
-      "name": "dt_value",
-      "type": "timestamp"
-    },
-    {
-      "name": "updated_date",
-      "type": "timestamp"
-    },
-    {
-      "name": "updated_staff",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "progression_action": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "progression_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "progression_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
+    },
+    {
+      "name": "type",
+      "type": "enum('field'"
     }
   ],
   "progression_tracking": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "engagement_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "engagement_table",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "modified",
-      "type": "timestamp"
-    },
-    {
-      "name": "modified_by",
-      "type": "int(11)"
-    },
-    {
-      "name": "to_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "prospect": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "affiliation_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "staff_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "text"
-    },
-    {
-      "name": "type_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "status",
-      "type": "enum('unassigned','active','won','lost','cancelled','abandoned')"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "actioned",
-      "type": "timestamp"
-    },
-    {
-      "name": "due",
-      "type": "date"
-    },
-    {
-      "name": "status_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "weighting",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "prospect_probability": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "value",
-      "type": "int(11)"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "prospect_progression": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "next_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "status_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "link",
       "type": "mediumtext"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
-    },
-    {
-      "name": "icon",
-      "type": "enum('forward','back','delete','add','new','pause','play')"
-    },
-    {
-      "name": "type_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "progress",
-      "type": "int(11)"
     }
   ],
   "prospect_status": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "color",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('unassigned','active','won','lost','cancelled','abandoned')"
+      "type": "enum('unassigned'"
     }
   ],
   "prospect_type": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "text"
-    },
-    {
-      "name": "ordering",
-      "type": "int(11)"
-    },
-    {
-      "name": "status",
-      "type": "enum('active','inactive')"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "quote": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(256)"
+      "type": "varchar(256) NOT NULL"
     },
     {
       "name": "engagement_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "engagement_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "manager_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "affiliation_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "status_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('draft','published','publishing','accepted','declined','converted','inactive')"
-    },
-    {
-      "name": "created_by",
-      "type": "int(11)"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "modified",
-      "type": "timestamp"
-    },
-    {
-      "name": "modified_by",
-      "type": "int(11)"
-    },
-    {
-      "name": "expiry",
-      "type": "timestamp"
-    },
-    {
-      "name": "notes",
-      "type": "text"
-    },
-    {
-      "name": "introduction",
-      "type": "text"
-    },
-    {
-      "name": "conclusion",
-      "type": "text"
-    },
-    {
-      "name": "terms_and_conditions",
-      "type": "text"
-    },
-    {
-      "name": "settings",
-      "type": "text"
-    },
-    {
-      "name": "client_portal_access",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "service_price_total",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "service_time_total",
-      "type": "int(11)"
-    },
-    {
-      "name": "material_price_total",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "total_price",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "exchange_rate",
-      "type": "double"
+      "type": "enum('draft'"
     }
   ],
   "quote_comment": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "quote_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "activity_id",
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "quote_converted": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "template_table",
-      "type": "varchar(30)"
+      "type": "varchar(30) NOT NULL"
     },
     {
       "name": "template_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(30)"
-    },
-    {
-      "name": "object_id",
-      "type": "int(11)"
+      "type": "varchar(30) NOT NULL"
     }
   ],
   "quote_pdf_rte_row": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "quote_pdf_setting_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "ordering",
-      "type": "tinyint(3)"
+      "type": "tinyint(3) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL"
     },
     {
       "name": "value",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL"
+    },
+    {
+      "name": "show_row",
+      "type": "enum('yes'"
     }
   ],
   "quote_pdf_setting": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "varchar(45)"
-    },
-    {
-      "name": "style_font",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "style_theme",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "service_rollup_objects",
-      "type": "enum('none','tasks','sub_milestones_and_tasks','all_milestones_and_tasks')"
-    },
-    {
-      "name": "show_job_hours",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "show_job_amount",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "show_task_description",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "show_task_rate",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "show_task_hours",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "show_task_amount",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "show_milestone_description",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "show_milestone_rate",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "show_milestone_hours",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "show_milestone_amount",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "show_material",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "show_material_price",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "show_material_qty",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "show_material_amount",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "file_name",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "rte_left_section",
-      "type": "text"
-    },
-    {
-      "name": "rte_right_section",
-      "type": "text"
-    },
-    {
-      "name": "rte_bottom_section",
-      "type": "text"
-    },
-    {
-      "name": "rte_description_section",
-      "type": "text"
-    },
-    {
-      "name": "tax_type",
-      "type": "enum('fixed','calculated','rate_percentage')"
-    },
-    {
-      "name": "tax",
-      "type": "decimal(12,2)"
+      "type": "varchar(45) NOT NULL"
     }
   ],
   "quote_recipient": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "quote_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "affiliation_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "response",
-      "type": "enum('pending','accepted','declined')"
-    },
-    {
-      "name": "responded",
-      "type": "timestamp"
+      "type": "enum('pending'"
     }
   ],
   "quote_status": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "color",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
+    },
+    {
+      "name": "status",
+      "type": "enum('draft'"
     }
   ],
   "quote_template": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "default_tax_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "days_valid",
-      "type": "int(11)"
-    },
-    {
-      "name": "introduction",
-      "type": "mediumtext"
-    },
-    {
-      "name": "conclusion",
-      "type": "mediumtext"
-    },
-    {
-      "name": "terms_and_conditions",
-      "type": "mediumtext"
-    },
-    {
-      "name": "email_subject",
-      "type": "mediumtext"
-    },
-    {
-      "name": "email_body",
-      "type": "mediumtext"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "rate": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
     },
     {
       "name": "charged",
-      "type": "decimal(10,2)"
-    },
-    {
-      "name": "status",
-      "type": "enum('active','inactive')"
-    },
-    {
-      "name": "object",
-      "type": "set('staff','issue','job','milestone','contract_period')"
+      "type": "decimal(10"
     }
   ],
   "rate_card": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "rate_card_link": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "rate_card_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "rate_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "rate_card_staff_link": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "rate_card_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "staff_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "rate_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "recurring_event": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "type",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "object_id",
-      "type": "int(11)"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "recurring_event_interact": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "owner_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "owner_table",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "type",
-      "type": "enum('creator','from','to','cc','bcc','attendee','attended','did_not_attend')"
-    },
-    {
-      "name": "recurring_event_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
-  "recurring_rule": [
-    {
-      "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "start",
-      "type": "timestamp"
-    },
-    {
-      "name": "end",
-      "type": "timestamp"
-    },
-    {
-      "name": "until",
-      "type": "timestamp"
-    },
-    {
-      "name": "freq",
-      "type": "enum('secondly','minutely','hourly','daily','weekly','monthly','yearly')"
-    }
-  ],
+  "recurring_rule": [],
   "recurring_rule_exception": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "recurring_rule_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "type",
-      "type": "enum('create','delete')"
-    },
-    {
-      "name": "start",
-      "type": "timestamp"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "referral": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "referrer_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "referrer_table",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
     },
     {
       "name": "engagement_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "engagement_table",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
     },
     {
       "name": "created",
-      "type": "datetime"
+      "type": "datetime NOT NULL"
     }
   ],
   "region": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "parent_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "region_link": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "region_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "object_table",
-      "type": "varchar(255)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "report_template": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "type",
-      "type": "varchar(25)"
-    },
-    {
-      "name": "type_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "file",
-      "type": "mediumtext"
+      "type": "varchar(25) NOT NULL"
     }
   ],
   "request": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "request_conversion": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
     },
     {
       "name": "object_table",
-      "type": "enum('issue','job','contract','prospect')"
-    },
-    {
-      "name": "object_type_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "object_progression_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "object_class_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "object_priority_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "defaults",
-      "type": "mediumtext"
-    },
-    {
-      "name": "automated",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "override",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "status",
-      "type": "enum('active','inactive')"
-    },
-    {
-      "name": "add_contributors",
-      "type": "enum('yes','no')"
+      "type": "enum('issue'"
     }
   ],
   "request_notification": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "request_priority": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "color",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "icon",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "request_rule": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "trigger_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "request_trigger": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "type_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
     },
     {
       "name": "logic",
-      "type": "enum('all','any')"
-    },
-    {
-      "name": "exclusivity",
-      "type": "enum('none','block')"
-    },
-    {
-      "name": "run_repeat",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "run_every",
-      "type": "int(11)"
+      "type": "enum('all'"
     }
   ],
   "request_type": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
     },
     {
       "name": "allow_email",
-      "type": "enum('yes','no')"
+      "type": "enum('yes'"
     }
   ],
   "request_type_conversion_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "type_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "conversion_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "defaults",
-      "type": "mediumtext"
-    },
-    {
-      "name": "status",
-      "type": "enum('active','inactive')"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "resource": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "collection_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "owner_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "owner_type",
-      "type": "enum('staff','contact')"
-    },
-    {
-      "name": "version",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "mediumtext"
-    },
-    {
-      "name": "content",
-      "type": "mediumtext"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "public",
-      "type": "enum('yes','no','limited')"
-    },
-    {
-      "name": "embargo",
-      "type": "datetime"
-    },
-    {
-      "name": "expiry",
-      "type": "datetime"
-    },
-    {
-      "name": "modified",
-      "type": "timestamp"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "resource_access": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "resource_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "access_table",
-      "type": "enum('staff','contact')"
-    },
-    {
-      "name": "access_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
+      "type": "enum('staff'"
     }
   ],
   "resource_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "resource_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "service",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL COMMENT 'This is the service name"
     },
     {
       "name": "service_id",
-      "type": "varchar(500)"
-    },
-    {
-      "name": "writeable",
-      "type": "tinyint(1)"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "updated",
-      "type": "timestamp"
-    },
-    {
-      "name": "filename",
-      "type": "varchar(255)"
+      "type": "varchar(500) NOT NULL COMMENT 'The ID"
     }
   ],
   "rich_content": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "name",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "user_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "user_type",
-      "type": "enum('staff','contact')"
-    },
-    {
-      "name": "content",
-      "type": "mediumtext"
-    },
-    {
-      "name": "parsed_content",
-      "type": "mediumtext"
+      "type": "enum('staff'"
     }
   ],
   "rule": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "ruleset_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "type",
-      "type": "enum('activity','field')"
-    },
-    {
-      "name": "activity_break",
-      "type": "int(11)"
+      "type": "enum('activity'"
     }
   ],
   "ruleset": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "segmentation": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "engagement_table",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "required",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "exclusive",
-      "type": "enum('yes','no')"
-    },
-    {
-      "name": "leaf",
-      "type": "enum('yes','no')"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "segmentation_option": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "segmentation_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "parent_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(200)"
-    },
-    {
-      "name": "ranking",
-      "type": "int(11)"
-    },
-    {
-      "name": "status",
-      "type": "enum('active','inactive')"
+      "type": "varchar(200) NOT NULL"
     }
   ],
   "site": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "type_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('active','inactive')"
+      "type": "enum('active'"
     }
   ],
   "site_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "site_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "location_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
+    },
+    {
+      "name": "status",
+      "type": "enum('active'"
     }
   ],
   "site_type": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "parent_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('active','inactive')"
-    },
-    {
-      "name": "icon",
-      "type": "varchar(50)"
+      "type": "enum('active'"
     }
   ],
   "skill": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "skill_link": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "skill_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "staff": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "firstname",
-      "type": "varchar(30)"
+      "type": "varchar(30) NOT NULL"
     },
     {
       "name": "surname",
-      "type": "varchar(30)"
+      "type": "varchar(30) NOT NULL"
     }
   ],
   "staff_bookmark": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL COMMENT 'DEPRECATED: Table now only supports bookmarking single objects (see get_object_bookmarks)'"
     },
     {
       "name": "owner_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "staff_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "reference_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "reference_table",
-      "type": "varchar(100)"
+      "type": "int(11) unsigned NOT NULL COMMENT 'DEPRECATED: Table now only supports bookmarking single objects (see get_object_bookmarks)'"
     }
   ],
   "staff_licence": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "staff_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "product",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "access_level",
-      "type": "enum('none','collaborator','professional','admin')"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "created_by",
-      "type": "int(11)"
-    },
-    {
-      "name": "modified",
-      "type": "timestamp"
+      "type": "enum('none'"
     }
   ],
   "staff_membership": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "group_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "staff_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "state": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "country_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(50)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "tag": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
+    },
+    {
+      "name": "name",
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "tag_link": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "tag_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "engagement_id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "engagement_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "created_by",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
+    },
+    {
+      "name": "created",
+      "type": "datetime NOT NULL"
     }
   ],
   "task": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "task_priority": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "icon",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "task_progression": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "next_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "status_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "ordering",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "icon",
-      "type": "enum('add','forward','play','pause','new','delete','back')"
-    },
-    {
-      "name": "type_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "on_create",
-      "type": "enum('no','yes')"
+      "type": "enum('add'"
     }
   ],
   "task_status": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "color",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('pending','accepted','started','complete','inactive','paused')"
+      "type": "enum('pending'"
     }
   ],
   "task_template": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "task_type": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(255)"
+      "type": "varchar(255) NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('active','inactive')"
+      "type": "enum('active'"
     }
   ],
   "timeline_entry": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "owner_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "owner_table",
-      "type": "varchar(45)"
+      "type": "varchar(45) NOT NULL"
     },
     {
       "name": "engagement_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "engagement_table",
-      "type": "varchar(45)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "timeline_entry_action": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "action",
-      "type": "varchar(45)"
+      "type": "varchar(45) NOT NULL"
+    },
+    {
+      "name": "timeline_entry_id",
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "timeline_entry_change": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "action_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "field",
-      "type": "varchar(45)"
+      "type": "varchar(45) NOT NULL"
     },
     {
       "name": "from_value",
       "type": "blob"
+    },
+    {
+      "name": "to_value",
+      "type": "blob"
     }
   ],
-  "timeline_entry_metadata": [
-    {
-      "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "entry_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(45)"
-    }
-  ],
-  "timer": [
-    {
-      "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "start_time",
-      "type": "timestamp"
-    },
-    {
-      "name": "extra_time",
-      "type": "int(11)"
-    },
-    {
-      "name": "timer_limit",
-      "type": "int(11)"
-    },
-    {
-      "name": "staff_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "subject",
-      "type": "varchar(256)"
-    },
-    {
-      "name": "body_rich_content_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "engagement_id",
-      "type": "int(11)"
-    }
-  ],
+  "timeline_entry_metadata": [],
+  "timer": [],
   "time_allocation": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "engagement_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "engagement_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('active','approved','invoiced','contracted','locked')"
-    },
-    {
-      "name": "billable",
-      "type": "int(11)"
-    },
-    {
-      "name": "nonbillable",
-      "type": "int(11)"
-    },
-    {
-      "name": "charged",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "costing",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "final_billable",
-      "type": "int(11)"
-    },
-    {
-      "name": "final_nonbillable",
-      "type": "int(11)"
-    },
-    {
-      "name": "final_charged",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "final_costing",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "locked",
-      "type": "timestamp"
+      "type": "enum('active'"
     }
   ],
   "time_allocation_link": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "time_allocation_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "engagement_table",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "engagement_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "billable",
-      "type": "int(11)"
-    },
-    {
-      "name": "nonbillable",
-      "type": "int(11)"
-    },
-    {
-      "name": "charged",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "costing",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "final_billable",
-      "type": "int(11)"
-    },
-    {
-      "name": "final_nonbillable",
-      "type": "int(11)"
-    },
-    {
-      "name": "final_charged",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "final_costing",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "comments",
-      "type": "mediumtext"
-    },
-    {
-      "name": "rate_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "time_external": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "staff_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "service",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "external_id",
-      "type": "varchar(2000)"
+      "type": "varchar(2000) NOT NULL"
     }
   ],
   "time_external_group": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "time_external_recurring": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "freq",
-      "type": "varchar(40)"
+      "type": "varchar(40) NOT NULL"
     }
   ],
   "time_holiday": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     }
   ],
   "time_schedule": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "staff_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "engagement_table",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "engagement_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "task_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "type",
-      "type": "enum('past','scheduled','autoscheduled','meeting','external','missed','tentative')"
-    },
-    {
-      "name": "duration",
-      "type": "int(11)"
-    },
-    {
-      "name": "year",
-      "type": "int(11)"
-    },
-    {
-      "name": "month",
-      "type": "int(11)"
-    },
-    {
-      "name": "week",
-      "type": "int(11)"
-    },
-    {
-      "name": "day",
-      "type": "int(11)"
-    },
-    {
-      "name": "schedule_date",
-      "type": "date"
-    },
-    {
-      "name": "rate_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "rate_charged",
-      "type": "decimal(10,2)"
-    },
-    {
-      "name": "charged",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "cost_rate_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "cost_rate_charged",
-      "type": "decimal(10,2)"
-    },
-    {
-      "name": "costing",
-      "type": "decimal(12,2)"
-    },
-    {
-      "name": "created",
-      "type": "timestamp"
-    },
-    {
-      "name": "created_by",
-      "type": "int(11)"
-    },
-    {
-      "name": "modified",
-      "type": "timestamp"
-    },
-    {
-      "name": "modified_by",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "time_schedule_link": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "activity_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "time_work_week": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "staff_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "weekday",
-      "type": "int(11)"
-    },
-    {
-      "name": "work",
-      "type": "enum('yes','no')"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "triggers": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "object_type",
-      "type": "varchar(50)"
-    },
-    {
-      "name": "type_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "title",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "status",
-      "type": "enum('active','inactive')"
-    },
-    {
-      "name": "modified",
-      "type": "timestamp"
-    },
-    {
-      "name": "modified_by",
-      "type": "int(11)"
-    },
-    {
-      "name": "delay_minutes",
-      "type": "int(11)"
-    },
-    {
-      "name": "delay_hours",
-      "type": "int(11)"
-    },
-    {
-      "name": "delay_days",
-      "type": "int(11)"
-    },
-    {
-      "name": "cycle",
-      "type": "enum('once','ongoing','manual')"
-    },
-    {
-      "name": "retrigger_delay_minutes",
-      "type": "int(11)"
-    },
-    {
-      "name": "retrigger_delay_hours",
-      "type": "int(11)"
-    },
-    {
-      "name": "retrigger_delay_days",
-      "type": "int(11)"
-    },
-    {
-      "name": "active_days",
-      "type": "varchar(30)"
-    },
-    {
-      "name": "active_hours",
-      "type": "varchar(70)"
-    },
-    {
-      "name": "progression_id",
-      "type": "int(11)"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "trigger_event": [
     {
       "name": "id",
-      "type": "int(11)"
-    },
-    {
-      "name": "type",
-      "type": "enum('activity')"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "trigger_history": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "trigger_id",
-      "type": "int(11)"
-    },
-    {
-      "name": "object_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     }
   ],
   "trigger_progression": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     }
   ],
   "trigger_rule": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "trigger_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "type",
-      "type": "enum('activity','field')"
-    },
-    {
-      "name": "activity_break",
-      "type": "int(11)"
+      "type": "enum('activity'"
     }
   ],
   "upload_file": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "section_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
     },
     {
       "name": "description",
-      "type": "mediumtext"
+      "type": "mediumtext NOT NULL"
     },
     {
       "name": "status",
-      "type": "enum('active','inactive')"
-    },
-    {
-      "name": "path",
-      "type": "varchar(255)"
-    },
-    {
-      "name": "multiple",
-      "type": "tinyint(1)"
-    },
-    {
-      "name": "max_size",
-      "type": "int(11)"
-    },
-    {
-      "name": "formats",
-      "type": "varchar(100)"
+      "type": "enum('active'"
     }
   ],
   "upload_section": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "title",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
     },
     {
       "name": "code",
-      "type": "varchar(100)"
+      "type": "varchar(100) NOT NULL"
+    },
+    {
+      "name": "ordering",
+      "type": "int(11) NOT NULL"
     }
   ],
   "view_date": [
     {
       "name": "id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "view_table",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
     },
     {
       "name": "type_id",
-      "type": "int(11)"
+      "type": "int(11) unsigned NOT NULL"
     },
     {
       "name": "view_date_type",
-      "type": "varchar(50)"
+      "type": "varchar(50) NOT NULL"
+    },
+    {
+      "name": "view_date_key",
+      "type": "varchar(50) NOT NULL"
     }
   ]
 }

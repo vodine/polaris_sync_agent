@@ -146,7 +146,7 @@
     - parent_id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - title: PG=text | MySQL=mediumtext | Compatibility=incompatible
     - direction: PG=text | MySQL=enum('debit','credit') | Compatibility=compatible
-    - ordering: PG=boolean | MySQL=tinyint(3) | Compatibility=incompatible
+    - ordering: PG=text | MySQL=tinyint(3) | Compatibility=incompatible
 
 📦 Table: account_preference
   ⚠️ Mismatched Types:
@@ -176,7 +176,7 @@
   ⚠️ Mismatched Types:
     - id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - account_purchase_order_setting_id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - ordering: PG=boolean | MySQL=tinyint(3) | Compatibility=incompatible
+    - ordering: PG=text | MySQL=tinyint(3) | Compatibility=incompatible
     - title: PG=character varying | MySQL=varchar(255) | Compatibility=compatible
 
 📦 Table: account_purchase_order_setting
@@ -268,7 +268,7 @@
     - id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - class_id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - engagement_table: PG=character varying | MySQL=varchar(50) | Compatibility=compatible
-    - ordering: PG=boolean | MySQL=tinyint(3) | Compatibility=incompatible
+    - ordering: PG=text | MySQL=tinyint(3) | Compatibility=incompatible
 
 📦 Table: activity_event
   ⚠️ Mismatched Types:
@@ -489,7 +489,7 @@
     - target_id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - started: PG=timestamp without time zone | MySQL=timestamp | Compatibility=compatible
     - caller: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - outcome: PG=USER-DEFINED | MySQL=enum('started','scheduled','busy','blocked','no | Compatibility=incompatible
+    - outcome: PG=text | MySQL=enum('started','scheduled','busy','blocked','no | Compatibility=compatible
     - outcome_id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - number: PG=character varying | MySQL=varchar(20) | Compatibility=compatible
     - notes: PG=text | MySQL=mediumtext | Compatibility=incompatible
@@ -871,7 +871,7 @@
     - next_id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - status_id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - link: PG=text | MySQL=mediumtext | Compatibility=incompatible
-    - ordering: PG=boolean | MySQL=tinyint(3) | Compatibility=incompatible
+    - ordering: PG=text | MySQL=tinyint(3) | Compatibility=incompatible
 
 📦 Table: contributor_status
   ⚠️ Mismatched Types:
@@ -879,13 +879,13 @@
     - title: PG=character varying | MySQL=varchar(50) | Compatibility=compatible
     - color: PG=character varying | MySQL=varchar(50) | Compatibility=compatible
     - status: PG=text | MySQL=enum('pending','active','complete','inactive','other') | Compatibility=compatible
-    - ordering: PG=boolean | MySQL=tinyint(3) | Compatibility=incompatible
+    - ordering: PG=text | MySQL=tinyint(3) | Compatibility=incompatible
 
 📦 Table: contributor_type
   ⚠️ Mismatched Types:
     - id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - title: PG=character varying | MySQL=varchar(50) | Compatibility=compatible
-    - ordering: PG=boolean | MySQL=tinyint(3) | Compatibility=incompatible
+    - ordering: PG=text | MySQL=tinyint(3) | Compatibility=incompatible
     - auto_link: PG=text | MySQL=enum('yes','no') | Compatibility=compatible
     - auto_cc: PG=text | MySQL=enum('yes','no') | Compatibility=compatible
     - has_status: PG=text | MySQL=enum('yes','no') | Compatibility=compatible
@@ -1550,7 +1550,7 @@
   ⚠️ Mismatched Types:
     - id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - quote_pdf_setting_id: PG=integer | MySQL=int(11) | Compatibility=compatible
-    - ordering: PG=boolean | MySQL=tinyint(3) | Compatibility=incompatible
+    - ordering: PG=text | MySQL=tinyint(3) | Compatibility=incompatible
     - title: PG=character varying | MySQL=varchar(255) | Compatibility=compatible
     - value: PG=character varying | MySQL=varchar(255) | Compatibility=compatible
 
@@ -2044,7 +2044,7 @@
     - id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - action_id: PG=integer | MySQL=int(11) | Compatibility=compatible
     - field: PG=character varying | MySQL=varchar(45) | Compatibility=compatible
-    - from_value: PG=bytea | MySQL=blob | Compatibility=incompatible
+    - from_value: PG=text | MySQL=blob | Compatibility=incompatible
 
 📦 Table: timeline_entry_metadata
   ⚠️ Mismatched Types:

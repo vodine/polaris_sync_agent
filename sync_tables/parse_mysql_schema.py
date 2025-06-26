@@ -1,44 +1,36 @@
 import os
 import json
 import re
+from tqdm import tqdm
 
-SQL_FOLDER = r"C:\polaris_migration\sql_scripts\polarisforensics.accelo.com-2025-06-16T23_11_46"
+SQL_FOLDER = r"C:/polaris_sync_agent/sql_parts"
 OUTPUT_JSON = "accelo_mysql_schema.json"
 
 def extract_columns(column_block):
-    lines = column_block.strip().splitlines()
-    cleaned_lines = []
-    buffer = ""
-    
-    for line in lines:
-        line = line.strip()
-        if not line or line.startswith('--'):
-            continue
-        buffer += " " + line
-        if line.endswith(",") or line.endswith(")"):
-            cleaned_lines.append(buffer.strip().rstrip(','))
-            buffer = ""
-    
     columns = []
-    for line in cleaned_lines:
-        if line.upper().startswith(("PRIMARY KEY", "KEY", "UNIQUE", "CONSTRAINT", "INDEX", "FULLTEXT")):
-            continue
 
-        col_match = re.match(r"`(?P<name>\w+)`\s+(?P<type>.+)", line)
-        if col_match:
-            col_name = col_match.group("name")
-            col_type = col_match.group("type").split()[0]  # just the type, drop NOT NULL etc.
-            columns.append({
-                "name": col_name,
-                "type": col_type.lower()
-            })
+    # Match every line that starts with a column definition using backticks
+    col_defs = re.findall(r"^\s*`(?P<name>\w+)`\s+(?P<type>.*?)(?:,|\n)", column_block, re.MULTILINE | re.DOTALL)
+
+    for name, type_expr in col_defs:
+        cleaned_type = re.sub(r"\s+", " ", type_expr.strip().rstrip(','))
+        columns.append({
+            "name": name,
+            "type": cleaned_type
+        })
+
     return columns
 
 def parse_sql_file(filepath):
-    with open(filepath, encoding='utf-8', errors='ignore') as f:
+    with open(filepath, encoding="utf-8", errors="ignore") as f:
         content = f.read()
 
-    match = re.search(r"CREATE TABLE\s+`?(\w+)`?\s*\((.*?)\)\s*(ENGINE|DEFAULT|CHARSET)", content, re.DOTALL | re.IGNORECASE)
+    # Extract full CREATE TABLE block, multi-line safe
+    match = re.search(
+        r"CREATE TABLE\s+`?(\w+)`?\s*\((.*?)\)[^\)]*(ENGINE|DEFAULT|CHARSET)",
+        content,
+        re.DOTALL | re.IGNORECASE
+    )
     if not match:
         return None
 
@@ -49,9 +41,8 @@ def parse_sql_file(filepath):
 
 def parse_all_sql_files(folder):
     schema = {}
-    for filename in os.listdir(folder):
-        if not filename.endswith(".sql"):
-            continue
+    files = [f for f in os.listdir(folder) if f.lower().endswith(".sql")]
+    for filename in tqdm(files, desc="Parsing SQL files"):
         full_path = os.path.join(folder, filename)
         parsed = parse_sql_file(full_path)
         if parsed:
@@ -60,9 +51,9 @@ def parse_all_sql_files(folder):
     return schema
 
 def export_schema_json(schema):
-    with open(OUTPUT_JSON, "w") as f:
+    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(schema, f, indent=2)
-    print(f"✅ Exported schema to {OUTPUT_JSON}")
+    print(f"\n✅ Exported schema to {OUTPUT_JSON}")
 
 if __name__ == "__main__":
     schema = parse_all_sql_files(SQL_FOLDER)
