@@ -1,7 +1,10 @@
 import json
+import argparse
 from datetime import datetime
 from mysql_conn import get_mysql_connection
 from pg_conn import get_pg_connection
+
+VALID_BACKUP_TYPES = {"backup sql export", "daily update", "sync event"}
 
 def extract_mysql_structure():
     conn = get_mysql_connection()
@@ -53,6 +56,14 @@ def insert_snapshot_to_postgres(structure_dict, backup_type):
     cur.close()
     conn.close()
 
+def main():
+    parser = argparse.ArgumentParser(description="Capture MySQL structure snapshot and log to PostgreSQL.")
+    parser.add_argument('-t', '--type', required=True, choices=VALID_BACKUP_TYPES,
+                        help="Type of backup event: 'backup sql export', 'daily update', or 'sync event'")
+    args = parser.parse_args()
+
+    structure = extract_mysql_structure()
+    insert_snapshot_to_postgres(structure, backup_type=args.type)
+
 if __name__ == "__main__":
-    mysql_structure = extract_mysql_structure()
-    insert_snapshot_to_postgres(mysql_structure, backup_type="sync event")
+    main()
