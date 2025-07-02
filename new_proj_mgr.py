@@ -26,7 +26,12 @@ headers = {
     "Accept": "application/json"
 }
 
-response = requests.get(f"{ACCELO_BASE_URL}jobs", headers=headers)
+params = {
+    "date_modified__gt": last_modified,
+    "limit": 50,
+    "start": 0
+}
+response = requests.get(f"{ACCELO_BASE_URL}jobs", headers=headers, params=params)
 
 # ---- PROCESS RESPONSE ----
 
