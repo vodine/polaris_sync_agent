@@ -18,10 +18,7 @@ def login_and_save_cookies():
 
         # Go to login page
         page.goto(f"https://{LOGIN_PAGE}", wait_until="domcontentloaded")
-
-        # Wait for username field (guarantees form is loaded)
-        page.wait_for_selector("input#username", timeout=10000)
-
+      
         # Fill in login form
         page.fill("input#username", LOGIN)
         page.fill("input#password", PASSWORD)
