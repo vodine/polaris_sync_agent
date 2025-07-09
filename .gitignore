@@ -91,3 +91,4 @@ sql_parts/
 # Custom files
 test_auth.py
 holiday.py
+accelo_cookies.json
