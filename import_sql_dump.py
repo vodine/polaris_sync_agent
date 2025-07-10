@@ -1,37 +1,37 @@
 import os
-from mysql_conn import get_mysql_connection
+import glob
+import subprocess
+from dotenv import load_dotenv
+
+load_dotenv()
+DBUSER = os.getenv("MYSQL_USER")
+DBPASS = os.getenv("MYSQL_PASSWORD")
+DBNAME = os.getenv("MYSQL_DATABASE")
 
 def import_sql_from_folder(folder_path):
-    import glob
-
     sql_files = sorted(glob.glob(os.path.join(folder_path, "*.sql")))
     if not sql_files:
         print("[!] No SQL files found to import.")
         return False
 
-    conn = get_mysql_connection()
-    cursor = conn.cursor()
     total = len(sql_files)
-
     print(f"[+] Found {total} SQL files. Starting import...")
 
     for i, file_path in enumerate(sql_files, 1):
-        with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
-            sql = f.read()
-
         print(f"  → Importing {os.path.basename(file_path)} ({i}/{total})... ", end="")
         try:
-            cursor.execute("SET FOREIGN_KEY_CHECKS=0;")
-            for statement in sql.split(";"):
-                statement = statement.strip()
-                if statement:
-                    cursor.execute(statement)
-            conn.commit()
-            print("Done")
+            result = subprocess.run(
+                ["mysql", f"-u{DBUSER}", f"-p{DBPASS}", DBNAME, "-e", f"source {file_path}"],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                shell=False
+            )
+            if result.returncode == 0:
+                print("Done")
+            else:
+                print(f"Failed:\n{result.stderr}")
         except Exception as e:
-            print(f"Failed: {e}")
-            conn.rollback()
+            print(f"Exception: {e}")
 
-    cursor.close()
-    conn.close()
     return True
