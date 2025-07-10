@@ -92,3 +92,4 @@ sql_parts/
 test_auth.py
 holiday.py
 accelo_cookies.json
+load_all_tables.bat
