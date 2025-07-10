@@ -41,15 +41,43 @@ def unzip_latest_sql():
         return None
 
     extract_path = os.path.splitext(ZIP_PATH)[0]
-    
+
     try:
         with zipfile.ZipFile(ZIP_PATH, 'r') as zip_ref:
-            zip_ref.extractall(extract_path)
+            temp_extract_path = extract_path + "_temp"
+            zip_ref.extractall(temp_extract_path)
+
+        # Look for first subdirectory
+        subdirs = [os.path.join(temp_extract_path, d) for d in os.listdir(temp_extract_path) if os.path.isdir(os.path.join(temp_extract_path, d))]
+        if not subdirs:
+            print("No subdirectory found inside the zip.")
+            return None
+
+        inner_folder = subdirs[0]
+
+        # Move files from inner_folder to extract_path
+        if not os.path.exists(extract_path):
+            os.makedirs(extract_path)
+
+        for filename in os.listdir(inner_folder):
+            src_file = os.path.join(inner_folder, filename)
+            dst_file = os.path.join(extract_path, filename)
+            os.rename(src_file, dst_file)
+
+        # Clean up temp directory
+        for root, dirs, files in os.walk(temp_extract_path, topdown=False):
+            for name in files:
+                os.remove(os.path.join(root, name))
+            for name in dirs:
+                os.rmdir(os.path.join(root, name))
+        os.rmdir(temp_extract_path)
+
         print(f"Unzipped to: {extract_path}")
         return extract_path
     except zipfile.BadZipFile:
         print("Failed: Bad zip file.")
         return None
+
 
 def run_clean_up(max_retries=12, wait_seconds=300):
     extract_path = os.path.splitext(ZIP_PATH)[0]
