@@ -1,7 +1,7 @@
 import time
 import argparse
 from accelo_scraper import login_and_save_cookies
-from main_helper import trigger_sql_export
+from main_helper import trigger_sql_export, unzip_latest_sql, run_clean_up
 from sql_watchdog import run_watchdog
 
 INTERVAL = 300
@@ -19,6 +19,9 @@ def main():
             success = run_watchdog()
             if not success:
                 time.sleep(INTERVAL)
-
+        if success:
+            unzip_latest_sql()
+            run_clean_up()
+                
 if __name__ == "__main__":
     main()
