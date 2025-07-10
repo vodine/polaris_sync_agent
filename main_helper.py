@@ -5,6 +5,7 @@ import zipfile
 import subprocess
 from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright
+from import_sql_dump import import_sql_from_folder
 
 
 load_dotenv()
@@ -57,9 +58,10 @@ def run_clean_up(max_retries=12, wait_seconds=300):
     retries = 0
 
     while retries < max_retries:
-        result = subprocess.run(f'cmd.exe /c "{BAT_FILE}"', shell=True)
-        if result.returncode == 0:
+        success = import_sql_from_folder(extract_path)
+        if success:
             print("SQL insert completed successfully.")
+            # proceed with cleanup
             try:
                 os.remove(ZIP_PATH)
                 print(f"Deleted ZIP: {ZIP_PATH}")
@@ -75,7 +77,7 @@ def run_clean_up(max_retries=12, wait_seconds=300):
                 print(f"Cleanup failed: {e}")
             return True
         else:
-            print(f"Insert failed (attempt {retries+1}/{max_retries}). Retrying in {wait_seconds} sec...")
+            print(f"Insert failed (attempt {retries + 1}/{max_retries}). Retrying in {wait_seconds} sec...")
             retries += 1
             time.sleep(wait_seconds)
 
