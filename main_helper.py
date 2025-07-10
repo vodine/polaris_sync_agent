@@ -12,7 +12,7 @@ LOGIN_PAGE = os.getenv("LOGIN_PAGE")
 SAVE_FOLDER = os.getenv("SAVE_FOLDER")
 BAT_FOLDER = os.getenv("BAT_FOLDER")
 ZIP_PATH = os.path.join(SAVE_FOLDER, "accelo_download.zip")
-BAT_FILE = os.path.join(BAT_FOLDER, "load_all_tables.bat")
+BAT_FILE = os.path.normpath(os.path.join(os.getcwd(), "load_all_tables.bat"))
 
 def trigger_sql_export():
     with sync_playwright() as p:
