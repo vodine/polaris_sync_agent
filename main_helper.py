@@ -58,7 +58,7 @@ def run_clean_up(max_retries=12, wait_seconds=300):
     retries = 0
 
     while retries < max_retries:
-        result = subprocess.run(BAT_FILE, shell=True)
+        result = subprocess.run(f'cmd /c "{BAT_FILE}"', shell=True)
         if result.returncode == 0:
             print("SQL insert completed successfully.")
             try:
